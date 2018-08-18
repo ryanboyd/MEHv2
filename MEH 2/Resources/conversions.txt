@@ -1,0 +1,297 @@
+i'm^i am
+you're^you are
+i've^i have
+you've^you have
+he'll^he will
+i'll^i will
+she'll^she will
+they'll^they will
+they're^they are
+they've^they have
+we're^we are
+we've^we have
+what'll^what will
+what're^what are
+what've^what have
+who'll^who will
+who're^who are
+who've^who have
+you'll^you will
+we'll^we will
+can't^can not
+won't^will not
+isn't^is not
+aren't^are not
+ain't^are not
+don't^do not
+haven't^have not
+havn't^have not
+cannot^can not
+willnot^will not
+couldn't^could not
+havn't^have not
+arn't^are not
+wouldn't^would not
+shouldn't^should not
+wasn't^was not
+shouldn't^should not
+could'nt^could not
+wouldn't^would not
+would'nt^would not
+should'nt^should not
+idon't^i do not
+mustn't^must not
+shalln't^shall not
+cn't^can not
+didn't^did not
+needn't^need not
+shoudn't^should not
+woudn't^would not
+doesen't^does not
+havne't^have not
+cant^can not
+didnt^did not
+gov't^government
+aint^are not
+doesnt^does not
+dosen't^does not
+hasn't^has not
+hadn't^had not
+couldn't^could not
+
+http*^URLLINK
+accomodate^accommodate
+accross^across
+acheive^achieve
+acting^act
+agressive^aggressive
+apparantly^apparently
+apparent*^apparent
+appearence^appearance
+realise*^realize
+honour*^honor
+favour*^favor
+recognise*^recognize
+favourite*^favorite
+colour*^color
+apologis*^apologize
+centre*^center
+defence*^defense
+behaviour*^behavior
+arguement^argument
+assasination^assassination
+awake*^awake
+basicly^basically
+begining^beginning
+beleive^believe
+bf^boyfriend
+bfs^boyfriend
+bitchy^bitch
+biteing^biting
+bizzare^bizarre
+bled^bleed
+bliss*^bliss
+blotch*^blotch
+blurred^blur
+blurry^blur
+blushing^blush
+boney^bone
+boyfrend*^boyfriend
+boyfrind*^boyfriend
+breakup^break-up
+break* up^break-up
+broke* up^break-up
+bro^brother
+buisness^business
+burning^burn
+calender^calendar
+cannibis^cannabis
+careful*^careful
+Carribean^Caribbean
+celeb^celebrity
+cemetary^cemetery
+changing^change
+chaotic^chaos
+chauffer^chauffeur
+clean*^clean
+collegue^colleague
+coming^come
+comming^coming
+commitee^committee
+complete*^complete
+completly^completely
+concious^conscious
+connect*^connect
+consuming^consume
+curiousity^curiosity
+cutting^cut
+dancing^dance
+definately^definitely
+dilemna^dilemma
+dissapear^disappear
+dissapoint^disappoint
+dream*^dream
+drinking^drink
+driving^drive
+ecstacy^ecstasy
+embarass^embarrass
+emotion*^emotion
+enviroment^environment
+existance^existence
+extreme*^extreme
+familar^familiar
+Farenheit^Fahrenheit
+feeling^feel
+fell^fall
+felt^feel
+fighting^fight
+finaly^finally
+finding^find
+florescent^fluorescent
+foriegn^foreign
+forseeable^foreseeable
+fourty^forty
+foward^forward
+freind^friend
+fucking^fuck
+futher^further
+gaurd^guard
+gf^girlfriend
+gfs^girlfriend
+girlfrend*^girlfriend
+girlfrind*^girlfriend
+glamourous^glamorous
+goverment^government
+growth^grow
+hall^hallway
+halls^hallway
+hanging^hang
+happend^happened
+heard^hear
+honest*^honest
+idiosyncracy^idiosyncrasy
+immediatly^immediately
+incidently^incidentally
+independant^independent
+interest*^interest
+interupt^interrupt
+irresistable^irresistible
+jist^gist
+keeping^keep
+killing^kill
+knowing^know
+knowlege^knowledge
+leading^lead
+living^live
+lollypop^lollipop
+making^make
+mountian*^mountain
+movement^move
+moving^move
+neccessary^necessary
+noticable^noticeable
+ocassion^occasion
+occassion^occasion
+occurance^occurrence
+occured^occurred
+occurence^occurrence
+occuring^occurring
+pavillion^pavilion
+peice^piece
+people*^people
+persistant^persistent
+pharoah^pharaoh
+politican^politician
+Portugese^Portuguese
+posession^possession
+prefered^preferred
+prefering^preferring
+propoganda^propaganda
+publically^publicly
+reading^read
+realy^really
+recieve^receive
+refered^referred
+refering^referring
+religous^religious
+resistence^resistance
+running^run
+sat^sit
+seige^siege
+sence^sense
+seperate^separate
+sitting^sit
+sleep*^sleep
+standing^stand
+staring^stare
+succesful^successful
+supercede^supersede
+suprise^surprise
+symbol*^symbol
+tatoo^tattoo
+teh^the
+tendancy^tendency
+therefor^therefore
+think*^think
+threshhold^threshold
+tommorow^tomorrow
+tommorrow^tomorrow
+totally^total
+tounge^tongue
+truely^truly
+unforseen^unforeseen
+unfortunatly^unfortunately
+United States of America^USA
+United States^USA
+untill^until
+walking^walk
+whereever^wherever
+wich^which
+wierd^weird
+working^work
+writing^write
+obscenely^obscene
+warily^wary
+courageously^courageous
+quickly^quick
+presently^present
+goodly^good
+humbly^humble
+freely^free
+suddenly^sudden
+tomarrow^tomorrow
+haha*^haha
+wooo^whoo
+ohhh^oh
+sooo*^so
+mmm*^mmm
+hm*^hmm
+umm*^um
+ahh*^ah
+youu*^you
+runnin^running
+xxx*^xxx
+hehe*^hehe
+wouldhave^would have
+grr*^grr
+too*^to
+shouldhave^should have
+couldhave^could have
+somthing^something
+HURTFUL^hurt
+SUCKY^suck
+SEX*^SEX
+APPRECIATIVE^appreciate
+FRANTICALLY^FRANTIC
+REGRETTABLY^REGRET
+HUMILIATION^HUMILIATE
+FRIGHT*^FRIGHT
+WORRY*^WORRY
+WORRINESS^WORRY
+MELANCHOL*^MELANCHOLY
+BITTER*^BITTER
+DISGUST*^DISGUST
+DEPRESS*^DEPRESS
+SHOCK*^SHOCK
+WOEFUL*^WOE
+STRESS*^STRESS
