@@ -657,6 +657,9 @@ namespace MEH2
                         for (int segment_number = 0; segment_number < SegmentedTokenText.Length; segment_number++) {
 
 
+                            //We drop the stop words here, prior to the generation of n-grams, to ensure that
+                            //everything is removed prior to building higher-order n-grams.
+                            string[] TokenizedText_For_Ngrams = SegmentedTokenText[segment_number].Where(x => !StopList.Contains(x)).ToArray();
 
 
                             Dictionary<string, Dictionary<string, long>> FileTokenData = new Dictionary<string, Dictionary<string, long>>();
@@ -666,20 +669,20 @@ namespace MEH2
                             FileTokenData.Add("TokenInfo", new Dictionary<string, long>());
 
                             //add number of tokens to dictionary
-                            FileTokenData.Add("FileInfo", new Dictionary<string, long> { { "TokenCount", SegmentedTokenText[segment_number].Length } });
+                            FileTokenData.Add("FileInfo", new Dictionary<string, long> { { "RawTokenCount", SegmentedTokenText[segment_number].Length } });
                             FileTokenData["FileInfo"].Add("Segment", segment_number + 1);
 
 
                             //General nested look to fill out our dictionary with ngrams
-                            for (long i = 0; i < SegmentedTokenText[segment_number].Length; i++)
+                            for (long i = 0; i < TokenizedText_For_Ngrams.Length; i++)
                             {
                                 //builds our ngrams...
                                 for (int j = BGData.Ngram_N; j > 0; j--)
                                 {
-                                    if (i + j <= SegmentedTokenText[segment_number].Length)
+                                    if (i + j <= TokenizedText_For_Ngrams.Length)
                                     {
                                         string[] token_builder = new string[j];
-                                        Array.Copy(SegmentedTokenText[segment_number], i, token_builder, 0, j);
+                                        Array.Copy(TokenizedText_For_Ngrams, i, token_builder, 0, j);
 
                                         string token = string.Join(" ", token_builder);
 
@@ -809,7 +812,11 @@ namespace MEH2
                                     //this way, if we choose to change the stoplist later, we don't have to
                                     //completely reprocess everything. instead, we can just load up the
                                     //DWL.ndjson file and apply the changes downstream
-                                    if (!StopList.Contains(entry.Key)) { 
+
+                                    //actually, I've changed my mind on this. It complicates things for
+                                    //n-grams > N=1. simplicity is bliss
+
+                                    //if (!StopList.Contains(entry.Key)) { 
 
                                         if (FreqListDictionary.ContainsKey(entry.Key))
                                         {
@@ -821,7 +828,7 @@ namespace MEH2
                                             FreqListDictionary.Add(entry.Key, new long[2] { entry.Value, 1 });
                                         }
 
-                                    }
+                                    //}
                                 }
                             }
 
@@ -1026,7 +1033,7 @@ namespace MEH2
                     HeaderString[0] = "\"Filename\"";
                     HeaderString[1] = "\"Segment\"";
                     HeaderString[2] = "\"WC\"";
-                    HeaderString[3] = "\"TokenCount\"";
+                    HeaderString[3] = "\"RawTokenCount\"";
 
                     foreach(var token in RetainedWords)
                     {
@@ -1058,19 +1065,19 @@ namespace MEH2
                             BinaryOutputString[0] = "\"" + Filename_WC.Keys.ToArray()[0].ToString().Replace("\"", "\"\"") + "\"";
                             BinaryOutputString[1] = FileInfo["Segment"].ToString();
                             BinaryOutputString[2] = Filename_WC.Values.ToArray()[0].ToString();
-                            BinaryOutputString[3] = FileInfo["TokenCount"].ToString();
+                            BinaryOutputString[3] = FileInfo["RawTokenCount"].ToString();
 
                             string[] VerboseOutputString = new string[HeaderLead + NGramCount];
                             VerboseOutputString[0] = "\"" + Filename_WC.Keys.ToArray()[0].ToString().Replace("\"", "\"\"") + "\"";
                             VerboseOutputString[1] = FileInfo["Segment"].ToString();
                             VerboseOutputString[2] = Filename_WC.Values.ToArray()[0].ToString();
-                            VerboseOutputString[3] = FileInfo["TokenCount"].ToString();
+                            VerboseOutputString[3] = FileInfo["RawTokenCount"].ToString();
 
                             string[] RawDTMOutputString = new string[HeaderLead + NGramCount];
                             RawDTMOutputString[0] = "\"" + Filename_WC.Keys.ToArray()[0].ToString().Replace("\"", "\"\"") + "\"";
                             RawDTMOutputString[1] = FileInfo["Segment"].ToString();
                             RawDTMOutputString[2] = Filename_WC.Values.ToArray()[0].ToString();
-                            RawDTMOutputString[3] = FileInfo["TokenCount"].ToString();
+                            RawDTMOutputString[3] = FileInfo["RawTokenCount"].ToString();
 
 
                             for (int i = 0; i < NGramCount; i++)
@@ -1086,7 +1093,7 @@ namespace MEH2
                                 {
                                     if (BGData.GenerateBinary) BinaryOutputString[HeaderLead + RetainedWords[token.Key]] = "1";
                                     if (BGData.GenerateRawDTM) RawDTMOutputString[HeaderLead + RetainedWords[token.Key]] = token.Value.ToString();
-                                    if (BGData.GenerateVerbose) VerboseOutputString[HeaderLead + RetainedWords[token.Key]] = Math.Round((token.Value / (double)FileInfo["TokenCount"]) * 100, 5, mode: MidpointRounding.AwayFromZero).ToString();
+                                    if (BGData.GenerateVerbose) VerboseOutputString[HeaderLead + RetainedWords[token.Key]] = Math.Round((token.Value / (double)FileInfo["RawTokenCount"]) * 100, 5, mode: MidpointRounding.AwayFromZero).ToString();
                                 }
                             }
 

@@ -77,6 +77,8 @@
             this.UseLemmatizationCheckbox = new System.Windows.Forms.CheckBox();
             this.label7 = new System.Windows.Forms.Label();
             this.ChooseOutputTypesTab = new System.Windows.Forms.TabPage();
+            this.PruneFreqListParameterTextbox = new System.Windows.Forms.TextBox();
+            this.PruneFreqListCheckbox = new System.Windows.Forms.CheckBox();
             this.label21 = new System.Windows.Forms.Label();
             this.ClearDWLSelectionButton = new System.Windows.Forms.Button();
             this.label25 = new System.Windows.Forms.Label();
@@ -119,8 +121,6 @@
             this.AboutMEHPictureBox = new System.Windows.Forms.PictureBox();
             this.label24 = new System.Windows.Forms.Label();
             this.BGWorker = new System.ComponentModel.BackgroundWorker();
-            this.PruneFreqListCheckbox = new System.Windows.Forms.CheckBox();
-            this.PruneFreqListParameterTextbox = new System.Windows.Forms.TextBox();
             this.TabControlObject.SuspendLayout();
             this.InputOutputTab.SuspendLayout();
             this.TextSegmentationTab.SuspendLayout();
@@ -738,6 +738,29 @@
             this.ChooseOutputTypesTab.TabIndex = 6;
             this.ChooseOutputTypesTab.Text = "Choose Output Types";
             // 
+            // PruneFreqListParameterTextbox
+            // 
+            this.PruneFreqListParameterTextbox.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PruneFreqListParameterTextbox.Location = new System.Drawing.Point(555, 345);
+            this.PruneFreqListParameterTextbox.Name = "PruneFreqListParameterTextbox";
+            this.PruneFreqListParameterTextbox.Size = new System.Drawing.Size(125, 27);
+            this.PruneFreqListParameterTextbox.TabIndex = 15;
+            this.PruneFreqListParameterTextbox.Text = "10000";
+            // 
+            // PruneFreqListCheckbox
+            // 
+            this.PruneFreqListCheckbox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.PruneFreqListCheckbox.AutoSize = true;
+            this.PruneFreqListCheckbox.Checked = true;
+            this.PruneFreqListCheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.PruneFreqListCheckbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PruneFreqListCheckbox.Location = new System.Drawing.Point(101, 347);
+            this.PruneFreqListCheckbox.Name = "PruneFreqListCheckbox";
+            this.PruneFreqListCheckbox.Size = new System.Drawing.Size(441, 24);
+            this.PruneFreqListCheckbox.TabIndex = 14;
+            this.PruneFreqListCheckbox.Text = "Prune Frequency List; Prune after every X Documents:";
+            this.PruneFreqListCheckbox.UseVisualStyleBackColor = true;
+            // 
             // label21
             // 
             this.label21.AutoSize = true;
@@ -1171,7 +1194,7 @@
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(398, 60);
             this.label32.TabIndex = 3;
-            this.label32.Text = "Boyd, R. L. (2018). MEH: Meaning Extraction\r\n      Helper (version 2.0.0b) [Softw" +
+            this.label32.Text = "Boyd, R. L. (2018). MEH: Meaning Extraction\r\n      Helper (version 2.0.1b) [Softw" +
     "are].\r\n      Available from https://meh.ryanb.cc";
             // 
             // label31
@@ -1219,29 +1242,6 @@
             this.BGWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BGWorker_DoWork);
             this.BGWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.BGWorker_ProgressChanged);
             this.BGWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BGWorker_RunWorkerCompleted);
-            // 
-            // PruneFreqListCheckbox
-            // 
-            this.PruneFreqListCheckbox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.PruneFreqListCheckbox.AutoSize = true;
-            this.PruneFreqListCheckbox.Checked = true;
-            this.PruneFreqListCheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.PruneFreqListCheckbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PruneFreqListCheckbox.Location = new System.Drawing.Point(101, 347);
-            this.PruneFreqListCheckbox.Name = "PruneFreqListCheckbox";
-            this.PruneFreqListCheckbox.Size = new System.Drawing.Size(441, 24);
-            this.PruneFreqListCheckbox.TabIndex = 14;
-            this.PruneFreqListCheckbox.Text = "Prune Frequency List; Prune after every X Documents:";
-            this.PruneFreqListCheckbox.UseVisualStyleBackColor = true;
-            // 
-            // PruneFreqListParameterTextbox
-            // 
-            this.PruneFreqListParameterTextbox.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PruneFreqListParameterTextbox.Location = new System.Drawing.Point(555, 345);
-            this.PruneFreqListParameterTextbox.Name = "PruneFreqListParameterTextbox";
-            this.PruneFreqListParameterTextbox.Size = new System.Drawing.Size(125, 27);
-            this.PruneFreqListParameterTextbox.TabIndex = 15;
-            this.PruneFreqListParameterTextbox.Text = "10000";
             // 
             // MainForm
             // 
