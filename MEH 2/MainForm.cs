@@ -792,7 +792,7 @@ namespace MEH2
                                     LogWriter.WriteToLog(DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss tt") + ": " + 
                                                          ItemsToPrune.Count.ToString() + " N-grams pruned.", Color.Yellow);
 
-                            }
+                                }
                             }
 
 
@@ -835,8 +835,33 @@ namespace MEH2
                         }
                     }
 
-                    if (!BGWorker.CancellationPending) { 
+                    if (!BGWorker.CancellationPending) {
+
+
+                        //this is if we're pruning the ngrams from the frequency list.
+                        //we want to do it one last time prior to writing the output
+                        if (BGData.PruneFreqList)
+                        {
+                            
+                            LogWriter.WriteToLog(DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss tt") + ": Pruning rare N-grams...", Color.Yellow);
+                            long itemcount = FreqListDictionary.Count;
+                            List<string> ItemsToPrune = new List<string>();
+                            foreach (var token in FreqListDictionary)
+                            {
+                                if (token.Value[0] == 1) ItemsToPrune.Add(token.Key);
+                            }
+
+                            //do the actual pruning here
+                            for (int prunecounter = 0; prunecounter < ItemsToPrune.Count; prunecounter++) FreqListDictionary.Remove(ItemsToPrune[prunecounter]);
+
+                            LogWriter.WriteToLog(DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss tt") + ": " +
+                                                    ItemsToPrune.Count.ToString() + " N-grams pruned.", Color.Yellow);
+                        
+                        }
+
+
                         string FrequencyListPath = BGData.OutputFileLocation + Path.DirectorySeparatorChar + DateTime.Now.ToString("yyyy-MM-dd_") + "MEH Freq List.csv";
+                        
                         //at this point, the entire frequency list is assembled
                         //so now we have to write it out
                         using (StreamWriter FreqListFileStream = new StreamWriter(FrequencyListPath, encoding: BGData.SelectedEncoding, append: false))
