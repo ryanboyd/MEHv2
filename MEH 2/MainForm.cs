@@ -1268,7 +1268,8 @@ namespace MEH2
         {
             StartButton.Enabled = true;
 
-            string[] ControlsToKeepDisabled = new string[] { "InputFolderTextbox", "OutputFileTextbox", "PregeneratedDWLTextbox" };
+            string[] ControlsToKeepDisabled = new string[] { "InputFolderTextbox", "OutputFileTextbox",
+                                                             "PregeneratedDWLTextbox", "DocumentWordListsOutputCheckbox" };
             foreach (TabPage Tab in TabControlObject.TabPages)
             {
                 if (Tab.Name != "BeginAnalysisTab" && Tab.Name != "AboutMEHTab")

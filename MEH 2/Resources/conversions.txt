@@ -58,7 +58,6 @@ dosen't^does not
 hasn't^has not
 hadn't^had not
 couldn't^could not
-
 http*^URLLINK
 accomodate^accommodate
 accross^across
