@@ -955,9 +955,9 @@
             this.ThresholdOptionRawFreq.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ThresholdOptionRawFreq.Location = new System.Drawing.Point(14, 342);
             this.ThresholdOptionRawFreq.Name = "ThresholdOptionRawFreq";
-            this.ThresholdOptionRawFreq.Size = new System.Drawing.Size(340, 24);
+            this.ThresholdOptionRawFreq.Size = new System.Drawing.Size(345, 24);
             this.ThresholdOptionRawFreq.TabIndex = 13;
-            this.ThresholdOptionRawFreq.Text = "Retain N-grams that with Frequency >= X";
+            this.ThresholdOptionRawFreq.Text = "Retain N-grams with Raw Frequency >= X";
             this.ThresholdOptionRawFreq.UseVisualStyleBackColor = true;
             // 
             // label28
