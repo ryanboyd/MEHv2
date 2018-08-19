@@ -1194,7 +1194,7 @@
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(398, 60);
             this.label32.TabIndex = 3;
-            this.label32.Text = "Boyd, R. L. (2018). MEH: Meaning Extraction\r\n      Helper (version 2.0.2b) [Softw" +
+            this.label32.Text = "Boyd, R. L. (2018). MEH: Meaning Extraction\r\n      Helper (version 2.0.3b) [Softw" +
     "are].\r\n      Available from https://meh.ryanb.cc";
             // 
             // label31

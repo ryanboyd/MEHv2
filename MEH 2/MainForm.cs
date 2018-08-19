@@ -783,7 +783,7 @@ namespace MEH2
                                 List<string> ItemsToPrune = new List<string>();
                                     foreach (var token in FreqListDictionary)
                                     {
-                                        if (token.Value[0] == 1) ItemsToPrune.Add(token.Key);
+                                        if (token.Value[0] == 1 && !DictionaryList.Contains(token.Key)) ItemsToPrune.Add(token.Key);
                                     }
 
                                     //do the actual pruning here
@@ -848,7 +848,7 @@ namespace MEH2
                             List<string> ItemsToPrune = new List<string>();
                             foreach (var token in FreqListDictionary)
                             {
-                                if (token.Value[0] == 1) ItemsToPrune.Add(token.Key);
+                                if (token.Value[0] == 1 && !DictionaryList.Contains(token.Key)) ItemsToPrune.Add(token.Key);
                             }
 
                             //do the actual pruning here
