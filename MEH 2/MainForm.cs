@@ -307,6 +307,7 @@ namespace MEH2
                 BGData.TextFileFolder = InputFolderTextbox.Text;
                 BGData.OutputFileLocation = OutputFileTextbox.Text;
                 BGData.SelectedEncoding = Encoding.GetEncoding(EncodingDropdown.SelectedItem.ToString());
+                BGData.RetainOnlyDictionaryWords = KeepOnlyDictionaryWordsCheckbox.Checked;
 
                 if (SubfolderCheckbox.Checked)
                 {
@@ -489,28 +490,8 @@ namespace MEH2
 
                 }
 
-                //  ____        _ _     _   ____  _                _     _     _   
-                // | __ ) _   _(_) | __| | / ___|| |_ ___  _ __   | |   (_)___| |_ 
-                // |  _ \| | | | | |/ _` | \___ \| __/ _ \| '_ \  | |   | / __| __|
-                // | |_) | |_| | | | (_| |  ___) | || (_) | |_) | | |___| \__ \ |_ 
-                // |____/ \__,_|_|_|\__,_| |____/ \__\___/| .__/  |_____|_|___/\__|
-                //                                        |_|                      
 
-                HashSet<string> StopList = new HashSet<string>();
-                foreach (string stopword in BGData.StopListString.Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries))
-                {
-                    if (!StopList.Contains(stopword))
-                    {
-                        if (BGData.ConvertToLowerCase)
-                        {
-                            StopList.Add(stopword.ToLower());
-                        }
-                        else
-                        {
-                            StopList.Add(stopword);
-                        }
-                    }
-                }
+
 
 
                 //  ____        _ _     _   ____  _      _   _                                _     _     _   
@@ -537,6 +518,35 @@ namespace MEH2
                         }
                     }
                 }
+
+
+
+
+                //  ____        _ _     _   ____  _                _     _     _   
+                // | __ ) _   _(_) | __| | / ___|| |_ ___  _ __   | |   (_)___| |_ 
+                // |  _ \| | | | | |/ _` | \___ \| __/ _ \| '_ \  | |   | / __| __|
+                // | |_) | |_| | | | (_| |  ___) | || (_) | |_) | | |___| \__ \ |_ 
+                // |____/ \__,_|_|_|\__,_| |____/ \__\___/| .__/  |_____|_|___/\__|
+                //                                        |_|                      
+
+                HashSet<string> StopList = new HashSet<string>();
+                foreach (string stopword in BGData.StopListString.Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries))
+                {
+                    //we want our dictionary list to override our stop list
+                    if (!StopList.Contains(stopword) && !DictionaryList.Contains(stopword))
+                    {
+                        if (BGData.ConvertToLowerCase)
+                        {
+                            StopList.Add(stopword.ToLower());
+                        }
+                        else
+                        {
+                            StopList.Add(stopword);
+                        }
+                    }
+                }
+
+
 
 
 
@@ -818,6 +828,10 @@ namespace MEH2
 
                                     //if (!StopList.Contains(entry.Key)) { 
 
+
+                                    //we go this route if we're NOT retaining only dictionary words
+                                    if (!BGData.RetainOnlyDictionaryWords) { 
+
                                         if (FreqListDictionary.ContainsKey(entry.Key))
                                         {
                                             FreqListDictionary[entry.Key][0] += entry.Value;
@@ -827,6 +841,24 @@ namespace MEH2
                                         {
                                             FreqListDictionary.Add(entry.Key, new long[2] { entry.Value, 1 });
                                         }
+
+                                    }
+                                    //we go this route if we ARE retaining only dictionary words
+                                    else
+                                    {
+                                        if (DictionaryList.Contains(entry.Key))
+                                        {
+                                            if (FreqListDictionary.ContainsKey(entry.Key))
+                                            {
+                                                FreqListDictionary[entry.Key][0] += entry.Value;
+                                                FreqListDictionary[entry.Key][1]++;
+                                            }
+                                            else
+                                            {
+                                                FreqListDictionary.Add(entry.Key, new long[2] { entry.Value, 1 });
+                                            }
+                                        }
+                                    }
 
                                     //}
                                 }

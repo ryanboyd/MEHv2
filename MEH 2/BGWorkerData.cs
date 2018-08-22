@@ -27,6 +27,7 @@ namespace MEH2
 
         //dictionary list tab
         public string DictionaryListString { get; set; }
+        public bool RetainOnlyDictionaryWords { get; set; }
 
         //lemmatization tab
         public bool ConvertToLowerCase { get; set; }

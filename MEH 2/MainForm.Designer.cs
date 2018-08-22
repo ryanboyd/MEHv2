@@ -121,6 +121,8 @@
             this.AboutMEHPictureBox = new System.Windows.Forms.PictureBox();
             this.label24 = new System.Windows.Forms.Label();
             this.BGWorker = new System.ComponentModel.BackgroundWorker();
+            this.KeepOnlyDictionaryWordsCheckbox = new System.Windows.Forms.CheckBox();
+            this.label35 = new System.Windows.Forms.Label();
             this.TabControlObject.SuspendLayout();
             this.InputOutputTab.SuspendLayout();
             this.TextSegmentationTab.SuspendLayout();
@@ -604,6 +606,8 @@
             // 
             this.DictionaryListTab.BackColor = System.Drawing.Color.PaleTurquoise;
             this.DictionaryListTab.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.DictionaryListTab.Controls.Add(this.label35);
+            this.DictionaryListTab.Controls.Add(this.KeepOnlyDictionaryWordsCheckbox);
             this.DictionaryListTab.Controls.Add(this.DictionaryListTextbox);
             this.DictionaryListTab.Controls.Add(this.label6);
             this.DictionaryListTab.Location = new System.Drawing.Point(229, 4);
@@ -1147,9 +1151,9 @@
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.Location = new System.Drawing.Point(8, 4);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(155, 25);
+            this.label23.Size = new System.Drawing.Size(108, 25);
             this.label23.TabIndex = 0;
-            this.label23.Text = "Begin Analysis";
+            this.label23.Text = "MEH Log:";
             // 
             // AboutMEHTab
             // 
@@ -1194,7 +1198,7 @@
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(398, 60);
             this.label32.TabIndex = 3;
-            this.label32.Text = "Boyd, R. L. (2018). MEH: Meaning Extraction\r\n      Helper (version 2.0.3b) [Softw" +
+            this.label32.Text = "Boyd, R. L. (2018). MEH: Meaning Extraction\r\n      Helper (version 2.0.4b) [Softw" +
     "are].\r\n      Available from https://meh.ryanb.cc";
             // 
             // label31
@@ -1242,6 +1246,27 @@
             this.BGWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BGWorker_DoWork);
             this.BGWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.BGWorker_ProgressChanged);
             this.BGWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BGWorker_RunWorkerCompleted);
+            // 
+            // KeepOnlyDictionaryWordsCheckbox
+            // 
+            this.KeepOnlyDictionaryWordsCheckbox.AutoSize = true;
+            this.KeepOnlyDictionaryWordsCheckbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.KeepOnlyDictionaryWordsCheckbox.Location = new System.Drawing.Point(512, 70);
+            this.KeepOnlyDictionaryWordsCheckbox.Name = "KeepOnlyDictionaryWordsCheckbox";
+            this.KeepOnlyDictionaryWordsCheckbox.Size = new System.Drawing.Size(294, 44);
+            this.KeepOnlyDictionaryWordsCheckbox.TabIndex = 2;
+            this.KeepOnlyDictionaryWordsCheckbox.Text = "Ignore words that are not contained\r\nin your Dictionary List";
+            this.KeepOnlyDictionaryWordsCheckbox.UseVisualStyleBackColor = true;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.Location = new System.Drawing.Point(508, 32);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(204, 20);
+            this.label35.TabIndex = 3;
+            this.label35.Text = "Dictionary List Options";
             // 
             // MainForm
             // 
@@ -1379,6 +1404,8 @@
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.TextBox PruneFreqListParameterTextbox;
         private System.Windows.Forms.CheckBox PruneFreqListCheckbox;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.CheckBox KeepOnlyDictionaryWordsCheckbox;
     }
 }
 
