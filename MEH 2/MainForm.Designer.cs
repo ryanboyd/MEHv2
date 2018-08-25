@@ -68,6 +68,8 @@
             this.StopListTextbox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.DictionaryListTab = new System.Windows.Forms.TabPage();
+            this.label35 = new System.Windows.Forms.Label();
+            this.KeepOnlyDictionaryWordsCheckbox = new System.Windows.Forms.CheckBox();
             this.DictionaryListTextbox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.LemmatizationTab = new System.Windows.Forms.TabPage();
@@ -94,9 +96,12 @@
             this.FrequencyListCheckbox = new System.Windows.Forms.CheckBox();
             this.label8 = new System.Windows.Forms.Label();
             this.NgramSettingsTab = new System.Windows.Forms.TabPage();
+            this.label37 = new System.Windows.Forms.Label();
+            this.NgramTextboxMinimum = new System.Windows.Forms.TextBox();
+            this.label36 = new System.Windows.Forms.Label();
             this.ThresholdOptionRawFreq = new System.Windows.Forms.RadioButton();
             this.label28 = new System.Windows.Forms.Label();
-            this.NgramTextbox = new System.Windows.Forms.TextBox();
+            this.NgramTextboxMaximum = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.MinimumWCTextbox = new System.Windows.Forms.TextBox();
@@ -121,8 +126,6 @@
             this.AboutMEHPictureBox = new System.Windows.Forms.PictureBox();
             this.label24 = new System.Windows.Forms.Label();
             this.BGWorker = new System.ComponentModel.BackgroundWorker();
-            this.KeepOnlyDictionaryWordsCheckbox = new System.Windows.Forms.CheckBox();
-            this.label35 = new System.Windows.Forms.Label();
             this.TabControlObject.SuspendLayout();
             this.InputOutputTab.SuspendLayout();
             this.TextSegmentationTab.SuspendLayout();
@@ -617,6 +620,27 @@
             this.DictionaryListTab.TabIndex = 4;
             this.DictionaryListTab.Text = "Dictionary List";
             // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.Location = new System.Drawing.Point(508, 32);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(204, 20);
+            this.label35.TabIndex = 3;
+            this.label35.Text = "Dictionary List Options";
+            // 
+            // KeepOnlyDictionaryWordsCheckbox
+            // 
+            this.KeepOnlyDictionaryWordsCheckbox.AutoSize = true;
+            this.KeepOnlyDictionaryWordsCheckbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.KeepOnlyDictionaryWordsCheckbox.Location = new System.Drawing.Point(512, 70);
+            this.KeepOnlyDictionaryWordsCheckbox.Name = "KeepOnlyDictionaryWordsCheckbox";
+            this.KeepOnlyDictionaryWordsCheckbox.Size = new System.Drawing.Size(294, 44);
+            this.KeepOnlyDictionaryWordsCheckbox.TabIndex = 2;
+            this.KeepOnlyDictionaryWordsCheckbox.Text = "Ignore words that are not contained\r\nin your Dictionary List";
+            this.KeepOnlyDictionaryWordsCheckbox.UseVisualStyleBackColor = true;
+            // 
             // DictionaryListTextbox
             // 
             this.DictionaryListTextbox.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -934,9 +958,12 @@
             // 
             this.NgramSettingsTab.BackColor = System.Drawing.Color.PaleTurquoise;
             this.NgramSettingsTab.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.NgramSettingsTab.Controls.Add(this.label37);
+            this.NgramSettingsTab.Controls.Add(this.NgramTextboxMinimum);
+            this.NgramSettingsTab.Controls.Add(this.label36);
             this.NgramSettingsTab.Controls.Add(this.ThresholdOptionRawFreq);
             this.NgramSettingsTab.Controls.Add(this.label28);
-            this.NgramSettingsTab.Controls.Add(this.NgramTextbox);
+            this.NgramSettingsTab.Controls.Add(this.NgramTextboxMaximum);
             this.NgramSettingsTab.Controls.Add(this.label27);
             this.NgramSettingsTab.Controls.Add(this.label26);
             this.NgramSettingsTab.Controls.Add(this.MinimumWCTextbox);
@@ -953,6 +980,36 @@
             this.NgramSettingsTab.TabIndex = 7;
             this.NgramSettingsTab.Text = "N-gram Settings";
             // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label37.Location = new System.Drawing.Point(26, 211);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(84, 20);
+            this.label37.TabIndex = 16;
+            this.label37.Text = "A (min) = ";
+            // 
+            // NgramTextboxMinimum
+            // 
+            this.NgramTextboxMinimum.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NgramTextboxMinimum.Location = new System.Drawing.Point(126, 208);
+            this.NgramTextboxMinimum.MaxLength = 999999999;
+            this.NgramTextboxMinimum.Name = "NgramTextboxMinimum";
+            this.NgramTextboxMinimum.Size = new System.Drawing.Size(111, 27);
+            this.NgramTextboxMinimum.TabIndex = 15;
+            this.NgramTextboxMinimum.Text = "1";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.Location = new System.Drawing.Point(264, 211);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(89, 20);
+            this.label36.TabIndex = 14;
+            this.label36.Text = "B (max) = ";
+            // 
             // ThresholdOptionRawFreq
             // 
             this.ThresholdOptionRawFreq.AutoSize = true;
@@ -967,31 +1024,31 @@
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(13, 133);
+            this.label28.Location = new System.Drawing.Point(13, 107);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(464, 18);
             this.label28.TabIndex = 12;
             this.label28.Text = "_________________________________________________________";
             // 
-            // NgramTextbox
+            // NgramTextboxMaximum
             // 
-            this.NgramTextbox.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NgramTextbox.Location = new System.Drawing.Point(16, 208);
-            this.NgramTextbox.MaxLength = 999999999;
-            this.NgramTextbox.Name = "NgramTextbox";
-            this.NgramTextbox.Size = new System.Drawing.Size(450, 27);
-            this.NgramTextbox.TabIndex = 11;
-            this.NgramTextbox.Text = "1";
+            this.NgramTextboxMaximum.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NgramTextboxMaximum.Location = new System.Drawing.Point(362, 208);
+            this.NgramTextboxMaximum.MaxLength = 999999999;
+            this.NgramTextboxMaximum.Name = "NgramTextboxMaximum";
+            this.NgramTextboxMaximum.Size = new System.Drawing.Size(111, 27);
+            this.NgramTextboxMaximum.TabIndex = 11;
+            this.NgramTextboxMaximum.Text = "1";
             // 
             // label27
             // 
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(12, 185);
+            this.label27.Location = new System.Drawing.Point(14, 163);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(429, 20);
+            this.label27.Size = new System.Drawing.Size(475, 20);
             this.label27.TabIndex = 10;
-            this.label27.Text = "Please choose the \"N\" in N-grams (e.g., 1 for unigrams):";
+            this.label27.Text = "Extract N-grams from A (min value of N) to B (max value of N)";
             // 
             // label26
             // 
@@ -1198,7 +1255,7 @@
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(398, 60);
             this.label32.TabIndex = 3;
-            this.label32.Text = "Boyd, R. L. (2018). MEH: Meaning Extraction\r\n      Helper (version 2.0.4b) [Softw" +
+            this.label32.Text = "Boyd, R. L. (2018). MEH: Meaning Extraction\r\n      Helper (version 2.0.5b) [Softw" +
     "are].\r\n      Available from https://meh.ryanb.cc";
             // 
             // label31
@@ -1246,27 +1303,6 @@
             this.BGWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BGWorker_DoWork);
             this.BGWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.BGWorker_ProgressChanged);
             this.BGWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BGWorker_RunWorkerCompleted);
-            // 
-            // KeepOnlyDictionaryWordsCheckbox
-            // 
-            this.KeepOnlyDictionaryWordsCheckbox.AutoSize = true;
-            this.KeepOnlyDictionaryWordsCheckbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.KeepOnlyDictionaryWordsCheckbox.Location = new System.Drawing.Point(512, 70);
-            this.KeepOnlyDictionaryWordsCheckbox.Name = "KeepOnlyDictionaryWordsCheckbox";
-            this.KeepOnlyDictionaryWordsCheckbox.Size = new System.Drawing.Size(294, 44);
-            this.KeepOnlyDictionaryWordsCheckbox.TabIndex = 2;
-            this.KeepOnlyDictionaryWordsCheckbox.Text = "Ignore words that are not contained\r\nin your Dictionary List";
-            this.KeepOnlyDictionaryWordsCheckbox.UseVisualStyleBackColor = true;
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.Location = new System.Drawing.Point(508, 32);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(204, 20);
-            this.label35.TabIndex = 3;
-            this.label35.Text = "Dictionary List Options";
             // 
             // MainForm
             // 
@@ -1389,7 +1425,7 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.TextBox NgramTextbox;
+        private System.Windows.Forms.TextBox NgramTextboxMaximum;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label29;
@@ -1406,6 +1442,9 @@
         private System.Windows.Forms.CheckBox PruneFreqListCheckbox;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.CheckBox KeepOnlyDictionaryWordsCheckbox;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.TextBox NgramTextboxMinimum;
+        private System.Windows.Forms.Label label36;
     }
 }
 

@@ -367,8 +367,12 @@ namespace MEH2
                 if (ValidationList[ValidationList.Count - 1].Item2) BGData.NgramThresholdParameter = double.Parse(ThresholdParameterTextbox.Text.Trim());
                 ValidationList.Add(BGData.ValidateWC(MinimumWCTextbox.Text));
                 if (ValidationList[ValidationList.Count - 1].Item2) BGData.MinWC = int.Parse(MinimumWCTextbox.Text.Trim());
-                ValidationList.Add(BGData.ValidateNGramN(NgramTextbox.Text));
-                if (ValidationList[ValidationList.Count - 1].Item2) BGData.Ngram_N = int.Parse(NgramTextbox.Text.Trim());
+                ValidationList.Add(BGData.ValidateNGramN(NgramTextboxMinimum.Text, NgramTextboxMaximum.Text));
+                if (ValidationList[ValidationList.Count - 1].Item2)
+                {
+                    BGData.Ngram_N_Min = int.Parse(NgramTextboxMinimum.Text.Trim());
+                    BGData.Ngram_N_Max = int.Parse(NgramTextboxMaximum.Text.Trim());
+                }
                 ValidationList.Add(BGData.ValidateFreqListPrune(PruneFreqListParameterTextbox.Text));
                 if (ValidationList[ValidationList.Count - 1].Item2)
                 {
@@ -687,7 +691,7 @@ namespace MEH2
                             for (long i = 0; i < TokenizedText_For_Ngrams.Length; i++)
                             {
                                 //builds our ngrams...
-                                for (int j = BGData.Ngram_N; j > 0; j--)
+                                for (int j = BGData.Ngram_N_Max; j > BGData.Ngram_N_Min - 1; j--)
                                 {
                                     if (i + j <= TokenizedText_For_Ngrams.Length)
                                     {

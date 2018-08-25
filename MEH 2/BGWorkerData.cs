@@ -48,7 +48,8 @@ namespace MEH2
 
         //n-gram / output thresholds tab
         public int MinWC { get; set; }
-        public int Ngram_N { get; set; }
+        public int Ngram_N_Min { get; set; }
+        public int Ngram_N_Max { get; set; }
         public string ThresholdType { get; set; }
         public double NgramThresholdParameter { get; set; }
 
@@ -214,15 +215,19 @@ namespace MEH2
 
 
 
-        public Tuple<string, bool, Color> ValidateNGramN(string NGramN)
+        public Tuple<string, bool, Color> ValidateNGramN(string NgramMin, string NgramMax)
         {
-            if (int.TryParse(NGramN.Trim(), out int n))
+            if (int.TryParse(NgramMax.Trim(), out int n) && int.TryParse(NgramMin.Trim(), out int m))
             {
-                if (int.Parse(NGramN.Trim()) < 0)
+                if (int.Parse(NgramMax.Trim()) <= 0 || int.Parse(NgramMin.Trim()) <= 0)
                 {
-                    return new Tuple<string, bool, Color>("Checking Minimum Word Count Options: Error." + Environment.NewLine + "Your N-gram setting must be a positive integer (i.e., a whole number > 0).", false, Color.Red);
+                    return new Tuple<string, bool, Color>("Checking N-gram Options: Error." + Environment.NewLine + "Your N-gram settings must both be positive integers (i.e., a whole number > 0).", false, Color.Red);
                 }
-                else if (int.Parse(NGramN) <= 3)
+                else if (int.Parse(NgramMax.Trim()) < int.Parse(NgramMin.Trim()))
+                {
+                    return new Tuple<string, bool, Color>("Checking N-gram Options: Error." + Environment.NewLine + "Your N-gram settings must have \"A\" (min) set to less than or equal to \"B\" (max).", false, Color.Red);
+                }
+                else if (int.Parse(NgramMax) <= 3)
                 {
                     return new Tuple<string, bool, Color>("Checking N-gram Selection: OK", true, Color.Green);
                 }
@@ -233,7 +238,7 @@ namespace MEH2
             }
             else
             {
-                return new Tuple<string, bool, Color>("Checking Minimum Word Count Options: Error." + Environment.NewLine + "Your N-gram setting must be a positive integer (i.e., a whole number > 0).", false, Color.Red);
+                return new Tuple<string, bool, Color>("Checking N-gram Options: Error." + Environment.NewLine + "Your N-gram settings must both be positive integers (i.e., a whole number > 0).", false, Color.Red);
             }
         }
 
