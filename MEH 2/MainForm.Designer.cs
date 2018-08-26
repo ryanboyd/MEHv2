@@ -72,7 +72,9 @@
             this.KeepOnlyDictionaryWordsCheckbox = new System.Windows.Forms.CheckBox();
             this.DictionaryListTextbox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.LemmatizationTab = new System.Windows.Forms.TabPage();
+            this.TokenizationHandlingTab = new System.Windows.Forms.TabPage();
+            this.label38 = new System.Windows.Forms.Label();
+            this.TokenizerSelectionDropdown = new System.Windows.Forms.ComboBox();
             this.label22 = new System.Windows.Forms.Label();
             this.ConvertToLowercaseCheckbox = new System.Windows.Forms.CheckBox();
             this.LemmatizerLanguageSelector = new System.Windows.Forms.ComboBox();
@@ -132,7 +134,7 @@
             this.ConversionListTab.SuspendLayout();
             this.StopListTab.SuspendLayout();
             this.DictionaryListTab.SuspendLayout();
-            this.LemmatizationTab.SuspendLayout();
+            this.TokenizationHandlingTab.SuspendLayout();
             this.ChooseOutputTypesTab.SuspendLayout();
             this.NgramSettingsTab.SuspendLayout();
             this.BeginAnalysisTab.SuspendLayout();
@@ -148,7 +150,7 @@
             this.TabControlObject.Controls.Add(this.ConversionListTab);
             this.TabControlObject.Controls.Add(this.StopListTab);
             this.TabControlObject.Controls.Add(this.DictionaryListTab);
-            this.TabControlObject.Controls.Add(this.LemmatizationTab);
+            this.TabControlObject.Controls.Add(this.TokenizationHandlingTab);
             this.TabControlObject.Controls.Add(this.ChooseOutputTypesTab);
             this.TabControlObject.Controls.Add(this.NgramSettingsTab);
             this.TabControlObject.Controls.Add(this.BeginAnalysisTab);
@@ -663,28 +665,50 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "Dictionary List";
             // 
-            // LemmatizationTab
+            // TokenizationHandlingTab
             // 
-            this.LemmatizationTab.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.LemmatizationTab.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LemmatizationTab.Controls.Add(this.label22);
-            this.LemmatizationTab.Controls.Add(this.ConvertToLowercaseCheckbox);
-            this.LemmatizationTab.Controls.Add(this.LemmatizerLanguageSelector);
-            this.LemmatizationTab.Controls.Add(this.UseLemmatizationCheckbox);
-            this.LemmatizationTab.Controls.Add(this.label7);
-            this.LemmatizationTab.Location = new System.Drawing.Point(229, 4);
-            this.LemmatizationTab.Margin = new System.Windows.Forms.Padding(4);
-            this.LemmatizationTab.Name = "LemmatizationTab";
-            this.LemmatizationTab.Size = new System.Drawing.Size(960, 561);
-            this.LemmatizationTab.TabIndex = 5;
-            this.LemmatizationTab.Text = "Lemmatization";
+            this.TokenizationHandlingTab.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.TokenizationHandlingTab.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TokenizationHandlingTab.Controls.Add(this.label38);
+            this.TokenizationHandlingTab.Controls.Add(this.TokenizerSelectionDropdown);
+            this.TokenizationHandlingTab.Controls.Add(this.label22);
+            this.TokenizationHandlingTab.Controls.Add(this.ConvertToLowercaseCheckbox);
+            this.TokenizationHandlingTab.Controls.Add(this.LemmatizerLanguageSelector);
+            this.TokenizationHandlingTab.Controls.Add(this.UseLemmatizationCheckbox);
+            this.TokenizationHandlingTab.Controls.Add(this.label7);
+            this.TokenizationHandlingTab.Location = new System.Drawing.Point(229, 4);
+            this.TokenizationHandlingTab.Margin = new System.Windows.Forms.Padding(4);
+            this.TokenizationHandlingTab.Name = "TokenizationHandlingTab";
+            this.TokenizationHandlingTab.Size = new System.Drawing.Size(960, 561);
+            this.TokenizationHandlingTab.TabIndex = 5;
+            this.TokenizationHandlingTab.Text = "Token Handling Options";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label38.Location = new System.Drawing.Point(13, 77);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(161, 20);
+            this.label38.TabIndex = 6;
+            this.label38.Text = "Tokenizer Selection:";
+            // 
+            // TokenizerSelectionDropdown
+            // 
+            this.TokenizerSelectionDropdown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.TokenizerSelectionDropdown.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TokenizerSelectionDropdown.FormattingEnabled = true;
+            this.TokenizerSelectionDropdown.Location = new System.Drawing.Point(13, 100);
+            this.TokenizerSelectionDropdown.Name = "TokenizerSelectionDropdown";
+            this.TokenizerSelectionDropdown.Size = new System.Drawing.Size(407, 28);
+            this.TokenizerSelectionDropdown.TabIndex = 5;
             // 
             // label22
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.ForeColor = System.Drawing.Color.Red;
-            this.label22.Location = new System.Drawing.Point(13, 77);
+            this.label22.Location = new System.Drawing.Point(13, 217);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(556, 60);
             this.label22.TabIndex = 4;
@@ -698,7 +722,7 @@
             this.ConvertToLowercaseCheckbox.Checked = true;
             this.ConvertToLowercaseCheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.ConvertToLowercaseCheckbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ConvertToLowercaseCheckbox.Location = new System.Drawing.Point(13, 46);
+            this.ConvertToLowercaseCheckbox.Location = new System.Drawing.Point(13, 186);
             this.ConvertToLowercaseCheckbox.Name = "ConvertToLowercaseCheckbox";
             this.ConvertToLowercaseCheckbox.Size = new System.Drawing.Size(241, 24);
             this.ConvertToLowercaseCheckbox.TabIndex = 3;
@@ -710,7 +734,7 @@
             this.LemmatizerLanguageSelector.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.LemmatizerLanguageSelector.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LemmatizerLanguageSelector.FormattingEnabled = true;
-            this.LemmatizerLanguageSelector.Location = new System.Drawing.Point(13, 196);
+            this.LemmatizerLanguageSelector.Location = new System.Drawing.Point(13, 356);
             this.LemmatizerLanguageSelector.Name = "LemmatizerLanguageSelector";
             this.LemmatizerLanguageSelector.Size = new System.Drawing.Size(407, 28);
             this.LemmatizerLanguageSelector.TabIndex = 2;
@@ -721,7 +745,7 @@
             this.UseLemmatizationCheckbox.Checked = true;
             this.UseLemmatizationCheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.UseLemmatizationCheckbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UseLemmatizationCheckbox.Location = new System.Drawing.Point(13, 166);
+            this.UseLemmatizationCheckbox.Location = new System.Drawing.Point(13, 326);
             this.UseLemmatizationCheckbox.Name = "UseLemmatizationCheckbox";
             this.UseLemmatizationCheckbox.Size = new System.Drawing.Size(176, 24);
             this.UseLemmatizationCheckbox.TabIndex = 1;
@@ -735,9 +759,9 @@
             this.label7.Location = new System.Drawing.Point(8, 4);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(151, 25);
+            this.label7.Size = new System.Drawing.Size(245, 25);
             this.label7.TabIndex = 0;
-            this.label7.Text = "Lemmatization";
+            this.label7.Text = "Token Handling Options";
             // 
             // ChooseOutputTypesTab
             // 
@@ -1255,7 +1279,7 @@
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(398, 60);
             this.label32.TabIndex = 3;
-            this.label32.Text = "Boyd, R. L. (2018). MEH: Meaning Extraction\r\n      Helper (version 2.0.5b) [Softw" +
+            this.label32.Text = "Boyd, R. L. (2018). MEH: Meaning Extraction\r\n      Helper (version 2.0.6b) [Softw" +
     "are].\r\n      Available from https://meh.ryanb.cc";
             // 
             // label31
@@ -1331,8 +1355,8 @@
             this.StopListTab.PerformLayout();
             this.DictionaryListTab.ResumeLayout(false);
             this.DictionaryListTab.PerformLayout();
-            this.LemmatizationTab.ResumeLayout(false);
-            this.LemmatizationTab.PerformLayout();
+            this.TokenizationHandlingTab.ResumeLayout(false);
+            this.TokenizationHandlingTab.PerformLayout();
             this.ChooseOutputTypesTab.ResumeLayout(false);
             this.ChooseOutputTypesTab.PerformLayout();
             this.NgramSettingsTab.ResumeLayout(false);
@@ -1368,7 +1392,7 @@
         private System.Windows.Forms.TabPage ConversionListTab;
         private System.Windows.Forms.TabPage StopListTab;
         private System.Windows.Forms.TabPage DictionaryListTab;
-        private System.Windows.Forms.TabPage LemmatizationTab;
+        private System.Windows.Forms.TabPage TokenizationHandlingTab;
         private System.Windows.Forms.TabPage ChooseOutputTypesTab;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
@@ -1445,6 +1469,8 @@
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.TextBox NgramTextboxMinimum;
         private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.ComboBox TokenizerSelectionDropdown;
     }
 }
 

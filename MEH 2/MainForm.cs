@@ -80,9 +80,15 @@ namespace MEH2
             "Español (Spanish)"
             });
 
+            TokenizerSelectionDropdown.Items.AddRange(new string[] {
+            "Twitter-Aware Tokenizer",
+            "Whitespace Tokenizer"
+             });
+
             StopListLanguageSelector.SelectedIndex = 0;
             ConversionSelectionBox.SelectedIndex = 0;
             LemmatizerLanguageSelector.SelectedIndex = 0;
+            TokenizerSelectionDropdown.SelectedIndex = 0;
 
             StopListTextbox.Text += MEHv2.Properties.Resources.StopListCharacters + Environment.NewLine + MEHv2.Properties.Resources.stoplist_english.ToLower();
             ConversionsTextbox.Text = MEHv2.Properties.Resources.conversions.ToLower();
@@ -324,6 +330,7 @@ namespace MEH2
                 if (SegmentationOptionEqualSegments.Checked) BGData.SegmentationType = "N_Equal_Segments";
                 if (SegmentationOptionWordsPerSegment.Checked) BGData.SegmentationType = "Words_Per_Segment";
                 if (SegmentationOptionRegex.Checked) BGData.SegmentationType = "Regex";
+                BGData.Tokenizer = TokenizerSelectionDropdown.SelectedItem.ToString();
                 BGData.SegmentationParameter = SegmentationParameterTextbox.Text;
 
                 BGData.ConvertToLowerCase = ConvertToLowercaseCheckbox.Checked;
@@ -637,7 +644,19 @@ namespace MEH2
 
 
                         //tokenize the text
-                        string[] TokenizedText = Tokenizer.tokenize(readText, preserve_case: BGData.ConvertToLowerCase == false, reduce_lengthening: true);
+                        string[] TokenizedText = new string[] { };
+                        
+                        switch (BGData.Tokenizer)
+                        {
+                            case "Twitter-Aware Tokenizer":
+                                TokenizedText = Tokenizer.tokenize(readText, preserve_case: BGData.ConvertToLowerCase == false, reduce_lengthening: true);
+                                break;
+
+                            case "Whitespace Tokenizer":
+                                TokenizedText = Tokenizer.TokenizeWhitespace(text: readText);
+                                break;
+                        }
+                        
 
 
 

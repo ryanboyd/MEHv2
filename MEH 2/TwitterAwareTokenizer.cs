@@ -92,6 +92,14 @@ namespace nltk.tokenize.casual.NET
         }
 
 
+        public string[] TokenizeWhitespace (string text)
+        {
+
+            return text.Trim().Split(new char[0], options: StringSplitOptions.RemoveEmptyEntries);
+
+        }
+
+
 
 
     }

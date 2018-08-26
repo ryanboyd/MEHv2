@@ -30,6 +30,7 @@ namespace MEH2
         public bool RetainOnlyDictionaryWords { get; set; }
 
         //lemmatization tab
+        public string Tokenizer { get; set; }
         public bool ConvertToLowerCase { get; set; }
         public bool UseLemmatization { get; set; }
         public string LemmatizationModel { get; set; }
