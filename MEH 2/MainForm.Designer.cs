@@ -123,7 +123,7 @@
             this.AboutMEHTab = new System.Windows.Forms.TabPage();
             this.label34 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
+            this.AboutLabel = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.AboutMEHPictureBox = new System.Windows.Forms.PictureBox();
             this.label24 = new System.Windows.Forms.Label();
@@ -158,12 +158,11 @@
             this.TabControlObject.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
             this.TabControlObject.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TabControlObject.ItemSize = new System.Drawing.Size(30, 225);
-            this.TabControlObject.Location = new System.Drawing.Point(13, 13);
-            this.TabControlObject.Margin = new System.Windows.Forms.Padding(4);
+            this.TabControlObject.Location = new System.Drawing.Point(10, 11);
             this.TabControlObject.Multiline = true;
             this.TabControlObject.Name = "TabControlObject";
             this.TabControlObject.SelectedIndex = 0;
-            this.TabControlObject.Size = new System.Drawing.Size(1193, 569);
+            this.TabControlObject.Size = new System.Drawing.Size(895, 462);
             this.TabControlObject.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.TabControlObject.TabIndex = 0;
             this.TabControlObject.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.tabControl_DrawItem);
@@ -185,19 +184,19 @@
             this.InputOutputTab.Controls.Add(this.EncodingDropdown);
             this.InputOutputTab.Controls.Add(this.label1);
             this.InputOutputTab.Location = new System.Drawing.Point(229, 4);
-            this.InputOutputTab.Margin = new System.Windows.Forms.Padding(4);
             this.InputOutputTab.Name = "InputOutputTab";
-            this.InputOutputTab.Padding = new System.Windows.Forms.Padding(4);
-            this.InputOutputTab.Size = new System.Drawing.Size(960, 561);
+            this.InputOutputTab.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.InputOutputTab.Size = new System.Drawing.Size(662, 454);
             this.InputOutputTab.TabIndex = 0;
             this.InputOutputTab.Text = "Input/Output File Settings";
             // 
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(16, 299);
+            this.label30.Location = new System.Drawing.Point(12, 243);
+            this.label30.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(888, 18);
+            this.label30.Size = new System.Drawing.Size(777, 15);
             this.label30.TabIndex = 11;
             this.label30.Text = "_________________________________________________________________________________" +
     "_____________________________";
@@ -205,9 +204,10 @@
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(13, 120);
+            this.label29.Location = new System.Drawing.Point(10, 98);
+            this.label29.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(888, 18);
+            this.label29.Size = new System.Drawing.Size(777, 15);
             this.label29.TabIndex = 10;
             this.label29.Text = "_________________________________________________________________________________" +
     "_____________________________";
@@ -216,10 +216,9 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(8, 4);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(6, 3);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(258, 25);
+            this.label9.Size = new System.Drawing.Size(217, 20);
             this.label9.TabIndex = 9;
             this.label9.Text = "Input/Output File Settings";
             // 
@@ -227,30 +226,27 @@
             // 
             this.OutputFileTextbox.Enabled = false;
             this.OutputFileTextbox.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OutputFileTextbox.Location = new System.Drawing.Point(14, 398);
-            this.OutputFileTextbox.Margin = new System.Windows.Forms.Padding(4);
+            this.OutputFileTextbox.Location = new System.Drawing.Point(10, 323);
             this.OutputFileTextbox.MaxLength = 2147483647;
             this.OutputFileTextbox.Name = "OutputFileTextbox";
-            this.OutputFileTextbox.Size = new System.Drawing.Size(619, 24);
+            this.OutputFileTextbox.Size = new System.Drawing.Size(465, 20);
             this.OutputFileTextbox.TabIndex = 8;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(15, 338);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(11, 275);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(180, 20);
+            this.label3.Size = new System.Drawing.Size(152, 17);
             this.label3.TabIndex = 7;
             this.label3.Text = "Select Output Location";
             // 
             // ChooseOutputFolderButton
             // 
-            this.ChooseOutputFolderButton.Location = new System.Drawing.Point(14, 362);
-            this.ChooseOutputFolderButton.Margin = new System.Windows.Forms.Padding(4);
+            this.ChooseOutputFolderButton.Location = new System.Drawing.Point(10, 294);
             this.ChooseOutputFolderButton.Name = "ChooseOutputFolderButton";
-            this.ChooseOutputFolderButton.Size = new System.Drawing.Size(180, 28);
+            this.ChooseOutputFolderButton.Size = new System.Drawing.Size(135, 23);
             this.ChooseOutputFolderButton.TabIndex = 6;
             this.ChooseOutputFolderButton.Text = "Choose Folder";
             this.ChooseOutputFolderButton.UseVisualStyleBackColor = true;
@@ -260,10 +256,9 @@
             // 
             this.SubfolderCheckbox.AutoSize = true;
             this.SubfolderCheckbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SubfolderCheckbox.Location = new System.Drawing.Point(14, 258);
-            this.SubfolderCheckbox.Margin = new System.Windows.Forms.Padding(4);
+            this.SubfolderCheckbox.Location = new System.Drawing.Point(10, 210);
             this.SubfolderCheckbox.Name = "SubfolderCheckbox";
-            this.SubfolderCheckbox.Size = new System.Drawing.Size(169, 24);
+            this.SubfolderCheckbox.Size = new System.Drawing.Size(144, 21);
             this.SubfolderCheckbox.TabIndex = 5;
             this.SubfolderCheckbox.Text = "Include Subfolders";
             this.SubfolderCheckbox.UseVisualStyleBackColor = true;
@@ -272,30 +267,27 @@
             // 
             this.InputFolderTextbox.Enabled = false;
             this.InputFolderTextbox.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InputFolderTextbox.Location = new System.Drawing.Point(13, 226);
-            this.InputFolderTextbox.Margin = new System.Windows.Forms.Padding(4);
+            this.InputFolderTextbox.Location = new System.Drawing.Point(10, 184);
             this.InputFolderTextbox.MaxLength = 2147483647;
             this.InputFolderTextbox.Name = "InputFolderTextbox";
-            this.InputFolderTextbox.Size = new System.Drawing.Size(619, 24);
+            this.InputFolderTextbox.Size = new System.Drawing.Size(465, 20);
             this.InputFolderTextbox.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(10, 166);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(8, 135);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(216, 20);
+            this.label2.Size = new System.Drawing.Size(178, 17);
             this.label2.TabIndex = 3;
             this.label2.Text = "Select Folder with .txt Files:";
             // 
             // ChooseInputFolderButton
             // 
-            this.ChooseInputFolderButton.Location = new System.Drawing.Point(13, 190);
-            this.ChooseInputFolderButton.Margin = new System.Windows.Forms.Padding(4);
+            this.ChooseInputFolderButton.Location = new System.Drawing.Point(10, 154);
             this.ChooseInputFolderButton.Name = "ChooseInputFolderButton";
-            this.ChooseInputFolderButton.Size = new System.Drawing.Size(180, 28);
+            this.ChooseInputFolderButton.Size = new System.Drawing.Size(135, 23);
             this.ChooseInputFolderButton.TabIndex = 2;
             this.ChooseInputFolderButton.Text = "Choose Folder";
             this.ChooseInputFolderButton.UseVisualStyleBackColor = true;
@@ -307,21 +299,19 @@
             this.EncodingDropdown.DropDownWidth = 300;
             this.EncodingDropdown.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EncodingDropdown.FormattingEnabled = true;
-            this.EncodingDropdown.Location = new System.Drawing.Point(13, 73);
-            this.EncodingDropdown.Margin = new System.Windows.Forms.Padding(4);
+            this.EncodingDropdown.Location = new System.Drawing.Point(10, 59);
             this.EncodingDropdown.MaxDropDownItems = 20;
             this.EncodingDropdown.Name = "EncodingDropdown";
-            this.EncodingDropdown.Size = new System.Drawing.Size(252, 28);
+            this.EncodingDropdown.Size = new System.Drawing.Size(190, 25);
             this.EncodingDropdown.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(10, 49);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(8, 40);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(233, 20);
+            this.label1.Size = new System.Drawing.Size(196, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Text Encoding of Input File(s):";
             // 
@@ -337,10 +327,9 @@
             this.TextSegmentationTab.Controls.Add(this.SegmentationOptionWordsPerSegment);
             this.TextSegmentationTab.Controls.Add(this.SegmentationOptionNone);
             this.TextSegmentationTab.Location = new System.Drawing.Point(229, 4);
-            this.TextSegmentationTab.Margin = new System.Windows.Forms.Padding(4);
             this.TextSegmentationTab.Name = "TextSegmentationTab";
-            this.TextSegmentationTab.Padding = new System.Windows.Forms.Padding(4);
-            this.TextSegmentationTab.Size = new System.Drawing.Size(960, 561);
+            this.TextSegmentationTab.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.TextSegmentationTab.Size = new System.Drawing.Size(662, 454);
             this.TextSegmentationTab.TabIndex = 1;
             this.TextSegmentationTab.Text = "Text Segmentation";
             // 
@@ -348,9 +337,10 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(13, 238);
+            this.label17.Location = new System.Drawing.Point(10, 193);
+            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(379, 20);
+            this.label17.Size = new System.Drawing.Size(323, 17);
             this.label17.TabIndex = 6;
             this.label17.Text = "Input your selected segmentation parameter here:";
             // 
@@ -358,31 +348,30 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(8, 4);
+            this.label10.Location = new System.Drawing.Point(6, 3);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(257, 25);
+            this.label10.Size = new System.Drawing.Size(210, 20);
             this.label10.TabIndex = 5;
             this.label10.Text = "Segmentation (by Token)";
             // 
             // SegmentationParameterTextbox
             // 
             this.SegmentationParameterTextbox.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SegmentationParameterTextbox.Location = new System.Drawing.Point(17, 262);
-            this.SegmentationParameterTextbox.Margin = new System.Windows.Forms.Padding(4);
+            this.SegmentationParameterTextbox.Location = new System.Drawing.Point(13, 213);
             this.SegmentationParameterTextbox.MaxLength = 999999999;
             this.SegmentationParameterTextbox.Name = "SegmentationParameterTextbox";
             this.SegmentationParameterTextbox.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.SegmentationParameterTextbox.Size = new System.Drawing.Size(577, 27);
+            this.SegmentationParameterTextbox.Size = new System.Drawing.Size(434, 23);
             this.SegmentationParameterTextbox.TabIndex = 4;
             // 
             // SegmentationOptionRegex
             // 
             this.SegmentationOptionRegex.AutoSize = true;
             this.SegmentationOptionRegex.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SegmentationOptionRegex.Location = new System.Drawing.Point(12, 175);
-            this.SegmentationOptionRegex.Margin = new System.Windows.Forms.Padding(4);
+            this.SegmentationOptionRegex.Location = new System.Drawing.Point(9, 142);
             this.SegmentationOptionRegex.Name = "SegmentationOptionRegex";
-            this.SegmentationOptionRegex.Size = new System.Drawing.Size(471, 24);
+            this.SegmentationOptionRegex.Size = new System.Drawing.Size(395, 21);
             this.SegmentationOptionRegex.TabIndex = 3;
             this.SegmentationOptionRegex.Text = "(Currently Hidden) Segment Texts with Regular Expression";
             this.SegmentationOptionRegex.UseVisualStyleBackColor = true;
@@ -392,10 +381,9 @@
             // 
             this.SegmentationOptionEqualSegments.AutoSize = true;
             this.SegmentationOptionEqualSegments.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SegmentationOptionEqualSegments.Location = new System.Drawing.Point(12, 94);
-            this.SegmentationOptionEqualSegments.Margin = new System.Windows.Forms.Padding(4);
+            this.SegmentationOptionEqualSegments.Location = new System.Drawing.Point(9, 76);
             this.SegmentationOptionEqualSegments.Name = "SegmentationOptionEqualSegments";
-            this.SegmentationOptionEqualSegments.Size = new System.Drawing.Size(345, 24);
+            this.SegmentationOptionEqualSegments.Size = new System.Drawing.Size(289, 21);
             this.SegmentationOptionEqualSegments.TabIndex = 2;
             this.SegmentationOptionEqualSegments.Text = "Split Texts into N Equally-Sized Segments";
             this.SegmentationOptionEqualSegments.UseVisualStyleBackColor = true;
@@ -404,10 +392,9 @@
             // 
             this.SegmentationOptionWordsPerSegment.AutoSize = true;
             this.SegmentationOptionWordsPerSegment.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SegmentationOptionWordsPerSegment.Location = new System.Drawing.Point(12, 134);
-            this.SegmentationOptionWordsPerSegment.Margin = new System.Windows.Forms.Padding(4);
+            this.SegmentationOptionWordsPerSegment.Location = new System.Drawing.Point(9, 109);
             this.SegmentationOptionWordsPerSegment.Name = "SegmentationOptionWordsPerSegment";
-            this.SegmentationOptionWordsPerSegment.Size = new System.Drawing.Size(371, 24);
+            this.SegmentationOptionWordsPerSegment.Size = new System.Drawing.Size(313, 21);
             this.SegmentationOptionWordsPerSegment.TabIndex = 1;
             this.SegmentationOptionWordsPerSegment.Text = "Desired Segment Size (Tokens Per Segment)";
             this.SegmentationOptionWordsPerSegment.UseVisualStyleBackColor = true;
@@ -417,10 +404,9 @@
             this.SegmentationOptionNone.AutoSize = true;
             this.SegmentationOptionNone.Checked = true;
             this.SegmentationOptionNone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SegmentationOptionNone.Location = new System.Drawing.Point(12, 53);
-            this.SegmentationOptionNone.Margin = new System.Windows.Forms.Padding(4);
+            this.SegmentationOptionNone.Location = new System.Drawing.Point(9, 43);
             this.SegmentationOptionNone.Name = "SegmentationOptionNone";
-            this.SegmentationOptionNone.Size = new System.Drawing.Size(158, 24);
+            this.SegmentationOptionNone.Size = new System.Drawing.Size(135, 21);
             this.SegmentationOptionNone.TabIndex = 0;
             this.SegmentationOptionNone.TabStop = true;
             this.SegmentationOptionNone.Text = "No Segmentation";
@@ -438,17 +424,17 @@
             this.ConversionListTab.Controls.Add(this.ConversionsTextbox);
             this.ConversionListTab.Controls.Add(this.label4);
             this.ConversionListTab.Location = new System.Drawing.Point(229, 4);
-            this.ConversionListTab.Margin = new System.Windows.Forms.Padding(4);
             this.ConversionListTab.Name = "ConversionListTab";
-            this.ConversionListTab.Size = new System.Drawing.Size(960, 561);
+            this.ConversionListTab.Size = new System.Drawing.Size(662, 454);
             this.ConversionListTab.TabIndex = 2;
             this.ConversionListTab.Text = "Conversion List";
             // 
             // ClearConversionsButton
             // 
-            this.ClearConversionsButton.Location = new System.Drawing.Point(562, 202);
+            this.ClearConversionsButton.Location = new System.Drawing.Point(422, 164);
+            this.ClearConversionsButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ClearConversionsButton.Name = "ClearConversionsButton";
-            this.ClearConversionsButton.Size = new System.Drawing.Size(210, 28);
+            this.ClearConversionsButton.Size = new System.Drawing.Size(158, 23);
             this.ClearConversionsButton.TabIndex = 6;
             this.ClearConversionsButton.Text = "Clear Conversions List";
             this.ClearConversionsButton.UseVisualStyleBackColor = true;
@@ -456,9 +442,10 @@
             // 
             // LoadConversionsButton
             // 
-            this.LoadConversionsButton.Location = new System.Drawing.Point(562, 147);
+            this.LoadConversionsButton.Location = new System.Drawing.Point(422, 119);
+            this.LoadConversionsButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.LoadConversionsButton.Name = "LoadConversionsButton";
-            this.LoadConversionsButton.Size = new System.Drawing.Size(210, 28);
+            this.LoadConversionsButton.Size = new System.Drawing.Size(158, 23);
             this.LoadConversionsButton.TabIndex = 5;
             this.LoadConversionsButton.Text = "Load Default Conversions";
             this.LoadConversionsButton.UseVisualStyleBackColor = true;
@@ -468,9 +455,10 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(486, 74);
+            this.label14.Location = new System.Drawing.Point(364, 60);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(87, 20);
+            this.label14.Size = new System.Drawing.Size(76, 17);
             this.label14.TabIndex = 4;
             this.label14.Text = "Language:";
             // 
@@ -479,40 +467,42 @@
             this.ConversionSelectionBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ConversionSelectionBox.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ConversionSelectionBox.FormattingEnabled = true;
-            this.ConversionSelectionBox.Location = new System.Drawing.Point(490, 97);
+            this.ConversionSelectionBox.Location = new System.Drawing.Point(368, 79);
+            this.ConversionSelectionBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ConversionSelectionBox.Name = "ConversionSelectionBox";
-            this.ConversionSelectionBox.Size = new System.Drawing.Size(354, 28);
+            this.ConversionSelectionBox.Size = new System.Drawing.Size(266, 25);
             this.ConversionSelectionBox.TabIndex = 3;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(486, 34);
+            this.label13.Location = new System.Drawing.Point(364, 28);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(261, 20);
+            this.label13.Size = new System.Drawing.Size(223, 17);
             this.label13.TabIndex = 2;
             this.label13.Text = "Load Default Conversion List:";
             // 
             // ConversionsTextbox
             // 
             this.ConversionsTextbox.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ConversionsTextbox.Location = new System.Drawing.Point(13, 34);
+            this.ConversionsTextbox.Location = new System.Drawing.Point(10, 28);
+            this.ConversionsTextbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ConversionsTextbox.MaxLength = 2147483647;
             this.ConversionsTextbox.Multiline = true;
             this.ConversionsTextbox.Name = "ConversionsTextbox";
             this.ConversionsTextbox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.ConversionsTextbox.Size = new System.Drawing.Size(422, 465);
+            this.ConversionsTextbox.Size = new System.Drawing.Size(318, 379);
             this.ConversionsTextbox.TabIndex = 1;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(8, 4);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(6, 3);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(162, 25);
+            this.label4.Size = new System.Drawing.Size(132, 20);
             this.label4.TabIndex = 0;
             this.label4.Text = "Conversion List";
             // 
@@ -528,17 +518,17 @@
             this.StopListTab.Controls.Add(this.StopListTextbox);
             this.StopListTab.Controls.Add(this.label5);
             this.StopListTab.Location = new System.Drawing.Point(229, 4);
-            this.StopListTab.Margin = new System.Windows.Forms.Padding(4);
             this.StopListTab.Name = "StopListTab";
-            this.StopListTab.Size = new System.Drawing.Size(960, 561);
+            this.StopListTab.Size = new System.Drawing.Size(662, 454);
             this.StopListTab.TabIndex = 3;
             this.StopListTab.Text = "Stop List";
             // 
             // ClearStopListButton
             // 
-            this.ClearStopListButton.Location = new System.Drawing.Point(595, 202);
+            this.ClearStopListButton.Location = new System.Drawing.Point(446, 164);
+            this.ClearStopListButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ClearStopListButton.Name = "ClearStopListButton";
-            this.ClearStopListButton.Size = new System.Drawing.Size(142, 28);
+            this.ClearStopListButton.Size = new System.Drawing.Size(106, 23);
             this.ClearStopListButton.TabIndex = 6;
             this.ClearStopListButton.Text = "Clear Stop List";
             this.ClearStopListButton.UseVisualStyleBackColor = true;
@@ -546,9 +536,10 @@
             // 
             // LoadStopListButton
             // 
-            this.LoadStopListButton.Location = new System.Drawing.Point(595, 147);
+            this.LoadStopListButton.Location = new System.Drawing.Point(446, 119);
+            this.LoadStopListButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.LoadStopListButton.Name = "LoadStopListButton";
-            this.LoadStopListButton.Size = new System.Drawing.Size(142, 28);
+            this.LoadStopListButton.Size = new System.Drawing.Size(106, 23);
             this.LoadStopListButton.TabIndex = 5;
             this.LoadStopListButton.Text = "Load Stop List";
             this.LoadStopListButton.UseVisualStyleBackColor = true;
@@ -558,9 +549,10 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(486, 74);
+            this.label12.Location = new System.Drawing.Point(364, 60);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(87, 20);
+            this.label12.Size = new System.Drawing.Size(76, 17);
             this.label12.TabIndex = 4;
             this.label12.Text = "Language:";
             // 
@@ -568,9 +560,10 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(486, 34);
+            this.label11.Location = new System.Drawing.Point(364, 28);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(205, 20);
+            this.label11.Size = new System.Drawing.Size(175, 17);
             this.label11.TabIndex = 3;
             this.label11.Text = "Load Default Stop List:";
             // 
@@ -579,31 +572,32 @@
             this.StopListLanguageSelector.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.StopListLanguageSelector.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StopListLanguageSelector.FormattingEnabled = true;
-            this.StopListLanguageSelector.Location = new System.Drawing.Point(490, 97);
+            this.StopListLanguageSelector.Location = new System.Drawing.Point(368, 79);
+            this.StopListLanguageSelector.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.StopListLanguageSelector.MaxDropDownItems = 20;
             this.StopListLanguageSelector.Name = "StopListLanguageSelector";
-            this.StopListLanguageSelector.Size = new System.Drawing.Size(354, 28);
+            this.StopListLanguageSelector.Size = new System.Drawing.Size(266, 25);
             this.StopListLanguageSelector.TabIndex = 2;
             // 
             // StopListTextbox
             // 
             this.StopListTextbox.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StopListTextbox.Location = new System.Drawing.Point(13, 34);
+            this.StopListTextbox.Location = new System.Drawing.Point(10, 28);
+            this.StopListTextbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.StopListTextbox.MaxLength = 2147483647;
             this.StopListTextbox.Multiline = true;
             this.StopListTextbox.Name = "StopListTextbox";
             this.StopListTextbox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.StopListTextbox.Size = new System.Drawing.Size(420, 465);
+            this.StopListTextbox.Size = new System.Drawing.Size(316, 379);
             this.StopListTextbox.TabIndex = 1;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(8, 4);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(6, 3);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(97, 25);
+            this.label5.Size = new System.Drawing.Size(81, 20);
             this.label5.TabIndex = 0;
             this.label5.Text = "Stop List";
             // 
@@ -616,9 +610,8 @@
             this.DictionaryListTab.Controls.Add(this.DictionaryListTextbox);
             this.DictionaryListTab.Controls.Add(this.label6);
             this.DictionaryListTab.Location = new System.Drawing.Point(229, 4);
-            this.DictionaryListTab.Margin = new System.Windows.Forms.Padding(4);
             this.DictionaryListTab.Name = "DictionaryListTab";
-            this.DictionaryListTab.Size = new System.Drawing.Size(960, 561);
+            this.DictionaryListTab.Size = new System.Drawing.Size(662, 454);
             this.DictionaryListTab.TabIndex = 4;
             this.DictionaryListTab.Text = "Dictionary List";
             // 
@@ -626,9 +619,10 @@
             // 
             this.label35.AutoSize = true;
             this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.Location = new System.Drawing.Point(508, 32);
+            this.label35.Location = new System.Drawing.Point(381, 26);
+            this.label35.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(204, 20);
+            this.label35.Size = new System.Drawing.Size(173, 17);
             this.label35.TabIndex = 3;
             this.label35.Text = "Dictionary List Options";
             // 
@@ -636,9 +630,10 @@
             // 
             this.KeepOnlyDictionaryWordsCheckbox.AutoSize = true;
             this.KeepOnlyDictionaryWordsCheckbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.KeepOnlyDictionaryWordsCheckbox.Location = new System.Drawing.Point(512, 70);
+            this.KeepOnlyDictionaryWordsCheckbox.Location = new System.Drawing.Point(384, 57);
+            this.KeepOnlyDictionaryWordsCheckbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.KeepOnlyDictionaryWordsCheckbox.Name = "KeepOnlyDictionaryWordsCheckbox";
-            this.KeepOnlyDictionaryWordsCheckbox.Size = new System.Drawing.Size(294, 44);
+            this.KeepOnlyDictionaryWordsCheckbox.Size = new System.Drawing.Size(251, 38);
             this.KeepOnlyDictionaryWordsCheckbox.TabIndex = 2;
             this.KeepOnlyDictionaryWordsCheckbox.Text = "Ignore words that are not contained\r\nin your Dictionary List";
             this.KeepOnlyDictionaryWordsCheckbox.UseVisualStyleBackColor = true;
@@ -646,22 +641,22 @@
             // DictionaryListTextbox
             // 
             this.DictionaryListTextbox.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DictionaryListTextbox.Location = new System.Drawing.Point(13, 32);
+            this.DictionaryListTextbox.Location = new System.Drawing.Point(10, 26);
+            this.DictionaryListTextbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.DictionaryListTextbox.MaxLength = 2147483647;
             this.DictionaryListTextbox.Multiline = true;
             this.DictionaryListTextbox.Name = "DictionaryListTextbox";
             this.DictionaryListTextbox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.DictionaryListTextbox.Size = new System.Drawing.Size(468, 465);
+            this.DictionaryListTextbox.Size = new System.Drawing.Size(352, 379);
             this.DictionaryListTextbox.TabIndex = 1;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(8, 4);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(6, 3);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(148, 25);
+            this.label6.Size = new System.Drawing.Size(123, 20);
             this.label6.TabIndex = 0;
             this.label6.Text = "Dictionary List";
             // 
@@ -677,9 +672,8 @@
             this.TokenizationHandlingTab.Controls.Add(this.UseLemmatizationCheckbox);
             this.TokenizationHandlingTab.Controls.Add(this.label7);
             this.TokenizationHandlingTab.Location = new System.Drawing.Point(229, 4);
-            this.TokenizationHandlingTab.Margin = new System.Windows.Forms.Padding(4);
             this.TokenizationHandlingTab.Name = "TokenizationHandlingTab";
-            this.TokenizationHandlingTab.Size = new System.Drawing.Size(960, 561);
+            this.TokenizationHandlingTab.Size = new System.Drawing.Size(662, 454);
             this.TokenizationHandlingTab.TabIndex = 5;
             this.TokenizationHandlingTab.Text = "Token Handling Options";
             // 
@@ -687,9 +681,10 @@
             // 
             this.label38.AutoSize = true;
             this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.Location = new System.Drawing.Point(13, 77);
+            this.label38.Location = new System.Drawing.Point(10, 63);
+            this.label38.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(161, 20);
+            this.label38.Size = new System.Drawing.Size(137, 17);
             this.label38.TabIndex = 6;
             this.label38.Text = "Tokenizer Selection:";
             // 
@@ -698,9 +693,10 @@
             this.TokenizerSelectionDropdown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.TokenizerSelectionDropdown.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TokenizerSelectionDropdown.FormattingEnabled = true;
-            this.TokenizerSelectionDropdown.Location = new System.Drawing.Point(13, 100);
+            this.TokenizerSelectionDropdown.Location = new System.Drawing.Point(10, 81);
+            this.TokenizerSelectionDropdown.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TokenizerSelectionDropdown.Name = "TokenizerSelectionDropdown";
-            this.TokenizerSelectionDropdown.Size = new System.Drawing.Size(407, 28);
+            this.TokenizerSelectionDropdown.Size = new System.Drawing.Size(306, 25);
             this.TokenizerSelectionDropdown.TabIndex = 5;
             // 
             // label22
@@ -708,9 +704,10 @@
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.ForeColor = System.Drawing.Color.Red;
-            this.label22.Location = new System.Drawing.Point(13, 217);
+            this.label22.Location = new System.Drawing.Point(10, 176);
+            this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(556, 60);
+            this.label22.Size = new System.Drawing.Size(470, 51);
             this.label22.TabIndex = 4;
             this.label22.Text = "Note that the LemmaGen lemmatizer requires texts to be converted to\r\nlowercase in" +
     " order to function properly. If you uncheck this box, your texts\r\nwill not be le" +
@@ -722,9 +719,10 @@
             this.ConvertToLowercaseCheckbox.Checked = true;
             this.ConvertToLowercaseCheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.ConvertToLowercaseCheckbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ConvertToLowercaseCheckbox.Location = new System.Drawing.Point(13, 186);
+            this.ConvertToLowercaseCheckbox.Location = new System.Drawing.Point(10, 151);
+            this.ConvertToLowercaseCheckbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ConvertToLowercaseCheckbox.Name = "ConvertToLowercaseCheckbox";
-            this.ConvertToLowercaseCheckbox.Size = new System.Drawing.Size(241, 24);
+            this.ConvertToLowercaseCheckbox.Size = new System.Drawing.Size(202, 21);
             this.ConvertToLowercaseCheckbox.TabIndex = 3;
             this.ConvertToLowercaseCheckbox.Text = "Convert Texts to Lowercase";
             this.ConvertToLowercaseCheckbox.UseVisualStyleBackColor = true;
@@ -734,9 +732,10 @@
             this.LemmatizerLanguageSelector.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.LemmatizerLanguageSelector.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LemmatizerLanguageSelector.FormattingEnabled = true;
-            this.LemmatizerLanguageSelector.Location = new System.Drawing.Point(13, 356);
+            this.LemmatizerLanguageSelector.Location = new System.Drawing.Point(10, 289);
+            this.LemmatizerLanguageSelector.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.LemmatizerLanguageSelector.Name = "LemmatizerLanguageSelector";
-            this.LemmatizerLanguageSelector.Size = new System.Drawing.Size(407, 28);
+            this.LemmatizerLanguageSelector.Size = new System.Drawing.Size(306, 25);
             this.LemmatizerLanguageSelector.TabIndex = 2;
             // 
             // UseLemmatizationCheckbox
@@ -745,9 +744,10 @@
             this.UseLemmatizationCheckbox.Checked = true;
             this.UseLemmatizationCheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.UseLemmatizationCheckbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UseLemmatizationCheckbox.Location = new System.Drawing.Point(13, 326);
+            this.UseLemmatizationCheckbox.Location = new System.Drawing.Point(10, 265);
+            this.UseLemmatizationCheckbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.UseLemmatizationCheckbox.Name = "UseLemmatizationCheckbox";
-            this.UseLemmatizationCheckbox.Size = new System.Drawing.Size(176, 24);
+            this.UseLemmatizationCheckbox.Size = new System.Drawing.Size(147, 21);
             this.UseLemmatizationCheckbox.TabIndex = 1;
             this.UseLemmatizationCheckbox.Text = "Use Lemmatization";
             this.UseLemmatizationCheckbox.UseVisualStyleBackColor = true;
@@ -756,10 +756,9 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(8, 4);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(6, 3);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(245, 25);
+            this.label7.Size = new System.Drawing.Size(201, 20);
             this.label7.TabIndex = 0;
             this.label7.Text = "Token Handling Options";
             // 
@@ -784,18 +783,18 @@
             this.ChooseOutputTypesTab.Controls.Add(this.FrequencyListCheckbox);
             this.ChooseOutputTypesTab.Controls.Add(this.label8);
             this.ChooseOutputTypesTab.Location = new System.Drawing.Point(229, 4);
-            this.ChooseOutputTypesTab.Margin = new System.Windows.Forms.Padding(4);
             this.ChooseOutputTypesTab.Name = "ChooseOutputTypesTab";
-            this.ChooseOutputTypesTab.Size = new System.Drawing.Size(960, 561);
+            this.ChooseOutputTypesTab.Size = new System.Drawing.Size(662, 454);
             this.ChooseOutputTypesTab.TabIndex = 6;
             this.ChooseOutputTypesTab.Text = "Choose Output Types";
             // 
             // PruneFreqListParameterTextbox
             // 
             this.PruneFreqListParameterTextbox.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PruneFreqListParameterTextbox.Location = new System.Drawing.Point(555, 345);
+            this.PruneFreqListParameterTextbox.Location = new System.Drawing.Point(416, 280);
+            this.PruneFreqListParameterTextbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.PruneFreqListParameterTextbox.Name = "PruneFreqListParameterTextbox";
-            this.PruneFreqListParameterTextbox.Size = new System.Drawing.Size(125, 27);
+            this.PruneFreqListParameterTextbox.Size = new System.Drawing.Size(95, 23);
             this.PruneFreqListParameterTextbox.TabIndex = 15;
             this.PruneFreqListParameterTextbox.Text = "10000";
             // 
@@ -806,9 +805,10 @@
             this.PruneFreqListCheckbox.Checked = true;
             this.PruneFreqListCheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.PruneFreqListCheckbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PruneFreqListCheckbox.Location = new System.Drawing.Point(101, 347);
+            this.PruneFreqListCheckbox.Location = new System.Drawing.Point(76, 282);
+            this.PruneFreqListCheckbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.PruneFreqListCheckbox.Name = "PruneFreqListCheckbox";
-            this.PruneFreqListCheckbox.Size = new System.Drawing.Size(441, 24);
+            this.PruneFreqListCheckbox.Size = new System.Drawing.Size(372, 21);
             this.PruneFreqListCheckbox.TabIndex = 14;
             this.PruneFreqListCheckbox.Text = "Prune Frequency List; Prune after every X Documents:";
             this.PruneFreqListCheckbox.UseVisualStyleBackColor = true;
@@ -818,18 +818,20 @@
             this.label21.AutoSize = true;
             this.label21.BackColor = System.Drawing.Color.Crimson;
             this.label21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label21.Location = new System.Drawing.Point(417, 515);
+            this.label21.Location = new System.Drawing.Point(313, 418);
+            this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(185, 20);
+            this.label21.Size = new System.Drawing.Size(155, 17);
             this.label21.TabIndex = 13;
             this.label21.Text = "Not Currently Implemented";
             this.label21.Visible = false;
             // 
             // ClearDWLSelectionButton
             // 
-            this.ClearDWLSelectionButton.Location = new System.Drawing.Point(220, 115);
+            this.ClearDWLSelectionButton.Location = new System.Drawing.Point(165, 93);
+            this.ClearDWLSelectionButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ClearDWLSelectionButton.Name = "ClearDWLSelectionButton";
-            this.ClearDWLSelectionButton.Size = new System.Drawing.Size(196, 53);
+            this.ClearDWLSelectionButton.Size = new System.Drawing.Size(147, 43);
             this.ClearDWLSelectionButton.TabIndex = 12;
             this.ClearDWLSelectionButton.Text = "Clear DWL Selection";
             this.ClearDWLSelectionButton.UseVisualStyleBackColor = true;
@@ -838,9 +840,10 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(10, 371);
+            this.label25.Location = new System.Drawing.Point(8, 301);
+            this.label25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(896, 18);
+            this.label25.Size = new System.Drawing.Size(784, 15);
             this.label25.TabIndex = 11;
             this.label25.Text = "_________________________________________________________________________________" +
     "______________________________\r\n";
@@ -848,9 +851,10 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(10, 235);
+            this.label16.Location = new System.Drawing.Point(8, 191);
+            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(896, 18);
+            this.label16.Size = new System.Drawing.Size(784, 15);
             this.label16.TabIndex = 10;
             this.label16.Text = "_________________________________________________________________________________" +
     "______________________________\r\n";
@@ -859,16 +863,18 @@
             // 
             this.PregeneratedDWLTextbox.Enabled = false;
             this.PregeneratedDWLTextbox.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PregeneratedDWLTextbox.Location = new System.Drawing.Point(13, 186);
+            this.PregeneratedDWLTextbox.Location = new System.Drawing.Point(10, 151);
+            this.PregeneratedDWLTextbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.PregeneratedDWLTextbox.Name = "PregeneratedDWLTextbox";
-            this.PregeneratedDWLTextbox.Size = new System.Drawing.Size(722, 27);
+            this.PregeneratedDWLTextbox.Size = new System.Drawing.Size(542, 23);
             this.PregeneratedDWLTextbox.TabIndex = 9;
             // 
             // ChooseDWLButton
             // 
-            this.ChooseDWLButton.Location = new System.Drawing.Point(13, 115);
+            this.ChooseDWLButton.Location = new System.Drawing.Point(10, 93);
+            this.ChooseDWLButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ChooseDWLButton.Name = "ChooseDWLButton";
-            this.ChooseDWLButton.Size = new System.Drawing.Size(196, 53);
+            this.ChooseDWLButton.Size = new System.Drawing.Size(147, 43);
             this.ChooseDWLButton.TabIndex = 8;
             this.ChooseDWLButton.Text = "Choose Pre-Existing\r\nDocument Word List";
             this.ChooseDWLButton.UseVisualStyleBackColor = true;
@@ -878,9 +884,10 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(9, 61);
+            this.label15.Location = new System.Drawing.Point(7, 50);
+            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(441, 40);
+            this.label15.Size = new System.Drawing.Size(376, 34);
             this.label15.TabIndex = 7;
             this.label15.Text = "If you have already generated the \"Document Word Lists\" \r\n.ndjson file, you can r" +
     "eload it here to bypass regeneration:";
@@ -893,9 +900,10 @@
             this.DocumentWordListsOutputCheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.DocumentWordListsOutputCheckbox.Enabled = false;
             this.DocumentWordListsOutputCheckbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DocumentWordListsOutputCheckbox.Location = new System.Drawing.Point(53, 279);
+            this.DocumentWordListsOutputCheckbox.Location = new System.Drawing.Point(40, 227);
+            this.DocumentWordListsOutputCheckbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.DocumentWordListsOutputCheckbox.Name = "DocumentWordListsOutputCheckbox";
-            this.DocumentWordListsOutputCheckbox.Size = new System.Drawing.Size(315, 24);
+            this.DocumentWordListsOutputCheckbox.Size = new System.Drawing.Size(263, 21);
             this.DocumentWordListsOutputCheckbox.TabIndex = 6;
             this.DocumentWordListsOutputCheckbox.Text = "Document Word Lists (as .ndjson file)";
             this.DocumentWordListsOutputCheckbox.UseVisualStyleBackColor = true;
@@ -905,9 +913,10 @@
             this.TFIDFOutputCheckbox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TFIDFOutputCheckbox.AutoSize = true;
             this.TFIDFOutputCheckbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TFIDFOutputCheckbox.Location = new System.Drawing.Point(53, 513);
+            this.TFIDFOutputCheckbox.Location = new System.Drawing.Point(40, 417);
+            this.TFIDFOutputCheckbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TFIDFOutputCheckbox.Name = "TFIDFOutputCheckbox";
-            this.TFIDFOutputCheckbox.Size = new System.Drawing.Size(358, 24);
+            this.TFIDFOutputCheckbox.Size = new System.Drawing.Size(299, 21);
             this.TFIDFOutputCheckbox.TabIndex = 5;
             this.TFIDFOutputCheckbox.Text = "TF-IDF Weighted Document by Term Matrix";
             this.TFIDFOutputCheckbox.UseVisualStyleBackColor = true;
@@ -918,9 +927,10 @@
             this.RawOutputCheckbox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.RawOutputCheckbox.AutoSize = true;
             this.RawOutputCheckbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RawOutputCheckbox.Location = new System.Drawing.Point(53, 478);
+            this.RawOutputCheckbox.Location = new System.Drawing.Point(40, 388);
+            this.RawOutputCheckbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.RawOutputCheckbox.Name = "RawOutputCheckbox";
-            this.RawOutputCheckbox.Size = new System.Drawing.Size(363, 24);
+            this.RawOutputCheckbox.Size = new System.Drawing.Size(302, 21);
             this.RawOutputCheckbox.TabIndex = 4;
             this.RawOutputCheckbox.Text = "Raw Count (Sum) Document by Term Matrix";
             this.RawOutputCheckbox.UseVisualStyleBackColor = true;
@@ -932,9 +942,10 @@
             this.VerboseOutputCheckbox.Checked = true;
             this.VerboseOutputCheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.VerboseOutputCheckbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VerboseOutputCheckbox.Location = new System.Drawing.Point(53, 443);
+            this.VerboseOutputCheckbox.Location = new System.Drawing.Point(40, 360);
+            this.VerboseOutputCheckbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.VerboseOutputCheckbox.Name = "VerboseOutputCheckbox";
-            this.VerboseOutputCheckbox.Size = new System.Drawing.Size(403, 24);
+            this.VerboseOutputCheckbox.Size = new System.Drawing.Size(339, 21);
             this.VerboseOutputCheckbox.TabIndex = 3;
             this.VerboseOutputCheckbox.Text = "Verbose (Percentages) Document by Term Matrix";
             this.VerboseOutputCheckbox.UseVisualStyleBackColor = true;
@@ -946,9 +957,10 @@
             this.BinaryOutputCheckbox.Checked = true;
             this.BinaryOutputCheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.BinaryOutputCheckbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BinaryOutputCheckbox.Location = new System.Drawing.Point(53, 408);
+            this.BinaryOutputCheckbox.Location = new System.Drawing.Point(40, 332);
+            this.BinaryOutputCheckbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BinaryOutputCheckbox.Name = "BinaryOutputCheckbox";
-            this.BinaryOutputCheckbox.Size = new System.Drawing.Size(359, 24);
+            this.BinaryOutputCheckbox.Size = new System.Drawing.Size(300, 21);
             this.BinaryOutputCheckbox.TabIndex = 2;
             this.BinaryOutputCheckbox.Text = "Binary (One-Hot) Document by Term Matrix";
             this.BinaryOutputCheckbox.UseVisualStyleBackColor = true;
@@ -960,9 +972,10 @@
             this.FrequencyListCheckbox.Checked = true;
             this.FrequencyListCheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.FrequencyListCheckbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FrequencyListCheckbox.Location = new System.Drawing.Point(53, 314);
+            this.FrequencyListCheckbox.Location = new System.Drawing.Point(40, 255);
+            this.FrequencyListCheckbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.FrequencyListCheckbox.Name = "FrequencyListCheckbox";
-            this.FrequencyListCheckbox.Size = new System.Drawing.Size(142, 24);
+            this.FrequencyListCheckbox.Size = new System.Drawing.Size(120, 21);
             this.FrequencyListCheckbox.TabIndex = 1;
             this.FrequencyListCheckbox.Text = "Frequency List";
             this.FrequencyListCheckbox.UseVisualStyleBackColor = true;
@@ -971,10 +984,9 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(8, 4);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(6, 3);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(184, 25);
+            this.label8.Size = new System.Drawing.Size(150, 20);
             this.label8.TabIndex = 0;
             this.label8.Text = "Output File Types";
             // 
@@ -999,8 +1011,9 @@
             this.NgramSettingsTab.Controls.Add(this.ThresholdOptionPercentOfDocuments);
             this.NgramSettingsTab.Controls.Add(this.label18);
             this.NgramSettingsTab.Location = new System.Drawing.Point(229, 4);
+            this.NgramSettingsTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.NgramSettingsTab.Name = "NgramSettingsTab";
-            this.NgramSettingsTab.Size = new System.Drawing.Size(960, 561);
+            this.NgramSettingsTab.Size = new System.Drawing.Size(662, 454);
             this.NgramSettingsTab.TabIndex = 7;
             this.NgramSettingsTab.Text = "N-gram Settings";
             // 
@@ -1008,19 +1021,21 @@
             // 
             this.label37.AutoSize = true;
             this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.Location = new System.Drawing.Point(26, 211);
+            this.label37.Location = new System.Drawing.Point(20, 171);
+            this.label37.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(84, 20);
+            this.label37.Size = new System.Drawing.Size(69, 17);
             this.label37.TabIndex = 16;
             this.label37.Text = "A (min) = ";
             // 
             // NgramTextboxMinimum
             // 
             this.NgramTextboxMinimum.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NgramTextboxMinimum.Location = new System.Drawing.Point(126, 208);
+            this.NgramTextboxMinimum.Location = new System.Drawing.Point(94, 169);
+            this.NgramTextboxMinimum.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.NgramTextboxMinimum.MaxLength = 999999999;
             this.NgramTextboxMinimum.Name = "NgramTextboxMinimum";
-            this.NgramTextboxMinimum.Size = new System.Drawing.Size(111, 27);
+            this.NgramTextboxMinimum.Size = new System.Drawing.Size(84, 23);
             this.NgramTextboxMinimum.TabIndex = 15;
             this.NgramTextboxMinimum.Text = "1";
             // 
@@ -1028,9 +1043,10 @@
             // 
             this.label36.AutoSize = true;
             this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.Location = new System.Drawing.Point(264, 211);
+            this.label36.Location = new System.Drawing.Point(198, 171);
+            this.label36.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(89, 20);
+            this.label36.Size = new System.Drawing.Size(72, 17);
             this.label36.TabIndex = 14;
             this.label36.Text = "B (max) = ";
             // 
@@ -1038,9 +1054,10 @@
             // 
             this.ThresholdOptionRawFreq.AutoSize = true;
             this.ThresholdOptionRawFreq.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ThresholdOptionRawFreq.Location = new System.Drawing.Point(14, 342);
+            this.ThresholdOptionRawFreq.Location = new System.Drawing.Point(10, 278);
+            this.ThresholdOptionRawFreq.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ThresholdOptionRawFreq.Name = "ThresholdOptionRawFreq";
-            this.ThresholdOptionRawFreq.Size = new System.Drawing.Size(345, 24);
+            this.ThresholdOptionRawFreq.Size = new System.Drawing.Size(288, 21);
             this.ThresholdOptionRawFreq.TabIndex = 13;
             this.ThresholdOptionRawFreq.Text = "Retain N-grams with Raw Frequency >= X";
             this.ThresholdOptionRawFreq.UseVisualStyleBackColor = true;
@@ -1048,19 +1065,21 @@
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(13, 107);
+            this.label28.Location = new System.Drawing.Point(10, 87);
+            this.label28.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(464, 18);
+            this.label28.Size = new System.Drawing.Size(406, 15);
             this.label28.TabIndex = 12;
             this.label28.Text = "_________________________________________________________";
             // 
             // NgramTextboxMaximum
             // 
             this.NgramTextboxMaximum.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NgramTextboxMaximum.Location = new System.Drawing.Point(362, 208);
+            this.NgramTextboxMaximum.Location = new System.Drawing.Point(272, 169);
+            this.NgramTextboxMaximum.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.NgramTextboxMaximum.MaxLength = 999999999;
             this.NgramTextboxMaximum.Name = "NgramTextboxMaximum";
-            this.NgramTextboxMaximum.Size = new System.Drawing.Size(111, 27);
+            this.NgramTextboxMaximum.Size = new System.Drawing.Size(84, 23);
             this.NgramTextboxMaximum.TabIndex = 11;
             this.NgramTextboxMaximum.Text = "1";
             // 
@@ -1068,28 +1087,31 @@
             // 
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(14, 163);
+            this.label27.Location = new System.Drawing.Point(10, 132);
+            this.label27.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(475, 20);
+            this.label27.Size = new System.Drawing.Size(394, 17);
             this.label27.TabIndex = 10;
             this.label27.Text = "Extract N-grams from A (min value of N) to B (max value of N)";
             // 
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(15, 256);
+            this.label26.Location = new System.Drawing.Point(11, 208);
+            this.label26.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(464, 18);
+            this.label26.Size = new System.Drawing.Size(406, 15);
             this.label26.TabIndex = 9;
             this.label26.Text = "_________________________________________________________";
             // 
             // MinimumWCTextbox
             // 
             this.MinimumWCTextbox.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MinimumWCTextbox.Location = new System.Drawing.Point(16, 77);
+            this.MinimumWCTextbox.Location = new System.Drawing.Point(12, 63);
+            this.MinimumWCTextbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MinimumWCTextbox.MaxLength = 999999999;
             this.MinimumWCTextbox.Name = "MinimumWCTextbox";
-            this.MinimumWCTextbox.Size = new System.Drawing.Size(450, 27);
+            this.MinimumWCTextbox.Size = new System.Drawing.Size(338, 23);
             this.MinimumWCTextbox.TabIndex = 7;
             this.MinimumWCTextbox.Text = "100";
             // 
@@ -1097,9 +1119,10 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(12, 54);
+            this.label20.Location = new System.Drawing.Point(9, 44);
+            this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(367, 20);
+            this.label20.Size = new System.Drawing.Size(307, 17);
             this.label20.TabIndex = 6;
             this.label20.Text = "Ignore Documents with a Word Count less than:";
             // 
@@ -1107,19 +1130,21 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(14, 480);
+            this.label19.Location = new System.Drawing.Point(10, 390);
+            this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(376, 20);
+            this.label19.Size = new System.Drawing.Size(320, 17);
             this.label19.TabIndex = 5;
             this.label19.Text = "Input your selected threshold parameter (X) here:";
             // 
             // ThresholdParameterTextbox
             // 
             this.ThresholdParameterTextbox.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ThresholdParameterTextbox.Location = new System.Drawing.Point(18, 503);
+            this.ThresholdParameterTextbox.Location = new System.Drawing.Point(14, 409);
+            this.ThresholdParameterTextbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ThresholdParameterTextbox.MaxLength = 999999999;
             this.ThresholdParameterTextbox.Name = "ThresholdParameterTextbox";
-            this.ThresholdParameterTextbox.Size = new System.Drawing.Size(450, 27);
+            this.ThresholdParameterTextbox.Size = new System.Drawing.Size(338, 23);
             this.ThresholdParameterTextbox.TabIndex = 4;
             this.ThresholdParameterTextbox.Text = "5";
             // 
@@ -1127,9 +1152,10 @@
             // 
             this.ThresholdOptionMostFrequentByPercentOfDocuments.AutoSize = true;
             this.ThresholdOptionMostFrequentByPercentOfDocuments.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ThresholdOptionMostFrequentByPercentOfDocuments.Location = new System.Drawing.Point(14, 422);
+            this.ThresholdOptionMostFrequentByPercentOfDocuments.Location = new System.Drawing.Point(10, 343);
+            this.ThresholdOptionMostFrequentByPercentOfDocuments.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ThresholdOptionMostFrequentByPercentOfDocuments.Name = "ThresholdOptionMostFrequentByPercentOfDocuments";
-            this.ThresholdOptionMostFrequentByPercentOfDocuments.Size = new System.Drawing.Size(469, 24);
+            this.ThresholdOptionMostFrequentByPercentOfDocuments.Size = new System.Drawing.Size(393, 21);
             this.ThresholdOptionMostFrequentByPercentOfDocuments.TabIndex = 3;
             this.ThresholdOptionMostFrequentByPercentOfDocuments.Text = "Retain the X most Frequent N-grams (by % of Documents)";
             this.ThresholdOptionMostFrequentByPercentOfDocuments.UseVisualStyleBackColor = true;
@@ -1138,9 +1164,10 @@
             // 
             this.ThresholdOptionMostFrequentByRawFrequency.AutoSize = true;
             this.ThresholdOptionMostFrequentByRawFrequency.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ThresholdOptionMostFrequentByRawFrequency.Location = new System.Drawing.Point(14, 382);
+            this.ThresholdOptionMostFrequentByRawFrequency.Location = new System.Drawing.Point(10, 310);
+            this.ThresholdOptionMostFrequentByRawFrequency.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ThresholdOptionMostFrequentByRawFrequency.Name = "ThresholdOptionMostFrequentByRawFrequency";
-            this.ThresholdOptionMostFrequentByRawFrequency.Size = new System.Drawing.Size(449, 24);
+            this.ThresholdOptionMostFrequentByRawFrequency.Size = new System.Drawing.Size(379, 21);
             this.ThresholdOptionMostFrequentByRawFrequency.TabIndex = 2;
             this.ThresholdOptionMostFrequentByRawFrequency.Text = "Retain the X most Frequent N-grams (by raw frequency)";
             this.ThresholdOptionMostFrequentByRawFrequency.UseVisualStyleBackColor = true;
@@ -1150,9 +1177,10 @@
             this.ThresholdOptionPercentOfDocuments.AutoSize = true;
             this.ThresholdOptionPercentOfDocuments.Checked = true;
             this.ThresholdOptionPercentOfDocuments.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ThresholdOptionPercentOfDocuments.Location = new System.Drawing.Point(14, 302);
+            this.ThresholdOptionPercentOfDocuments.Location = new System.Drawing.Point(10, 245);
+            this.ThresholdOptionPercentOfDocuments.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ThresholdOptionPercentOfDocuments.Name = "ThresholdOptionPercentOfDocuments";
-            this.ThresholdOptionPercentOfDocuments.Size = new System.Drawing.Size(421, 24);
+            this.ThresholdOptionPercentOfDocuments.Size = new System.Drawing.Size(353, 21);
             this.ThresholdOptionPercentOfDocuments.TabIndex = 1;
             this.ThresholdOptionPercentOfDocuments.TabStop = true;
             this.ThresholdOptionPercentOfDocuments.Text = "Retain N-grams that appear in >= X% of Documents";
@@ -1162,9 +1190,10 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(8, 4);
+            this.label18.Location = new System.Drawing.Point(6, 3);
+            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(168, 25);
+            this.label18.Size = new System.Drawing.Size(139, 20);
             this.label18.TabIndex = 0;
             this.label18.Text = "N-gram Settings";
             // 
@@ -1178,16 +1207,18 @@
             this.BeginAnalysisTab.Controls.Add(this.ProgressBar);
             this.BeginAnalysisTab.Controls.Add(this.label23);
             this.BeginAnalysisTab.Location = new System.Drawing.Point(229, 4);
+            this.BeginAnalysisTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BeginAnalysisTab.Name = "BeginAnalysisTab";
-            this.BeginAnalysisTab.Size = new System.Drawing.Size(960, 561);
+            this.BeginAnalysisTab.Size = new System.Drawing.Size(662, 454);
             this.BeginAnalysisTab.TabIndex = 8;
             this.BeginAnalysisTab.Text = "Begin Analysis";
             // 
             // CancelAnalysisButton
             // 
-            this.CancelAnalysisButton.Location = new System.Drawing.Point(472, 463);
+            this.CancelAnalysisButton.Location = new System.Drawing.Point(354, 376);
+            this.CancelAnalysisButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.CancelAnalysisButton.Name = "CancelAnalysisButton";
-            this.CancelAnalysisButton.Size = new System.Drawing.Size(165, 43);
+            this.CancelAnalysisButton.Size = new System.Drawing.Size(124, 35);
             this.CancelAnalysisButton.TabIndex = 4;
             this.CancelAnalysisButton.Text = "Cancel";
             this.CancelAnalysisButton.UseVisualStyleBackColor = true;
@@ -1195,9 +1226,10 @@
             // 
             // StartButton
             // 
-            this.StartButton.Location = new System.Drawing.Point(235, 463);
+            this.StartButton.Location = new System.Drawing.Point(176, 376);
+            this.StartButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.StartButton.Name = "StartButton";
-            this.StartButton.Size = new System.Drawing.Size(165, 43);
+            this.StartButton.Size = new System.Drawing.Size(124, 35);
             this.StartButton.TabIndex = 3;
             this.StartButton.Text = "Start!";
             this.StartButton.UseVisualStyleBackColor = true;
@@ -1209,20 +1241,22 @@
             this.RichTextboxLog.DetectUrls = false;
             this.RichTextboxLog.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RichTextboxLog.ForeColor = System.Drawing.Color.LimeGreen;
-            this.RichTextboxLog.Location = new System.Drawing.Point(13, 41);
+            this.RichTextboxLog.Location = new System.Drawing.Point(10, 33);
+            this.RichTextboxLog.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.RichTextboxLog.Name = "RichTextboxLog";
             this.RichTextboxLog.ReadOnly = true;
-            this.RichTextboxLog.Size = new System.Drawing.Size(851, 411);
+            this.RichTextboxLog.Size = new System.Drawing.Size(639, 335);
             this.RichTextboxLog.TabIndex = 2;
             this.RichTextboxLog.Text = "<Log>";
             // 
             // ProgressBar
             // 
             this.ProgressBar.ForeColor = System.Drawing.Color.Lime;
-            this.ProgressBar.Location = new System.Drawing.Point(13, 517);
+            this.ProgressBar.Location = new System.Drawing.Point(10, 420);
+            this.ProgressBar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ProgressBar.MarqueeAnimationSpeed = 3000;
             this.ProgressBar.Name = "ProgressBar";
-            this.ProgressBar.Size = new System.Drawing.Size(851, 30);
+            this.ProgressBar.Size = new System.Drawing.Size(638, 24);
             this.ProgressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.ProgressBar.TabIndex = 1;
             // 
@@ -1230,9 +1264,10 @@
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(8, 4);
+            this.label23.Location = new System.Drawing.Point(6, 3);
+            this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(108, 25);
+            this.label23.Size = new System.Drawing.Size(88, 20);
             this.label23.TabIndex = 0;
             this.label23.Text = "MEH Log:";
             // 
@@ -1241,13 +1276,14 @@
             this.AboutMEHTab.BackColor = System.Drawing.Color.PaleTurquoise;
             this.AboutMEHTab.Controls.Add(this.label34);
             this.AboutMEHTab.Controls.Add(this.label33);
-            this.AboutMEHTab.Controls.Add(this.label32);
+            this.AboutMEHTab.Controls.Add(this.AboutLabel);
             this.AboutMEHTab.Controls.Add(this.label31);
             this.AboutMEHTab.Controls.Add(this.AboutMEHPictureBox);
             this.AboutMEHTab.Controls.Add(this.label24);
             this.AboutMEHTab.Location = new System.Drawing.Point(229, 4);
+            this.AboutMEHTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.AboutMEHTab.Name = "AboutMEHTab";
-            this.AboutMEHTab.Size = new System.Drawing.Size(960, 561);
+            this.AboutMEHTab.Size = new System.Drawing.Size(662, 454);
             this.AboutMEHTab.TabIndex = 9;
             this.AboutMEHTab.Text = "About MEH";
             // 
@@ -1255,9 +1291,10 @@
             // 
             this.label34.AutoSize = true;
             this.label34.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.Location = new System.Drawing.Point(443, 374);
+            this.label34.Location = new System.Drawing.Point(332, 304);
+            this.label34.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(380, 40);
+            this.label34.Size = new System.Drawing.Size(309, 34);
             this.label34.TabIndex = 5;
             this.label34.Text = "This software is *completely free* and\r\nopen source software.";
             // 
@@ -1265,30 +1302,33 @@
             // 
             this.label33.AutoSize = true;
             this.label33.Font = new System.Drawing.Font("Verdana", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.Location = new System.Drawing.Point(443, 225);
+            this.label33.Location = new System.Drawing.Point(332, 183);
+            this.label33.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(91, 20);
+            this.label33.Size = new System.Drawing.Size(74, 17);
             this.label33.TabIndex = 4;
             this.label33.Text = "Citation:";
             // 
-            // label32
+            // AboutLabel
             // 
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(443, 265);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(398, 60);
-            this.label32.TabIndex = 3;
-            this.label32.Text = "Boyd, R. L. (2018). MEH: Meaning Extraction\r\n      Helper (version 2.0.6b) [Softw" +
+            this.AboutLabel.AutoSize = true;
+            this.AboutLabel.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AboutLabel.Location = new System.Drawing.Point(332, 215);
+            this.AboutLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.AboutLabel.Name = "AboutLabel";
+            this.AboutLabel.Size = new System.Drawing.Size(325, 51);
+            this.AboutLabel.TabIndex = 3;
+            this.AboutLabel.Text = "Boyd, R. L. (2018). MEH: Meaning Extraction\r\n      Helper (version 2.0.6b) [Softw" +
     "are].\r\n      Available from https://meh.ryanb.cc";
             // 
             // label31
             // 
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Verdana", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(443, 141);
+            this.label31.Location = new System.Drawing.Point(332, 115);
+            this.label31.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(302, 40);
+            this.label31.Size = new System.Drawing.Size(246, 34);
             this.label31.TabIndex = 2;
             this.label31.Text = "The Meaning Extraction Helper\r\nby Ryan L. Boyd, Ph.D.";
             // 
@@ -1299,12 +1339,12 @@
             this.AboutMEHPictureBox.ErrorImage = global::MEHv2.Properties.Resources.MEHSplash;
             this.AboutMEHPictureBox.Image = global::MEHv2.Properties.Resources.MEHSplash;
             this.AboutMEHPictureBox.InitialImage = global::MEHv2.Properties.Resources.MEHSplash;
-            this.AboutMEHPictureBox.Location = new System.Drawing.Point(16, 86);
+            this.AboutMEHPictureBox.Location = new System.Drawing.Point(12, 70);
             this.AboutMEHPictureBox.Margin = new System.Windows.Forms.Padding(0);
-            this.AboutMEHPictureBox.MaximumSize = new System.Drawing.Size(400, 400);
-            this.AboutMEHPictureBox.MinimumSize = new System.Drawing.Size(400, 400);
+            this.AboutMEHPictureBox.MaximumSize = new System.Drawing.Size(300, 325);
+            this.AboutMEHPictureBox.MinimumSize = new System.Drawing.Size(300, 325);
             this.AboutMEHPictureBox.Name = "AboutMEHPictureBox";
-            this.AboutMEHPictureBox.Size = new System.Drawing.Size(400, 400);
+            this.AboutMEHPictureBox.Size = new System.Drawing.Size(300, 325);
             this.AboutMEHPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.AboutMEHPictureBox.TabIndex = 1;
             this.AboutMEHPictureBox.TabStop = false;
@@ -1314,9 +1354,10 @@
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(8, 4);
+            this.label24.Location = new System.Drawing.Point(6, 3);
+            this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(122, 25);
+            this.label24.Size = new System.Drawing.Size(101, 20);
             this.label24.TabIndex = 0;
             this.label24.Text = "About MEH";
             // 
@@ -1330,16 +1371,15 @@
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1219, 595);
+            this.ClientSize = new System.Drawing.Size(916, 490);
             this.Controls.Add(this.TabControlObject);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(1237, 642);
-            this.MinimumSize = new System.Drawing.Size(1237, 642);
+            this.MaximumSize = new System.Drawing.Size(932, 529);
+            this.MinimumSize = new System.Drawing.Size(932, 529);
             this.Name = "MainForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1460,7 +1500,7 @@
         private System.Windows.Forms.PictureBox AboutMEHPictureBox;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label AboutLabel;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.TextBox PruneFreqListParameterTextbox;
         private System.Windows.Forms.CheckBox PruneFreqListCheckbox;

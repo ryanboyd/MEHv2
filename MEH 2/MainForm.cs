@@ -20,11 +20,18 @@ namespace MEH2
         {
             InitializeComponent();
 
+            Version version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
+            string VersionText = version.Major.ToString() + "." + version.Minor.ToString() + "." + version.Build.ToString();
+
+            AboutLabel.Text = "Boyd, R. L. (2018). MEH: Meaning Extraction" + Environment.NewLine + 
+                              "      Helper(version " + VersionText + "b)[Software]." + Environment.NewLine +
+                              "      Available from https://meh.ryanb.cc";
+
 
             //just testing some stuff -- disregard
             //LemmaSharp.LemmatizerPrebuiltCompact Lemmatizer = new LemmaSharp.LemmatizerPrebuiltCompact(LemmaSharp.LanguagePrebuilt.English);
             //MessageBox.Show(Lemmatizer.Lemmatize("don't"));
-            
+
             //populate text encoding box
             foreach (var encoding in Encoding.GetEncodings())
             {
@@ -260,7 +267,7 @@ namespace MEH2
 
         private void LoadConversionsButton_Click(object sender, EventArgs e)
         {
-            switch (StopListLanguageSelector.SelectedItem.ToString())
+            switch (ConversionSelectionBox.SelectedItem.ToString())
             {
                 case "English":
                     ConversionsTextbox.Text = MEHv2.Properties.Resources.conversions.ToLower();
