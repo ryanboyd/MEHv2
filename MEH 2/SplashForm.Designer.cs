@@ -48,7 +48,7 @@
             this.SplashPictureBox.Image = global::MEHv2.Properties.Resources.MEHSplash;
             this.SplashPictureBox.InitialImage = null;
             this.SplashPictureBox.Location = new System.Drawing.Point(28, 24);
-            this.SplashPictureBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SplashPictureBox.Margin = new System.Windows.Forms.Padding(2);
             this.SplashPictureBox.Name = "SplashPictureBox";
             this.SplashPictureBox.Size = new System.Drawing.Size(438, 475);
             this.SplashPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -90,7 +90,7 @@
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label3.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(448, 578);
+            this.label3.Location = new System.Drawing.Point(446, 576);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(42, 15);
@@ -101,15 +101,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(496, 600);
+            this.ClientSize = new System.Drawing.Size(490, 594);
             this.ControlBox = false;
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.TitleLabel);
             this.Controls.Add(this.SplashPictureBox);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(496, 600);
             this.MinimizeBox = false;

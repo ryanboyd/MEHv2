@@ -7,6 +7,8 @@ namespace MEHv2
 {
     public partial class SplashForm : Form
     {
+
+
         public SplashForm()
         {
             InitializeComponent();
@@ -24,6 +26,8 @@ namespace MEHv2
 
             //}
 
+
+
             Version version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
             string VersionText = version.Major.ToString() + "." + version.Minor.ToString() + "." + version.Build.ToString();
 
@@ -33,6 +37,7 @@ namespace MEHv2
 
         private void SplashTimer_Tick(object sender, EventArgs e)
         {
+            
             this.Close();
         }
     }
