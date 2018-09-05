@@ -18,10 +18,15 @@ namespace MEH2
     {
         public MainForm()
         {
-            InitializeComponent();
 
             Version version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
             string VersionText = version.Major.ToString() + "." + version.Minor.ToString() + "." + version.Build.ToString();
+
+
+
+            InitializeComponent();
+
+            
 
             AboutLabel.Text = "Boyd, R. L. (2018). MEH: Meaning Extraction" + Environment.NewLine + 
                               "      Helper(version " + VersionText + "b)[Software]." + Environment.NewLine +
@@ -133,7 +138,7 @@ namespace MEH2
             {
                 if (OutputFileTextbox.Text != "") dialog.SelectedPath = OutputFileTextbox.Text;
                 dialog.ShowNewFolderButton = false;
-                dialog.Description = "Please choose the folder where your output will be saved";
+                dialog.Description = "Please choose the location of your .txt files to analyze";
                 if (dialog.ShowDialog() == DialogResult.OK)
                 {
                     InputFolderTextbox.Text = dialog.SelectedPath.ToString();
@@ -156,7 +161,7 @@ namespace MEH2
             {
                 if (InputFolderTextbox.Text != "") dialog.SelectedPath = InputFolderTextbox.Text;
                 dialog.ShowNewFolderButton = true;
-                dialog.Description = "Please choose the location of your .txt files to analyze";
+                dialog.Description = "Please choose the folder where your output will be saved";
                 if (dialog.ShowDialog() == DialogResult.OK)
                 {
                     OutputFileTextbox.Text = dialog.SelectedPath.ToString();
