@@ -815,7 +815,7 @@ namespace MEH2
 
                             NumberOfRows++;
 
-                            if (NumberOfRows % 1000 == 0) LogWriter.WriteToLog(DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss tt") + ": Reading DWL row #" + NumberOfRows.ToString(), Color.White);
+                            if (NumberOfRows % 10000 == 0) LogWriter.WriteToLog(DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss tt") + ": Reading DWL row #" + NumberOfRows.ToString(), Color.White);
 
                             //this is if we're pruning the ngrams from the frequency list
                             if (BGData.PruneFreqList)
