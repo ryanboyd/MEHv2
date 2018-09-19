@@ -185,7 +185,7 @@
             this.InputOutputTab.Controls.Add(this.label1);
             this.InputOutputTab.Location = new System.Drawing.Point(229, 4);
             this.InputOutputTab.Name = "InputOutputTab";
-            this.InputOutputTab.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.InputOutputTab.Padding = new System.Windows.Forms.Padding(3);
             this.InputOutputTab.Size = new System.Drawing.Size(662, 454);
             this.InputOutputTab.TabIndex = 0;
             this.InputOutputTab.Text = "Input/Output File Settings";
@@ -328,7 +328,7 @@
             this.TextSegmentationTab.Controls.Add(this.SegmentationOptionNone);
             this.TextSegmentationTab.Location = new System.Drawing.Point(229, 4);
             this.TextSegmentationTab.Name = "TextSegmentationTab";
-            this.TextSegmentationTab.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.TextSegmentationTab.Padding = new System.Windows.Forms.Padding(3);
             this.TextSegmentationTab.Size = new System.Drawing.Size(662, 454);
             this.TextSegmentationTab.TabIndex = 1;
             this.TextSegmentationTab.Text = "Text Segmentation";
@@ -432,7 +432,7 @@
             // ClearConversionsButton
             // 
             this.ClearConversionsButton.Location = new System.Drawing.Point(422, 164);
-            this.ClearConversionsButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ClearConversionsButton.Margin = new System.Windows.Forms.Padding(2);
             this.ClearConversionsButton.Name = "ClearConversionsButton";
             this.ClearConversionsButton.Size = new System.Drawing.Size(158, 23);
             this.ClearConversionsButton.TabIndex = 6;
@@ -443,7 +443,7 @@
             // LoadConversionsButton
             // 
             this.LoadConversionsButton.Location = new System.Drawing.Point(422, 119);
-            this.LoadConversionsButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.LoadConversionsButton.Margin = new System.Windows.Forms.Padding(2);
             this.LoadConversionsButton.Name = "LoadConversionsButton";
             this.LoadConversionsButton.Size = new System.Drawing.Size(158, 23);
             this.LoadConversionsButton.TabIndex = 5;
@@ -468,7 +468,7 @@
             this.ConversionSelectionBox.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ConversionSelectionBox.FormattingEnabled = true;
             this.ConversionSelectionBox.Location = new System.Drawing.Point(368, 79);
-            this.ConversionSelectionBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ConversionSelectionBox.Margin = new System.Windows.Forms.Padding(2);
             this.ConversionSelectionBox.Name = "ConversionSelectionBox";
             this.ConversionSelectionBox.Size = new System.Drawing.Size(266, 25);
             this.ConversionSelectionBox.TabIndex = 3;
@@ -488,7 +488,7 @@
             // 
             this.ConversionsTextbox.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ConversionsTextbox.Location = new System.Drawing.Point(10, 28);
-            this.ConversionsTextbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ConversionsTextbox.Margin = new System.Windows.Forms.Padding(2);
             this.ConversionsTextbox.MaxLength = 2147483647;
             this.ConversionsTextbox.Multiline = true;
             this.ConversionsTextbox.Name = "ConversionsTextbox";
@@ -526,7 +526,7 @@
             // ClearStopListButton
             // 
             this.ClearStopListButton.Location = new System.Drawing.Point(446, 164);
-            this.ClearStopListButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ClearStopListButton.Margin = new System.Windows.Forms.Padding(2);
             this.ClearStopListButton.Name = "ClearStopListButton";
             this.ClearStopListButton.Size = new System.Drawing.Size(106, 23);
             this.ClearStopListButton.TabIndex = 6;
@@ -537,7 +537,7 @@
             // LoadStopListButton
             // 
             this.LoadStopListButton.Location = new System.Drawing.Point(446, 119);
-            this.LoadStopListButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.LoadStopListButton.Margin = new System.Windows.Forms.Padding(2);
             this.LoadStopListButton.Name = "LoadStopListButton";
             this.LoadStopListButton.Size = new System.Drawing.Size(106, 23);
             this.LoadStopListButton.TabIndex = 5;
@@ -573,7 +573,7 @@
             this.StopListLanguageSelector.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StopListLanguageSelector.FormattingEnabled = true;
             this.StopListLanguageSelector.Location = new System.Drawing.Point(368, 79);
-            this.StopListLanguageSelector.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.StopListLanguageSelector.Margin = new System.Windows.Forms.Padding(2);
             this.StopListLanguageSelector.MaxDropDownItems = 20;
             this.StopListLanguageSelector.Name = "StopListLanguageSelector";
             this.StopListLanguageSelector.Size = new System.Drawing.Size(266, 25);
@@ -583,7 +583,7 @@
             // 
             this.StopListTextbox.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StopListTextbox.Location = new System.Drawing.Point(10, 28);
-            this.StopListTextbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.StopListTextbox.Margin = new System.Windows.Forms.Padding(2);
             this.StopListTextbox.MaxLength = 2147483647;
             this.StopListTextbox.Multiline = true;
             this.StopListTextbox.Name = "StopListTextbox";
@@ -631,7 +631,7 @@
             this.KeepOnlyDictionaryWordsCheckbox.AutoSize = true;
             this.KeepOnlyDictionaryWordsCheckbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.KeepOnlyDictionaryWordsCheckbox.Location = new System.Drawing.Point(384, 57);
-            this.KeepOnlyDictionaryWordsCheckbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.KeepOnlyDictionaryWordsCheckbox.Margin = new System.Windows.Forms.Padding(2);
             this.KeepOnlyDictionaryWordsCheckbox.Name = "KeepOnlyDictionaryWordsCheckbox";
             this.KeepOnlyDictionaryWordsCheckbox.Size = new System.Drawing.Size(251, 38);
             this.KeepOnlyDictionaryWordsCheckbox.TabIndex = 2;
@@ -642,7 +642,7 @@
             // 
             this.DictionaryListTextbox.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DictionaryListTextbox.Location = new System.Drawing.Point(10, 26);
-            this.DictionaryListTextbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DictionaryListTextbox.Margin = new System.Windows.Forms.Padding(2);
             this.DictionaryListTextbox.MaxLength = 2147483647;
             this.DictionaryListTextbox.Multiline = true;
             this.DictionaryListTextbox.Name = "DictionaryListTextbox";
@@ -694,7 +694,7 @@
             this.TokenizerSelectionDropdown.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TokenizerSelectionDropdown.FormattingEnabled = true;
             this.TokenizerSelectionDropdown.Location = new System.Drawing.Point(10, 81);
-            this.TokenizerSelectionDropdown.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TokenizerSelectionDropdown.Margin = new System.Windows.Forms.Padding(2);
             this.TokenizerSelectionDropdown.Name = "TokenizerSelectionDropdown";
             this.TokenizerSelectionDropdown.Size = new System.Drawing.Size(306, 25);
             this.TokenizerSelectionDropdown.TabIndex = 5;
@@ -720,7 +720,7 @@
             this.ConvertToLowercaseCheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.ConvertToLowercaseCheckbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ConvertToLowercaseCheckbox.Location = new System.Drawing.Point(10, 151);
-            this.ConvertToLowercaseCheckbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ConvertToLowercaseCheckbox.Margin = new System.Windows.Forms.Padding(2);
             this.ConvertToLowercaseCheckbox.Name = "ConvertToLowercaseCheckbox";
             this.ConvertToLowercaseCheckbox.Size = new System.Drawing.Size(202, 21);
             this.ConvertToLowercaseCheckbox.TabIndex = 3;
@@ -733,7 +733,7 @@
             this.LemmatizerLanguageSelector.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LemmatizerLanguageSelector.FormattingEnabled = true;
             this.LemmatizerLanguageSelector.Location = new System.Drawing.Point(10, 289);
-            this.LemmatizerLanguageSelector.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.LemmatizerLanguageSelector.Margin = new System.Windows.Forms.Padding(2);
             this.LemmatizerLanguageSelector.Name = "LemmatizerLanguageSelector";
             this.LemmatizerLanguageSelector.Size = new System.Drawing.Size(306, 25);
             this.LemmatizerLanguageSelector.TabIndex = 2;
@@ -745,7 +745,7 @@
             this.UseLemmatizationCheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.UseLemmatizationCheckbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UseLemmatizationCheckbox.Location = new System.Drawing.Point(10, 265);
-            this.UseLemmatizationCheckbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.UseLemmatizationCheckbox.Margin = new System.Windows.Forms.Padding(2);
             this.UseLemmatizationCheckbox.Name = "UseLemmatizationCheckbox";
             this.UseLemmatizationCheckbox.Size = new System.Drawing.Size(147, 21);
             this.UseLemmatizationCheckbox.TabIndex = 1;
@@ -791,8 +791,8 @@
             // PruneFreqListParameterTextbox
             // 
             this.PruneFreqListParameterTextbox.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PruneFreqListParameterTextbox.Location = new System.Drawing.Point(416, 280);
-            this.PruneFreqListParameterTextbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PruneFreqListParameterTextbox.Location = new System.Drawing.Point(452, 281);
+            this.PruneFreqListParameterTextbox.Margin = new System.Windows.Forms.Padding(2);
             this.PruneFreqListParameterTextbox.Name = "PruneFreqListParameterTextbox";
             this.PruneFreqListParameterTextbox.Size = new System.Drawing.Size(95, 23);
             this.PruneFreqListParameterTextbox.TabIndex = 15;
@@ -806,7 +806,7 @@
             this.PruneFreqListCheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.PruneFreqListCheckbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PruneFreqListCheckbox.Location = new System.Drawing.Point(76, 282);
-            this.PruneFreqListCheckbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PruneFreqListCheckbox.Margin = new System.Windows.Forms.Padding(2);
             this.PruneFreqListCheckbox.Name = "PruneFreqListCheckbox";
             this.PruneFreqListCheckbox.Size = new System.Drawing.Size(372, 21);
             this.PruneFreqListCheckbox.TabIndex = 14;
@@ -829,7 +829,7 @@
             // ClearDWLSelectionButton
             // 
             this.ClearDWLSelectionButton.Location = new System.Drawing.Point(165, 93);
-            this.ClearDWLSelectionButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ClearDWLSelectionButton.Margin = new System.Windows.Forms.Padding(2);
             this.ClearDWLSelectionButton.Name = "ClearDWLSelectionButton";
             this.ClearDWLSelectionButton.Size = new System.Drawing.Size(147, 43);
             this.ClearDWLSelectionButton.TabIndex = 12;
@@ -864,7 +864,7 @@
             this.PregeneratedDWLTextbox.Enabled = false;
             this.PregeneratedDWLTextbox.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PregeneratedDWLTextbox.Location = new System.Drawing.Point(10, 151);
-            this.PregeneratedDWLTextbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PregeneratedDWLTextbox.Margin = new System.Windows.Forms.Padding(2);
             this.PregeneratedDWLTextbox.Name = "PregeneratedDWLTextbox";
             this.PregeneratedDWLTextbox.Size = new System.Drawing.Size(542, 23);
             this.PregeneratedDWLTextbox.TabIndex = 9;
@@ -872,7 +872,7 @@
             // ChooseDWLButton
             // 
             this.ChooseDWLButton.Location = new System.Drawing.Point(10, 93);
-            this.ChooseDWLButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ChooseDWLButton.Margin = new System.Windows.Forms.Padding(2);
             this.ChooseDWLButton.Name = "ChooseDWLButton";
             this.ChooseDWLButton.Size = new System.Drawing.Size(147, 43);
             this.ChooseDWLButton.TabIndex = 8;
@@ -901,7 +901,7 @@
             this.DocumentWordListsOutputCheckbox.Enabled = false;
             this.DocumentWordListsOutputCheckbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DocumentWordListsOutputCheckbox.Location = new System.Drawing.Point(40, 227);
-            this.DocumentWordListsOutputCheckbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DocumentWordListsOutputCheckbox.Margin = new System.Windows.Forms.Padding(2);
             this.DocumentWordListsOutputCheckbox.Name = "DocumentWordListsOutputCheckbox";
             this.DocumentWordListsOutputCheckbox.Size = new System.Drawing.Size(263, 21);
             this.DocumentWordListsOutputCheckbox.TabIndex = 6;
@@ -914,7 +914,7 @@
             this.TFIDFOutputCheckbox.AutoSize = true;
             this.TFIDFOutputCheckbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TFIDFOutputCheckbox.Location = new System.Drawing.Point(40, 417);
-            this.TFIDFOutputCheckbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TFIDFOutputCheckbox.Margin = new System.Windows.Forms.Padding(2);
             this.TFIDFOutputCheckbox.Name = "TFIDFOutputCheckbox";
             this.TFIDFOutputCheckbox.Size = new System.Drawing.Size(299, 21);
             this.TFIDFOutputCheckbox.TabIndex = 5;
@@ -928,7 +928,7 @@
             this.RawOutputCheckbox.AutoSize = true;
             this.RawOutputCheckbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RawOutputCheckbox.Location = new System.Drawing.Point(40, 388);
-            this.RawOutputCheckbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RawOutputCheckbox.Margin = new System.Windows.Forms.Padding(2);
             this.RawOutputCheckbox.Name = "RawOutputCheckbox";
             this.RawOutputCheckbox.Size = new System.Drawing.Size(302, 21);
             this.RawOutputCheckbox.TabIndex = 4;
@@ -943,7 +943,7 @@
             this.VerboseOutputCheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.VerboseOutputCheckbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.VerboseOutputCheckbox.Location = new System.Drawing.Point(40, 360);
-            this.VerboseOutputCheckbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.VerboseOutputCheckbox.Margin = new System.Windows.Forms.Padding(2);
             this.VerboseOutputCheckbox.Name = "VerboseOutputCheckbox";
             this.VerboseOutputCheckbox.Size = new System.Drawing.Size(339, 21);
             this.VerboseOutputCheckbox.TabIndex = 3;
@@ -958,7 +958,7 @@
             this.BinaryOutputCheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.BinaryOutputCheckbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BinaryOutputCheckbox.Location = new System.Drawing.Point(40, 332);
-            this.BinaryOutputCheckbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BinaryOutputCheckbox.Margin = new System.Windows.Forms.Padding(2);
             this.BinaryOutputCheckbox.Name = "BinaryOutputCheckbox";
             this.BinaryOutputCheckbox.Size = new System.Drawing.Size(300, 21);
             this.BinaryOutputCheckbox.TabIndex = 2;
@@ -973,7 +973,7 @@
             this.FrequencyListCheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.FrequencyListCheckbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FrequencyListCheckbox.Location = new System.Drawing.Point(40, 255);
-            this.FrequencyListCheckbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FrequencyListCheckbox.Margin = new System.Windows.Forms.Padding(2);
             this.FrequencyListCheckbox.Name = "FrequencyListCheckbox";
             this.FrequencyListCheckbox.Size = new System.Drawing.Size(120, 21);
             this.FrequencyListCheckbox.TabIndex = 1;
@@ -1011,7 +1011,7 @@
             this.NgramSettingsTab.Controls.Add(this.ThresholdOptionPercentOfDocuments);
             this.NgramSettingsTab.Controls.Add(this.label18);
             this.NgramSettingsTab.Location = new System.Drawing.Point(229, 4);
-            this.NgramSettingsTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.NgramSettingsTab.Margin = new System.Windows.Forms.Padding(2);
             this.NgramSettingsTab.Name = "NgramSettingsTab";
             this.NgramSettingsTab.Size = new System.Drawing.Size(662, 454);
             this.NgramSettingsTab.TabIndex = 7;
@@ -1032,7 +1032,7 @@
             // 
             this.NgramTextboxMinimum.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NgramTextboxMinimum.Location = new System.Drawing.Point(94, 169);
-            this.NgramTextboxMinimum.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.NgramTextboxMinimum.Margin = new System.Windows.Forms.Padding(2);
             this.NgramTextboxMinimum.MaxLength = 999999999;
             this.NgramTextboxMinimum.Name = "NgramTextboxMinimum";
             this.NgramTextboxMinimum.Size = new System.Drawing.Size(84, 23);
@@ -1055,7 +1055,7 @@
             this.ThresholdOptionRawFreq.AutoSize = true;
             this.ThresholdOptionRawFreq.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ThresholdOptionRawFreq.Location = new System.Drawing.Point(10, 278);
-            this.ThresholdOptionRawFreq.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ThresholdOptionRawFreq.Margin = new System.Windows.Forms.Padding(2);
             this.ThresholdOptionRawFreq.Name = "ThresholdOptionRawFreq";
             this.ThresholdOptionRawFreq.Size = new System.Drawing.Size(288, 21);
             this.ThresholdOptionRawFreq.TabIndex = 13;
@@ -1076,7 +1076,7 @@
             // 
             this.NgramTextboxMaximum.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NgramTextboxMaximum.Location = new System.Drawing.Point(272, 169);
-            this.NgramTextboxMaximum.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.NgramTextboxMaximum.Margin = new System.Windows.Forms.Padding(2);
             this.NgramTextboxMaximum.MaxLength = 999999999;
             this.NgramTextboxMaximum.Name = "NgramTextboxMaximum";
             this.NgramTextboxMaximum.Size = new System.Drawing.Size(84, 23);
@@ -1108,7 +1108,7 @@
             // 
             this.MinimumWCTextbox.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MinimumWCTextbox.Location = new System.Drawing.Point(12, 63);
-            this.MinimumWCTextbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MinimumWCTextbox.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumWCTextbox.MaxLength = 999999999;
             this.MinimumWCTextbox.Name = "MinimumWCTextbox";
             this.MinimumWCTextbox.Size = new System.Drawing.Size(338, 23);
@@ -1141,7 +1141,7 @@
             // 
             this.ThresholdParameterTextbox.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ThresholdParameterTextbox.Location = new System.Drawing.Point(14, 409);
-            this.ThresholdParameterTextbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ThresholdParameterTextbox.Margin = new System.Windows.Forms.Padding(2);
             this.ThresholdParameterTextbox.MaxLength = 999999999;
             this.ThresholdParameterTextbox.Name = "ThresholdParameterTextbox";
             this.ThresholdParameterTextbox.Size = new System.Drawing.Size(338, 23);
@@ -1153,7 +1153,7 @@
             this.ThresholdOptionMostFrequentByPercentOfDocuments.AutoSize = true;
             this.ThresholdOptionMostFrequentByPercentOfDocuments.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ThresholdOptionMostFrequentByPercentOfDocuments.Location = new System.Drawing.Point(10, 343);
-            this.ThresholdOptionMostFrequentByPercentOfDocuments.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ThresholdOptionMostFrequentByPercentOfDocuments.Margin = new System.Windows.Forms.Padding(2);
             this.ThresholdOptionMostFrequentByPercentOfDocuments.Name = "ThresholdOptionMostFrequentByPercentOfDocuments";
             this.ThresholdOptionMostFrequentByPercentOfDocuments.Size = new System.Drawing.Size(393, 21);
             this.ThresholdOptionMostFrequentByPercentOfDocuments.TabIndex = 3;
@@ -1165,7 +1165,7 @@
             this.ThresholdOptionMostFrequentByRawFrequency.AutoSize = true;
             this.ThresholdOptionMostFrequentByRawFrequency.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ThresholdOptionMostFrequentByRawFrequency.Location = new System.Drawing.Point(10, 310);
-            this.ThresholdOptionMostFrequentByRawFrequency.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ThresholdOptionMostFrequentByRawFrequency.Margin = new System.Windows.Forms.Padding(2);
             this.ThresholdOptionMostFrequentByRawFrequency.Name = "ThresholdOptionMostFrequentByRawFrequency";
             this.ThresholdOptionMostFrequentByRawFrequency.Size = new System.Drawing.Size(379, 21);
             this.ThresholdOptionMostFrequentByRawFrequency.TabIndex = 2;
@@ -1178,7 +1178,7 @@
             this.ThresholdOptionPercentOfDocuments.Checked = true;
             this.ThresholdOptionPercentOfDocuments.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ThresholdOptionPercentOfDocuments.Location = new System.Drawing.Point(10, 245);
-            this.ThresholdOptionPercentOfDocuments.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ThresholdOptionPercentOfDocuments.Margin = new System.Windows.Forms.Padding(2);
             this.ThresholdOptionPercentOfDocuments.Name = "ThresholdOptionPercentOfDocuments";
             this.ThresholdOptionPercentOfDocuments.Size = new System.Drawing.Size(353, 21);
             this.ThresholdOptionPercentOfDocuments.TabIndex = 1;
@@ -1207,7 +1207,7 @@
             this.BeginAnalysisTab.Controls.Add(this.ProgressBar);
             this.BeginAnalysisTab.Controls.Add(this.label23);
             this.BeginAnalysisTab.Location = new System.Drawing.Point(229, 4);
-            this.BeginAnalysisTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BeginAnalysisTab.Margin = new System.Windows.Forms.Padding(2);
             this.BeginAnalysisTab.Name = "BeginAnalysisTab";
             this.BeginAnalysisTab.Size = new System.Drawing.Size(662, 454);
             this.BeginAnalysisTab.TabIndex = 8;
@@ -1216,7 +1216,7 @@
             // CancelAnalysisButton
             // 
             this.CancelAnalysisButton.Location = new System.Drawing.Point(354, 376);
-            this.CancelAnalysisButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CancelAnalysisButton.Margin = new System.Windows.Forms.Padding(2);
             this.CancelAnalysisButton.Name = "CancelAnalysisButton";
             this.CancelAnalysisButton.Size = new System.Drawing.Size(124, 35);
             this.CancelAnalysisButton.TabIndex = 4;
@@ -1227,7 +1227,7 @@
             // StartButton
             // 
             this.StartButton.Location = new System.Drawing.Point(176, 376);
-            this.StartButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.StartButton.Margin = new System.Windows.Forms.Padding(2);
             this.StartButton.Name = "StartButton";
             this.StartButton.Size = new System.Drawing.Size(124, 35);
             this.StartButton.TabIndex = 3;
@@ -1242,7 +1242,7 @@
             this.RichTextboxLog.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RichTextboxLog.ForeColor = System.Drawing.Color.LimeGreen;
             this.RichTextboxLog.Location = new System.Drawing.Point(10, 33);
-            this.RichTextboxLog.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RichTextboxLog.Margin = new System.Windows.Forms.Padding(2);
             this.RichTextboxLog.Name = "RichTextboxLog";
             this.RichTextboxLog.ReadOnly = true;
             this.RichTextboxLog.Size = new System.Drawing.Size(639, 335);
@@ -1253,7 +1253,7 @@
             // 
             this.ProgressBar.ForeColor = System.Drawing.Color.Lime;
             this.ProgressBar.Location = new System.Drawing.Point(10, 420);
-            this.ProgressBar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ProgressBar.Margin = new System.Windows.Forms.Padding(2);
             this.ProgressBar.MarqueeAnimationSpeed = 3000;
             this.ProgressBar.Name = "ProgressBar";
             this.ProgressBar.Size = new System.Drawing.Size(638, 24);
@@ -1281,7 +1281,7 @@
             this.AboutMEHTab.Controls.Add(this.AboutMEHPictureBox);
             this.AboutMEHTab.Controls.Add(this.label24);
             this.AboutMEHTab.Location = new System.Drawing.Point(229, 4);
-            this.AboutMEHTab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AboutMEHTab.Margin = new System.Windows.Forms.Padding(2);
             this.AboutMEHTab.Name = "AboutMEHTab";
             this.AboutMEHTab.Size = new System.Drawing.Size(662, 454);
             this.AboutMEHTab.TabIndex = 9;
