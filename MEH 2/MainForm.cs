@@ -19,6 +19,7 @@ namespace MEH2
         public MainForm()
         {
 
+
             Version version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
             string VersionText = version.Major.ToString() + "." + version.Minor.ToString() + "." + version.Build.ToString();
 
@@ -26,7 +27,7 @@ namespace MEH2
 
             InitializeComponent();
 
-            
+            DoubleBuffered = true;
 
             AboutLabel.Text = "Boyd, R. L. (2018). MEH: Meaning Extraction" + Environment.NewLine + 
                               "      Helper(version " + VersionText + "b)[Software]." + Environment.NewLine +
@@ -489,7 +490,7 @@ namespace MEH2
 
                         foreach (string filecount in files) {
                             NumberOfFiles++;
-                            if (NumberOfFiles % 10000 == 0)
+                            if (NumberOfFiles % 100000 == 0)
                             {
 
                                 int BoxStart = RichTextboxLog.Text.Length;
@@ -815,7 +816,7 @@ namespace MEH2
 
                             NumberOfRows++;
 
-                            if (NumberOfRows % 10000 == 0) LogWriter.WriteToLog(DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss tt") + ": Reading DWL row #" + NumberOfRows.ToString(), Color.White);
+                            if (NumberOfRows % 100000 == 0) LogWriter.WriteToLog(DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss tt") + ": Reading DWL row #" + NumberOfRows.ToString(), Color.White);
 
                             //this is if we're pruning the ngrams from the frequency list
                             if (BGData.PruneFreqList)
@@ -1264,24 +1265,27 @@ namespace MEH2
             if (e.ProgressPercentage > ProgressBar.Value) ProgressBar.Value = e.ProgressPercentage;
 
 
-            try
-            {
+            //going to remove these reports so that we can avoid the DisconnectedContext exception that keeps getting tossed
+            //particularly since this exception isn't being handled by anything, apparently. probably flooding something
+            //with the richtextbox, but I'm not actually sure at the moment
+            //try
+            //{
 
-                if (e.ProgressPercentage % 1000 == 0)
-                {
-                    int BoxStart = RichTextboxLog.Text.Length;
-                    RichTextboxLog.AppendText(DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss tt") + ": " + " ~" + e.ProgressPercentage.ToString() + " items processed thus far" + Environment.NewLine);
-                    int BoxEnd = RichTextboxLog.Text.Length;
-                    RichTextboxLog.Select(BoxStart, BoxEnd - BoxStart);
-                    RichTextboxLog.SelectionColor = Color.White;
-                    RichTextboxLog.Select(BoxEnd, 0);
-                    RichTextboxLog.ScrollToCaret();
-                }
-            }
-            catch
-            {
-                //do nothing if there's an issue here, it's not that central that the log be updated
-            }
+            //    if (e.ProgressPercentage % 10000 == 0)
+            //    {
+            //        int BoxStart = RichTextboxLog.Text.Length;
+            //        RichTextboxLog.AppendText(DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss tt") + ": " + " ~" + e.ProgressPercentage.ToString() + " items processed thus far" + Environment.NewLine);
+            //        int BoxEnd = RichTextboxLog.Text.Length;
+            //        RichTextboxLog.Select(BoxStart, BoxEnd - BoxStart);
+            //        RichTextboxLog.SelectionColor = Color.White;
+            //        RichTextboxLog.Select(BoxEnd, 0);
+            //        RichTextboxLog.ScrollToCaret();
+            //    }
+            //}
+            //catch
+            //{
+            //    //do nothing if there's an issue here, it's not that central that the log be updated
+            //}
         }
 
 
@@ -1396,17 +1400,19 @@ namespace MEH2
 
             public void WriteToLog(string text_to_log, Color color)
             {
-                //report that we're getting ready to start
-                mainform.Invoke((MethodInvoker)delegate ()
-                {
-                    int BoxStart = mainform.RichTextboxLog.Text.Length;
-                    mainform.RichTextboxLog.AppendText(text_to_log + Environment.NewLine);
-                    int BoxEnd = mainform.RichTextboxLog.Text.Length;
-                    mainform.RichTextboxLog.Select(BoxStart, BoxEnd - BoxStart);
-                    mainform.RichTextboxLog.SelectionColor = color;
-                    mainform.RichTextboxLog.Select(BoxEnd, 0);
-                    mainform.RichTextboxLog.ScrollToCaret();
-                });
+
+                    //report that we're getting ready to start
+                    mainform.Invoke((MethodInvoker)delegate ()
+                    {
+                        int BoxStart = mainform.RichTextboxLog.Text.Length;
+                        mainform.RichTextboxLog.AppendText(text_to_log + Environment.NewLine);
+                        int BoxEnd = mainform.RichTextboxLog.Text.Length;
+                        mainform.RichTextboxLog.Select(BoxStart, BoxEnd - BoxStart);
+                        mainform.RichTextboxLog.SelectionColor = color;
+                        mainform.RichTextboxLog.Select(BoxEnd, 0);
+                        mainform.RichTextboxLog.ScrollToCaret();
+                    });
+
 
             }
 
