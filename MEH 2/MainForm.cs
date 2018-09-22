@@ -1208,7 +1208,7 @@ namespace MEH2
                     }
 
 
-                    LogWriter.WriteToLog(Environment.NewLine + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss tt") + ": Finished writing Document × Term output...", Color.Green);
+                    LogWriter.WriteToLog(DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss tt") + ": Finished writing Document × Term output...", Color.Green);
 
 
                 }
