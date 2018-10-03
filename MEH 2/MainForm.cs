@@ -1207,11 +1207,13 @@ namespace MEH2
                         DTM_Logger.Value.Dispose();
                     }
 
+                    BGWorker.ReportProgress((int)NumberOfRows);
 
                     LogWriter.WriteToLog(DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss tt") + ": Finished writing Document × Term output...", Color.Green);
 
 
                 }
+
 
 
             }
@@ -1239,7 +1241,6 @@ namespace MEH2
             }
 
 
-
             //end of bgworker.dowork()
         }
 
@@ -1262,7 +1263,7 @@ namespace MEH2
         {
             //since the threads aren't being completed in a specific order, we really only want to update the bar
             //if the current value is greater than what has already been reported
-            if (e.ProgressPercentage > ProgressBar.Value) ProgressBar.Value = e.ProgressPercentage;
+            if ((e.ProgressPercentage > ProgressBar.Value) && (e.ProgressPercentage > ((ProgressBar.Maximum / 1000.00) + ProgressBar.Value))) ProgressBar.Value = e.ProgressPercentage;
 
 
             //going to remove these reports so that we can avoid the DisconnectedContext exception that keeps getting tossed
