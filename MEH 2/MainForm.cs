@@ -221,51 +221,51 @@ namespace MEH2
                     break;
 
                 case "Беларуская (Bulgarian)":
-                    StopListTextbox.Text = MEHv2.Properties.Resources.bulgarianST.ToLower();
+                    StopListTextbox.Text += MEHv2.Properties.Resources.bulgarianST.ToLower();
                     break;
 
                 case "čeština (Czech)":
-                    StopListTextbox.Text = MEHv2.Properties.Resources.czechstoplist.ToLower();
+                    StopListTextbox.Text += MEHv2.Properties.Resources.czechstoplist.ToLower();
                     break;
 
                 case "français (French)":
-                    StopListTextbox.Text = MEHv2.Properties.Resources.frenchstoplist.ToLower();
+                    StopListTextbox.Text += MEHv2.Properties.Resources.frenchstoplist.ToLower();
                     break;
 
                 case "Deutsch (German)":
-                    StopListTextbox.Text = MEHv2.Properties.Resources.germanstoplist.ToLower();
+                    StopListTextbox.Text += MEHv2.Properties.Resources.germanstoplist.ToLower();
                     break;
 
                 case "Magyar (Hungarian)":
-                    StopListTextbox.Text = MEHv2.Properties.Resources.hungarianST.ToLower();
+                    StopListTextbox.Text += MEHv2.Properties.Resources.hungarianST.ToLower();
                     break;
 
                 case "italiano (Italian)":
-                    StopListTextbox.Text = MEHv2.Properties.Resources.italianstoplist.ToLower();
+                    StopListTextbox.Text += MEHv2.Properties.Resources.italianstoplist.ToLower();
                     break;
 
                 case "فارسی (Persian)":
-                    StopListTextbox.Text = MEHv2.Properties.Resources.persianST.ToLower();
+                    StopListTextbox.Text += MEHv2.Properties.Resources.persianST.ToLower();
                     break;
 
                 case "polski (Polish)":
-                    StopListTextbox.Text = MEHv2.Properties.Resources.polishST.ToLower();
+                    StopListTextbox.Text += MEHv2.Properties.Resources.polishST.ToLower();
                     break;
 
                 case "Pyccĸий (Russian)":
-                    StopListTextbox.Text = MEHv2.Properties.Resources.russianstoplist.ToLower();
+                    StopListTextbox.Text += MEHv2.Properties.Resources.russianstoplist.ToLower();
                     break;
 
                 case "Español (Spanish)":
-                    StopListTextbox.Text = MEHv2.Properties.Resources.spanishstoplist.ToLower();
+                    StopListTextbox.Text += MEHv2.Properties.Resources.spanishstoplist.ToLower();
                     break;
 
                 case "Türkçe (Turkish)":
-                    StopListTextbox.Text = MEHv2.Properties.Resources.turkishstoplist.ToLower();
+                    StopListTextbox.Text += MEHv2.Properties.Resources.turkishstoplist.ToLower();
                     break;
 
                 case "English (Mallet Stop List)":
-                    StopListTextbox.Text = MEHv2.Properties.Resources.stoplist_mallet_en.ToLower();
+                    StopListTextbox.Text += MEHv2.Properties.Resources.stoplist_mallet_en.ToLower();
                     break;
 
             }
@@ -1228,14 +1228,17 @@ namespace MEH2
                 MessageBox.Show("Your system does not have enough memory to continue. Please check the log for additional details.", "Out of Memory Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
-            catch
+            catch (Exception ex)
             {
                 LogWindowWriter LogWriter = new LogWindowWriter();
                 LogWriter.setmainform(this);
-                LogWriter.WriteToLog(Environment.NewLine + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss tt") + ": MEH encountered an error while processing your texts. " +
-                    "Currently, MEH is in active development; forthcoming versions of this software will provide additional information on the likely causes of any given error that you receive. The most common causes of errors are:", color: Color.Red);
-                LogWriter.WriteToLog("\t-Opening a file that MEH is currently reading/writing", Color.Red);
-                LogWriter.WriteToLog("\t-Moving/deleting a file during use", Color.Red);
+                LogWriter.WriteToLog(Environment.NewLine + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss tt") + ": MEH encountered an error while processing your texts. ", color: Color.Red);
+                LogWriter.WriteToLog(Environment.NewLine + ex.Message, color: Color.Red);
+                LogWriter.WriteToLog(Environment.NewLine + ex.ToString(), color: Color.Red);
+                    //"" +
+                    //"The most common causes of errors are:", color: Color.Red);
+                //LogWriter.WriteToLog("\t-Opening a file that MEH is currently reading/writing", Color.Red);
+                //LogWriter.WriteToLog("\t-Moving/deleting a file during use", Color.Red);
 
                 MessageBox.Show("MEH encountered a problem while analyzing your texts. Please check the log for additional details.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
