@@ -117,6 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label32.Text" xml:space="preserve">
+    <value>If you are performing a large number of
+conversions (such as lemmatizing a long
+list of words for a non-supported language),
+this option should be used. Note, however,
+that the "lookup" method can only find
+exact matches. This means that 
+wildcards (*) will not work for the "lookup"
+method of performing conversions.</value>
+  </data>
   <metadata name="label21.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>

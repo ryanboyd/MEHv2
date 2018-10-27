@@ -21,6 +21,7 @@ namespace MEH2
 
         //conversions tab
         public string ConversionListString { get; set; }
+        public bool ConversionList_LookupMethod { get; set; }
 
         //stop list tab
         public string StopListString { get; set; }

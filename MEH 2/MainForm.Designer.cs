@@ -128,6 +128,8 @@
             this.AboutMEHPictureBox = new System.Windows.Forms.PictureBox();
             this.label24 = new System.Windows.Forms.Label();
             this.BGWorker = new System.ComponentModel.BackgroundWorker();
+            this.Conversions_Use_Lookup_Checkbox = new System.Windows.Forms.CheckBox();
+            this.label32 = new System.Windows.Forms.Label();
             this.TabControlObject.SuspendLayout();
             this.InputOutputTab.SuspendLayout();
             this.TextSegmentationTab.SuspendLayout();
@@ -416,6 +418,8 @@
             // 
             this.ConversionListTab.BackColor = System.Drawing.Color.PaleTurquoise;
             this.ConversionListTab.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ConversionListTab.Controls.Add(this.label32);
+            this.ConversionListTab.Controls.Add(this.Conversions_Use_Lookup_Checkbox);
             this.ConversionListTab.Controls.Add(this.ClearConversionsButton);
             this.ConversionListTab.Controls.Add(this.LoadConversionsButton);
             this.ConversionListTab.Controls.Add(this.label14);
@@ -1369,6 +1373,28 @@
             this.BGWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.BGWorker_ProgressChanged);
             this.BGWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BGWorker_RunWorkerCompleted);
             // 
+            // Conversions_Use_Lookup_Checkbox
+            // 
+            this.Conversions_Use_Lookup_Checkbox.AutoSize = true;
+            this.Conversions_Use_Lookup_Checkbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Conversions_Use_Lookup_Checkbox.Location = new System.Drawing.Point(368, 222);
+            this.Conversions_Use_Lookup_Checkbox.Name = "Conversions_Use_Lookup_Checkbox";
+            this.Conversions_Use_Lookup_Checkbox.Size = new System.Drawing.Size(248, 36);
+            this.Conversions_Use_Lookup_Checkbox.TabIndex = 7;
+            this.Conversions_Use_Lookup_Checkbox.Text = "Use \"lookup\" method for conversions\r\n(i.e., not regular expressions)\r\n";
+            this.Conversions_Use_Lookup_Checkbox.UseVisualStyleBackColor = true;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Location = new System.Drawing.Point(364, 274);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(265, 130);
+            this.label32.TabIndex = 8;
+            this.label32.Text = resources.GetString("label32.Text");
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1512,6 +1538,8 @@
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.ComboBox TokenizerSelectionDropdown;
+        private System.Windows.Forms.CheckBox Conversions_Use_Lookup_Checkbox;
+        private System.Windows.Forms.Label label32;
     }
 }
 

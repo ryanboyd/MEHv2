@@ -8,7 +8,8 @@ namespace MEH2
     class TextConversionClass
     { 
 
-        private List<Tuple<Regex, string>> ConversionList { get; set; }
+        private List<Tuple<Regex, string>> ConversionList_Regex { get; set; }
+        public Dictionary<string, string> ConversionList_NoRegex { get; set; }
 
 
 
@@ -18,7 +19,7 @@ namespace MEH2
         // | |_) | |_| | | | (_| | | |__| (_) | | | \ V /  __/ |  \__ \ | (_) | | | | | |___| \__ \ |_ 
         // |____/ \__,_|_|_|\__,_|  \____\___/|_| |_|\_/ \___|_|  |___/_|\___/|_| |_| |_____|_|___/\__|
         //                                                                                             
-        public void InitializeConversionList(string RawConversionText, bool LowerCaseConversion)
+        public void InitializeConversionList_Regex(string RawConversionText, bool LowerCaseConversion)
         {
 
             List<Tuple<Regex, string>> ConversionListCompiled = new List<Tuple<Regex, string>>();
@@ -60,9 +61,55 @@ namespace MEH2
 
             }
 
-            ConversionList = ConversionListCompiled;
+            ConversionList_Regex = ConversionListCompiled;
 
         }
+
+
+
+        public void InitializeConversionList_Lookup(string RawConversionText)
+        {
+
+            Dictionary<string, string> ConversionList_Dictionary = new Dictionary<string, string>();
+
+            string[] ConversionListArray = RawConversionText.Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
+
+            for (int i = 0; i < ConversionListArray.Length; i++)
+            {
+                string[] ConversionItemSplit = ConversionListArray[i].Split(new[] { '^' }, StringSplitOptions.RemoveEmptyEntries);
+
+                //we have to have the length be 2, otherwise we know that something is horribly wrong with the input
+                if (ConversionItemSplit.Length == 2)
+                {
+
+                    try
+                    {
+                        
+                         if (!ConversionList_Dictionary.ContainsKey(ConversionItemSplit[0])) ConversionList_Dictionary.Add(ConversionItemSplit[0], ConversionItemSplit[1]);
+                        
+
+                    }
+                    catch
+                    {
+                        continue;
+                    }
+
+
+                }
+
+            }
+
+            ConversionList_NoRegex = ConversionList_Dictionary;
+
+        }
+
+
+
+
+
+
+
+
 
 
 
@@ -72,9 +119,9 @@ namespace MEH2
 
             string modifiedtext = string.Copy(inputtext);
 
-            for(int i = 0; i < ConversionList.Count(); i++)
+            for(int i = 0; i < ConversionList_Regex.Count(); i++)
             {
-                modifiedtext = ConversionList[i].Item1.Replace(modifiedtext, ConversionList[i].Item2);
+                modifiedtext = ConversionList_Regex[i].Item1.Replace(modifiedtext, ConversionList_Regex[i].Item2);
             }
 
             return modifiedtext;

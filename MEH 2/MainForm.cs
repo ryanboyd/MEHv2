@@ -349,6 +349,7 @@ namespace MEH2
                 BGData.ConvertToLowerCase = ConvertToLowercaseCheckbox.Checked;
                 BGData.UseLemmatization = UseLemmatizationCheckbox.Checked;
                 BGData.LemmatizationModel = LemmatizerLanguageSelector.SelectedItem.ToString();
+                BGData.ConversionList_LookupMethod = Conversions_Use_Lookup_Checkbox.Checked;
 
                 if (BGData.ConvertToLowerCase)
                 {
@@ -362,6 +363,7 @@ namespace MEH2
                     BGData.StopListString = StopListTextbox.Text;
                     BGData.DictionaryListString = DictionaryListTextbox.Text;
                 }
+
 
                 BGData.GenerateDWL = true;
                 BGData.GenerateFreqList = FrequencyListCheckbox.Checked;
@@ -603,7 +605,15 @@ namespace MEH2
                 //report that we're getting ready to start
                 LogWriter.WriteToLog(Environment.NewLine + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss tt") + ": " + "Initializing / validating all items in Conversions box...", Color.Orange);
                 TextConversionClass Converter = new TextConversionClass();
-                Converter.InitializeConversionList(BGData.ConversionListString, BGData.ConvertToLowerCase);
+
+                if (BGData.ConversionList_LookupMethod)
+                {
+                    Converter.InitializeConversionList_Lookup(BGData.ConversionListString);
+                }
+                else
+                {
+                    Converter.InitializeConversionList_Regex(BGData.ConversionListString, BGData.ConvertToLowerCase);
+                }
 
 
 
@@ -648,8 +658,9 @@ namespace MEH2
                         string readText = File.ReadAllText(inputfile, BGData.SelectedEncoding).Replace("\r\n", " ").Replace("\r", " ").Replace("\n", " ");
                         if (BGData.ConvertToLowerCase) readText = readText.ToLower();
 
-                        //run the conversions from the converter
-                        readText = Converter.RunConversions(readText);
+
+                        //run the conversions from the converter here, but only if we're using the RegEx method (this is the default)
+                        if (!BGData.ConversionList_LookupMethod) readText = Converter.RunConversions(readText);
 
 
 
@@ -678,6 +689,12 @@ namespace MEH2
                         //at one point, we were also removing stop list entries here. this has been changed
                         //so that stop words are removed further downstream. this will help keep things sane
                         //TokenizedText = TokenizedText.Where(x => !StopList.Contains(x)).ToArray();
+
+
+                        
+                        
+                        
+
 
 
                         
@@ -731,6 +748,19 @@ namespace MEH2
                                         Array.Copy(TokenizedText_For_Ngrams, i, token_builder, 0, j);
 
                                         string token = string.Join(" ", token_builder);
+
+
+
+
+
+                                        //if we're using the "lookup" method for conversions, we want to do those here
+                                        if (BGData.ConversionList_LookupMethod && Converter.ConversionList_NoRegex.Count > 0 && Converter.ConversionList_NoRegex.ContainsKey(token))
+                                        {
+                                            token = Converter.ConversionList_NoRegex[token];
+                                            
+                                        }
+
+
 
 
 
