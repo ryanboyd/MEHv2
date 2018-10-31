@@ -178,4 +178,73 @@
   <data name="_switch" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\switch.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="manual_lemmatization_ast" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lemmatization-lists-master\fixed\manual-lemmatization-ast.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="manual_lemmatization_bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lemmatization-lists-master\fixed\manual-lemmatization-bg.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="manual_lemmatization_ca" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lemmatization-lists-master\fixed\manual-lemmatization-ca.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="manual_lemmatization_cs" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lemmatization-lists-master\fixed\manual-lemmatization-cs.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="manual_lemmatization_cy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lemmatization-lists-master\fixed\manual-lemmatization-cy.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="manual_lemmatization_de" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lemmatization-lists-master\fixed\manual-lemmatization-de.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="manual_lemmatization_en" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lemmatization-lists-master\fixed\manual-lemmatization-en.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="manual_lemmatization_es" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lemmatization-lists-master\fixed\manual-lemmatization-es.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="manual_lemmatization_et" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lemmatization-lists-master\fixed\manual-lemmatization-et.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="manual_lemmatization_fa" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lemmatization-lists-master\fixed\manual-lemmatization-fa.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="manual_lemmatization_fr" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lemmatization-lists-master\fixed\manual-lemmatization-fr.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="manual_lemmatization_ga" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lemmatization-lists-master\fixed\manual-lemmatization-ga.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="manual_lemmatization_gd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lemmatization-lists-master\fixed\manual-lemmatization-gd.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="manual_lemmatization_gl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lemmatization-lists-master\fixed\manual-lemmatization-gl.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="manual_lemmatization_gv" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lemmatization-lists-master\fixed\manual-lemmatization-gv.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="manual_lemmatization_hu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lemmatization-lists-master\fixed\manual-lemmatization-hu.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="manual_lemmatization_it" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lemmatization-lists-master\fixed\manual-lemmatization-it.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="manual_lemmatization_pt" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lemmatization-lists-master\fixed\manual-lemmatization-pt.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="manual_lemmatization_ro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lemmatization-lists-master\fixed\manual-lemmatization-ro.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="manual_lemmatization_sk" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lemmatization-lists-master\fixed\manual-lemmatization-sk.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="manual_lemmatization_sl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lemmatization-lists-master\fixed\manual-lemmatization-sl.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="manual_lemmatization_sv" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lemmatization-lists-master\fixed\manual-lemmatization-sv.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="manual_lemmatization_uk" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lemmatization-lists-master\fixed\manual-lemmatization-uk.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
 </root>

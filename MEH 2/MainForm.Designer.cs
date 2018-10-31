@@ -52,6 +52,8 @@
             this.SegmentationOptionWordsPerSegment = new System.Windows.Forms.RadioButton();
             this.SegmentationOptionNone = new System.Windows.Forms.RadioButton();
             this.ConversionListTab = new System.Windows.Forms.TabPage();
+            this.label32 = new System.Windows.Forms.Label();
+            this.Conversions_Use_Lookup_Checkbox = new System.Windows.Forms.CheckBox();
             this.ClearConversionsButton = new System.Windows.Forms.Button();
             this.LoadConversionsButton = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
@@ -128,8 +130,6 @@
             this.AboutMEHPictureBox = new System.Windows.Forms.PictureBox();
             this.label24 = new System.Windows.Forms.Label();
             this.BGWorker = new System.ComponentModel.BackgroundWorker();
-            this.Conversions_Use_Lookup_Checkbox = new System.Windows.Forms.CheckBox();
-            this.label32 = new System.Windows.Forms.Label();
             this.TabControlObject.SuspendLayout();
             this.InputOutputTab.SuspendLayout();
             this.TextSegmentationTab.SuspendLayout();
@@ -433,12 +433,34 @@
             this.ConversionListTab.TabIndex = 2;
             this.ConversionListTab.Text = "Conversion List";
             // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Location = new System.Drawing.Point(364, 274);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(265, 130);
+            this.label32.TabIndex = 8;
+            this.label32.Text = resources.GetString("label32.Text");
+            // 
+            // Conversions_Use_Lookup_Checkbox
+            // 
+            this.Conversions_Use_Lookup_Checkbox.AutoSize = true;
+            this.Conversions_Use_Lookup_Checkbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Conversions_Use_Lookup_Checkbox.Location = new System.Drawing.Point(368, 222);
+            this.Conversions_Use_Lookup_Checkbox.Name = "Conversions_Use_Lookup_Checkbox";
+            this.Conversions_Use_Lookup_Checkbox.Size = new System.Drawing.Size(248, 36);
+            this.Conversions_Use_Lookup_Checkbox.TabIndex = 7;
+            this.Conversions_Use_Lookup_Checkbox.Text = "Use \"lookup\" method for conversions\r\n(i.e., not regular expressions)\r\n";
+            this.Conversions_Use_Lookup_Checkbox.UseVisualStyleBackColor = true;
+            // 
             // ClearConversionsButton
             // 
-            this.ClearConversionsButton.Location = new System.Drawing.Point(422, 164);
+            this.ClearConversionsButton.Location = new System.Drawing.Point(417, 167);
             this.ClearConversionsButton.Margin = new System.Windows.Forms.Padding(2);
             this.ClearConversionsButton.Name = "ClearConversionsButton";
-            this.ClearConversionsButton.Size = new System.Drawing.Size(158, 23);
+            this.ClearConversionsButton.Size = new System.Drawing.Size(165, 23);
             this.ClearConversionsButton.TabIndex = 6;
             this.ClearConversionsButton.Text = "Clear Conversions List";
             this.ClearConversionsButton.UseVisualStyleBackColor = true;
@@ -446,12 +468,12 @@
             // 
             // LoadConversionsButton
             // 
-            this.LoadConversionsButton.Location = new System.Drawing.Point(422, 119);
+            this.LoadConversionsButton.Location = new System.Drawing.Point(417, 122);
             this.LoadConversionsButton.Margin = new System.Windows.Forms.Padding(2);
             this.LoadConversionsButton.Name = "LoadConversionsButton";
-            this.LoadConversionsButton.Size = new System.Drawing.Size(158, 23);
+            this.LoadConversionsButton.Size = new System.Drawing.Size(165, 23);
             this.LoadConversionsButton.TabIndex = 5;
-            this.LoadConversionsButton.Text = "Load Default Conversions";
+            this.LoadConversionsButton.Text = "Load Selected Conversions";
             this.LoadConversionsButton.UseVisualStyleBackColor = true;
             this.LoadConversionsButton.Click += new System.EventHandler(this.LoadConversionsButton_Click);
             // 
@@ -469,6 +491,7 @@
             // ConversionSelectionBox
             // 
             this.ConversionSelectionBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ConversionSelectionBox.DropDownWidth = 400;
             this.ConversionSelectionBox.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ConversionSelectionBox.FormattingEnabled = true;
             this.ConversionSelectionBox.Location = new System.Drawing.Point(368, 79);
@@ -751,9 +774,9 @@
             this.UseLemmatizationCheckbox.Location = new System.Drawing.Point(10, 265);
             this.UseLemmatizationCheckbox.Margin = new System.Windows.Forms.Padding(2);
             this.UseLemmatizationCheckbox.Name = "UseLemmatizationCheckbox";
-            this.UseLemmatizationCheckbox.Size = new System.Drawing.Size(147, 21);
+            this.UseLemmatizationCheckbox.Size = new System.Drawing.Size(292, 21);
             this.UseLemmatizationCheckbox.TabIndex = 1;
-            this.UseLemmatizationCheckbox.Text = "Use Lemmatization";
+            this.UseLemmatizationCheckbox.Text = "Use Automated/Algorithmic Lemmatization";
             this.UseLemmatizationCheckbox.UseVisualStyleBackColor = true;
             // 
             // label7
@@ -1372,28 +1395,6 @@
             this.BGWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BGWorker_DoWork);
             this.BGWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.BGWorker_ProgressChanged);
             this.BGWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BGWorker_RunWorkerCompleted);
-            // 
-            // Conversions_Use_Lookup_Checkbox
-            // 
-            this.Conversions_Use_Lookup_Checkbox.AutoSize = true;
-            this.Conversions_Use_Lookup_Checkbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Conversions_Use_Lookup_Checkbox.Location = new System.Drawing.Point(368, 222);
-            this.Conversions_Use_Lookup_Checkbox.Name = "Conversions_Use_Lookup_Checkbox";
-            this.Conversions_Use_Lookup_Checkbox.Size = new System.Drawing.Size(248, 36);
-            this.Conversions_Use_Lookup_Checkbox.TabIndex = 7;
-            this.Conversions_Use_Lookup_Checkbox.Text = "Use \"lookup\" method for conversions\r\n(i.e., not regular expressions)\r\n";
-            this.Conversions_Use_Lookup_Checkbox.UseVisualStyleBackColor = true;
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(364, 274);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(265, 130);
-            this.label32.TabIndex = 8;
-            this.label32.Text = resources.GetString("label32.Text");
             // 
             // MainForm
             // 

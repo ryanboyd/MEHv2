@@ -71,7 +71,32 @@ namespace MEH2
 
             ConversionSelectionBox.Items.AddRange(new string[] { "English",
             "italiano (Italian)",
-            "Türkçe (Turkish)"});
+            "Türkçe (Turkish)",
+            "---------------------------------",
+            "Lemma Lookup List: Asturian (ast)",
+            "Lemma Lookup List: Bulgarian (bg)",
+            "Lemma Lookup List: Catalan (ca)",
+            "Lemma Lookup List: Czech (cs)",
+            "Lemma Lookup List: English (en)",
+            "Lemma Lookup List: Estonian (et)",
+            "Lemma Lookup List: French (fr)",
+            "Lemma Lookup List: Galician (gl)",
+            "Lemma Lookup List: German (de)",
+            "Lemma Lookup List: Hungarian (hu)",
+            "Lemma Lookup List: Irish (ga)",
+            "Lemma Lookup List: Manx Gaelic (gv)",
+            "Lemma Lookup List: Italian (it)",
+            "Lemma Lookup List: Persian/Farsi (fa)",
+            "Lemma Lookup List: Portuguese (pt)",
+            "Lemma Lookup List: Romanian (ro)",
+            "Lemma Lookup List: Scottish Gaelic (gd)",
+            "Lemma Lookup List: Slovak (sk)",
+            "Lemma Lookup List: Slovene (sl)",
+            "Lemma Lookup List: Spanish (es)",
+            "Lemma Lookup List: Swedish (sv)",
+            "Lemma Lookup List: Ukrainian (uk)",
+            "Lemma Lookup List: Welsh (cy)",
+            });
 
             LemmatizerLanguageSelector.Items.AddRange(new string[] {
             "English",
@@ -273,19 +298,173 @@ namespace MEH2
 
         private void LoadConversionsButton_Click(object sender, EventArgs e)
         {
+
+            ConversionsTextbox.Text = "Loading conversion list..." + Environment.NewLine + "Please wait...";
+            ConversionsTextbox.Invalidate();
+            ConversionsTextbox.Update();
+            ConversionsTextbox.Refresh();
+            Application.DoEvents();
+
+
             switch (ConversionSelectionBox.SelectedItem.ToString())
             {
                 case "English":
                     ConversionsTextbox.Text = MEHv2.Properties.Resources.conversions.ToLower();
+                    Conversions_Use_Lookup_Checkbox.Checked = false;
                     break;
 
                 case "Türkçe (Turkish)":
                     ConversionsTextbox.Text = MEHv2.Properties.Resources.default_conversions_turkish.ToLower();
+                    Conversions_Use_Lookup_Checkbox.Checked = false;
                     break;
 
                 case "italiano (Italian)":
                     ConversionsTextbox.Text = MEHv2.Properties.Resources.default_conversions_italian.ToLower();
+                    Conversions_Use_Lookup_Checkbox.Checked = false;
                     break;
+
+                case "Lemma Lookup List: Asturian (ast)":
+                    ConversionsTextbox.Text = MEHv2.Properties.Resources.manual_lemmatization_ast;
+                    Conversions_Use_Lookup_Checkbox.Checked = true;
+                    UseLemmatizationCheckbox.Checked = false;
+                    break;
+
+                case "Lemma Lookup List: Bulgarian (bg)":
+                    ConversionsTextbox.Text = MEHv2.Properties.Resources.manual_lemmatization_bg;
+                    Conversions_Use_Lookup_Checkbox.Checked = true;
+                    UseLemmatizationCheckbox.Checked = false;
+                    break;
+
+                case "Lemma Lookup List: Catalan (ca)":
+                    ConversionsTextbox.Text = MEHv2.Properties.Resources.manual_lemmatization_ca;
+                    Conversions_Use_Lookup_Checkbox.Checked = true;
+                    UseLemmatizationCheckbox.Checked = false;
+                    break;
+
+                case "Lemma Lookup List: Czech (cs)":
+                    ConversionsTextbox.Text = MEHv2.Properties.Resources.manual_lemmatization_cs;
+                    Conversions_Use_Lookup_Checkbox.Checked = true;
+                    UseLemmatizationCheckbox.Checked = false;
+                    break;
+
+                case "Lemma Lookup List: English (en)":
+                    ConversionsTextbox.Text = MEHv2.Properties.Resources.manual_lemmatization_en;
+                    Conversions_Use_Lookup_Checkbox.Checked = true;
+                    UseLemmatizationCheckbox.Checked = false;
+                    break;
+
+                case "Lemma Lookup List: Estonian (et)":
+                    ConversionsTextbox.Text = MEHv2.Properties.Resources.manual_lemmatization_et;
+                    Conversions_Use_Lookup_Checkbox.Checked = true;
+                    UseLemmatizationCheckbox.Checked = false;
+                    break;
+
+                case "Lemma Lookup List: French (fr)":
+                    ConversionsTextbox.Text = MEHv2.Properties.Resources.manual_lemmatization_fr;
+                    Conversions_Use_Lookup_Checkbox.Checked = true;
+                    UseLemmatizationCheckbox.Checked = false;
+                    break;
+
+                case "Lemma Lookup List: Galician (gl)":
+                    ConversionsTextbox.Text = MEHv2.Properties.Resources.manual_lemmatization_gl;
+                    Conversions_Use_Lookup_Checkbox.Checked = true;
+                    UseLemmatizationCheckbox.Checked = false;
+                    break;
+
+                case "Lemma Lookup List: German (de)":
+                    ConversionsTextbox.Text = MEHv2.Properties.Resources.manual_lemmatization_de;
+                    Conversions_Use_Lookup_Checkbox.Checked = true;
+                    UseLemmatizationCheckbox.Checked = false;
+                    break;
+
+                case "Lemma Lookup List: Hungarian (hu)":
+                    ConversionsTextbox.Text = MEHv2.Properties.Resources.manual_lemmatization_hu;
+                    Conversions_Use_Lookup_Checkbox.Checked = true;
+                    UseLemmatizationCheckbox.Checked = false;
+                    break;
+
+                case "Lemma Lookup List: Irish (ga)":
+                    ConversionsTextbox.Text = MEHv2.Properties.Resources.manual_lemmatization_ga;
+                    Conversions_Use_Lookup_Checkbox.Checked = true;
+                    UseLemmatizationCheckbox.Checked = false;
+                    break;
+
+                case "Lemma Lookup List: Manx Gaelic (gv)":
+                    ConversionsTextbox.Text = MEHv2.Properties.Resources.manual_lemmatization_gv;
+                    Conversions_Use_Lookup_Checkbox.Checked = true;
+                    UseLemmatizationCheckbox.Checked = false;
+                    break;
+
+                case "Lemma Lookup List: Italian (it)":
+                    ConversionsTextbox.Text = MEHv2.Properties.Resources.manual_lemmatization_it;
+                    Conversions_Use_Lookup_Checkbox.Checked = true;
+                    UseLemmatizationCheckbox.Checked = false;
+                    break;
+
+                case "Lemma Lookup List: Persian/Farsi (fa)":
+                    ConversionsTextbox.Text = MEHv2.Properties.Resources.manual_lemmatization_fa;
+                    Conversions_Use_Lookup_Checkbox.Checked = true;
+                    UseLemmatizationCheckbox.Checked = false;
+                    break;
+
+                case "Lemma Lookup List: Portuguese (pt)":
+                    ConversionsTextbox.Text = MEHv2.Properties.Resources.manual_lemmatization_pt;
+                    Conversions_Use_Lookup_Checkbox.Checked = true;
+                    UseLemmatizationCheckbox.Checked = false;
+                    break;
+
+                case "Lemma Lookup List: Romanian (ro)":
+                    ConversionsTextbox.Text = MEHv2.Properties.Resources.manual_lemmatization_ro;
+                    Conversions_Use_Lookup_Checkbox.Checked = true;
+                    UseLemmatizationCheckbox.Checked = false;
+                    break;
+
+                case "Lemma Lookup List: Scottish Gaelic (gd)":
+                    ConversionsTextbox.Text = MEHv2.Properties.Resources.manual_lemmatization_gd;
+                    Conversions_Use_Lookup_Checkbox.Checked = true;
+                    UseLemmatizationCheckbox.Checked = false;
+                    break;
+
+                case "Lemma Lookup List: Slovak (sk)":
+                    ConversionsTextbox.Text = MEHv2.Properties.Resources.manual_lemmatization_sk;
+                    Conversions_Use_Lookup_Checkbox.Checked = true;
+                    UseLemmatizationCheckbox.Checked = false;
+                    break;
+
+                case "Lemma Lookup List: Slovene (sl)":
+                    ConversionsTextbox.Text = MEHv2.Properties.Resources.manual_lemmatization_sl;
+                    Conversions_Use_Lookup_Checkbox.Checked = true;
+                    UseLemmatizationCheckbox.Checked = false;
+                    break;
+
+                case "Lemma Lookup List: Spanish (es)":
+                    ConversionsTextbox.Text = MEHv2.Properties.Resources.manual_lemmatization_es;
+                    Conversions_Use_Lookup_Checkbox.Checked = true;
+                    UseLemmatizationCheckbox.Checked = false;
+                    break;
+
+                case "Lemma Lookup List: Swedish (sv)":
+                    ConversionsTextbox.Text = MEHv2.Properties.Resources.manual_lemmatization_sv;
+                    Conversions_Use_Lookup_Checkbox.Checked = true;
+                    UseLemmatizationCheckbox.Checked = false;
+                    break;
+
+                case "Lemma Lookup List: Ukrainian (uk)":
+                    ConversionsTextbox.Text = MEHv2.Properties.Resources.manual_lemmatization_uk;
+                    Conversions_Use_Lookup_Checkbox.Checked = true;
+                    UseLemmatizationCheckbox.Checked = false;
+                    break;
+
+                case "Lemma Lookup List: Welsh (cy)":
+                    ConversionsTextbox.Text = MEHv2.Properties.Resources.manual_lemmatization_cy;
+                    Conversions_Use_Lookup_Checkbox.Checked = true;
+                    UseLemmatizationCheckbox.Checked = false;
+                    break;
+
+                default:
+                    ConversionsTextbox.Text = "";
+                    break;
+
 
 
 
