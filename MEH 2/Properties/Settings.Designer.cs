@@ -12,7 +12,7 @@ namespace MEHv2.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.7.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.8.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -20,6 +20,306 @@ namespace MEHv2.Properties {
         public static Settings Default {
             get {
                 return defaultInstance;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SelectedEncoding {
+            get {
+                return ((string)(this["SelectedEncoding"]));
+            }
+            set {
+                this["SelectedEncoding"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SegmentationType {
+            get {
+                return ((string)(this["SegmentationType"]));
+            }
+            set {
+                this["SegmentationType"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SegmentationParameter {
+            get {
+                return ((string)(this["SegmentationParameter"]));
+            }
+            set {
+                this["SegmentationParameter"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ConversionListString {
+            get {
+                return ((string)(this["ConversionListString"]));
+            }
+            set {
+                this["ConversionListString"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ConversionList_LookupMethod {
+            get {
+                return ((bool)(this["ConversionList_LookupMethod"]));
+            }
+            set {
+                this["ConversionList_LookupMethod"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string StopListString {
+            get {
+                return ((string)(this["StopListString"]));
+            }
+            set {
+                this["StopListString"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string DictionaryListString {
+            get {
+                return ((string)(this["DictionaryListString"]));
+            }
+            set {
+                this["DictionaryListString"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool RetainOnlyDictionaryWords {
+            get {
+                return ((bool)(this["RetainOnlyDictionaryWords"]));
+            }
+            set {
+                this["RetainOnlyDictionaryWords"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Tokenizer {
+            get {
+                return ((string)(this["Tokenizer"]));
+            }
+            set {
+                this["Tokenizer"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ConvertToLowerCase {
+            get {
+                return ((bool)(this["ConvertToLowerCase"]));
+            }
+            set {
+                this["ConvertToLowerCase"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool UseLemmatization {
+            get {
+                return ((bool)(this["UseLemmatization"]));
+            }
+            set {
+                this["UseLemmatization"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string LemmatizationModel {
+            get {
+                return ((string)(this["LemmatizationModel"]));
+            }
+            set {
+                this["LemmatizationModel"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool GenerateDWL {
+            get {
+                return ((bool)(this["GenerateDWL"]));
+            }
+            set {
+                this["GenerateDWL"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool GenerateFreqList {
+            get {
+                return ((bool)(this["GenerateFreqList"]));
+            }
+            set {
+                this["GenerateFreqList"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool PruneFreqList {
+            get {
+                return ((bool)(this["PruneFreqList"]));
+            }
+            set {
+                this["PruneFreqList"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public string FreqListPruneCycle {
+            get {
+                return ((string)(this["FreqListPruneCycle"]));
+            }
+            set {
+                this["FreqListPruneCycle"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool GenerateBinary {
+            get {
+                return ((bool)(this["GenerateBinary"]));
+            }
+            set {
+                this["GenerateBinary"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool GenerateVerbose {
+            get {
+                return ((bool)(this["GenerateVerbose"]));
+            }
+            set {
+                this["GenerateVerbose"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool GenerateRawDTM {
+            get {
+                return ((bool)(this["GenerateRawDTM"]));
+            }
+            set {
+                this["GenerateRawDTM"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool GenerateTFIDF {
+            get {
+                return ((bool)(this["GenerateTFIDF"]));
+            }
+            set {
+                this["GenerateTFIDF"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string MinWC {
+            get {
+                return ((string)(this["MinWC"]));
+            }
+            set {
+                this["MinWC"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Ngram_N_Min {
+            get {
+                return ((string)(this["Ngram_N_Min"]));
+            }
+            set {
+                this["Ngram_N_Min"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Ngram_N_Max {
+            get {
+                return ((string)(this["Ngram_N_Max"]));
+            }
+            set {
+                this["Ngram_N_Max"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ThresholdType {
+            get {
+                return ((string)(this["ThresholdType"]));
+            }
+            set {
+                this["ThresholdType"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string NgramThresholdParameter {
+            get {
+                return ((string)(this["NgramThresholdParameter"]));
+            }
+            set {
+                this["NgramThresholdParameter"] = value;
             }
         }
     }

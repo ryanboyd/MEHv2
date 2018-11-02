@@ -19,6 +19,7 @@ namespace MEH2
         public MainForm()
         {
 
+            
 
             Version version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
             string VersionText = version.Major.ToString() + "." + version.Minor.ToString() + "." + version.Build.ToString();
@@ -30,7 +31,7 @@ namespace MEH2
             DoubleBuffered = true;
 
             AboutLabel.Text = "Boyd, R. L. (2018). MEH: Meaning Extraction" + Environment.NewLine + 
-                              "      Helper(version " + VersionText + "b)[Software]." + Environment.NewLine +
+                              "      Helper(version " + VersionText + ") [Software]." + Environment.NewLine +
                               "      Available from https://meh.ryanb.cc";
 
 
@@ -1637,6 +1638,77 @@ namespace MEH2
         }
 
 
+
+
+
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+
+            //this can be used to store what the last state was -- all of the user changes to the forms, etc.
+            //currently not going to implement, but maybe at a later date
+
+            //MEHv2.Properties.Settings.Default["SelectedEncoding"] = EncodingDropdown.SelectedItem.ToString();
+
+            ////segmentation tab
+            //if (SegmentationOptionNone.Checked) MEHv2.Properties.Settings.Default["SegmentationType"] = "NoSegmentation";
+            //if (SegmentationOptionEqualSegments.Checked) MEHv2.Properties.Settings.Default["SegmentationType"] = "N_Equal_Segments";
+            //if (SegmentationOptionWordsPerSegment.Checked) MEHv2.Properties.Settings.Default["SegmentationType"] = "Words_Per_Segment";
+            //if (SegmentationOptionRegex.Checked) MEHv2.Properties.Settings.Default["SegmentationType"] = "Regex";
+            
+            //MEHv2.Properties.Settings.Default["SegmentationParameter"] = SegmentationParameterTextbox.Text;
+
+            ////conversions tab
+            //MEHv2.Properties.Settings.Default["ConversionListString"] = ConversionsTextbox.Text;
+            //MEHv2.Properties.Settings.Default["ConversionList_LookupMethod"] = Conversions_Use_Lookup_Checkbox.Checked;
+
+            ////stop list tab
+            //MEHv2.Properties.Settings.Default["StopListString"] = StopListTextbox.Text;
+
+            ////dictionary list tab
+            //MEHv2.Properties.Settings.Default["DictionaryListString"] = DictionaryListTextbox.Text;
+            //MEHv2.Properties.Settings.Default["RetainOnlyDictionaryWords"] = KeepOnlyDictionaryWordsCheckbox.Checked;
+
+            ////lemmatization tab
+            //MEHv2.Properties.Settings.Default["Tokenizer"] = TokenizerSelectionDropdown.SelectedItem.ToString();
+            //MEHv2.Properties.Settings.Default["ConvertToLowerCase"] = ConvertToLowercaseCheckbox.Checked;
+            //MEHv2.Properties.Settings.Default["UseLemmatization"] = UseLemmatizationCheckbox.Checked;
+            //MEHv2.Properties.Settings.Default["LemmatizationModel"] = LemmatizerLanguageSelector.SelectedItem.ToString();
+
+            ////output file types tab
+            //MEHv2.Properties.Settings.Default["GenerateDWL"] = DocumentWordListsOutputCheckbox.Checked;
+            //MEHv2.Properties.Settings.Default["GenerateFreqList"] = FrequencyListCheckbox.Checked;
+            //MEHv2.Properties.Settings.Default["PruneFreqList"] = PruneFreqListCheckbox.Checked;
+            //MEHv2.Properties.Settings.Default["FreqListPruneCycle"] = PruneFreqListParameterTextbox.Text;
+            //MEHv2.Properties.Settings.Default["GenerateBinary"] = BinaryOutputCheckbox.Checked;
+            //MEHv2.Properties.Settings.Default["GenerateVerbose"] = VerboseOutputCheckbox.Checked;
+            //MEHv2.Properties.Settings.Default["GenerateRawDTM"] = RawOutputCheckbox.Checked;
+            //MEHv2.Properties.Settings.Default["GenerateTFIDF"] = TFIDFOutputCheckbox.Checked;
+
+            ////n-gram / output thresholds tab
+            //MEHv2.Properties.Settings.Default["MinWC"] = MinimumWCTextbox.Text;
+            //MEHv2.Properties.Settings.Default["Ngram_N_Min"] = NgramTextboxMinimum.Text;
+            //MEHv2.Properties.Settings.Default["Ngram_N_Max"] = NgramTextboxMaximum.Text;
+
+            //if (ThresholdOptionMostFrequentByPercentOfDocuments.Checked) MEHv2.Properties.Settings.Default["ThresholdType"] = "TopNDocumentFrequency";
+            //if (ThresholdOptionMostFrequentByRawFrequency.Checked) MEHv2.Properties.Settings.Default["ThresholdType"] = "TopNRawFrequency";
+            //if (ThresholdOptionPercentOfDocuments.Checked) MEHv2.Properties.Settings.Default["ThresholdType"] = "PercentOfDocs";
+            //if (ThresholdOptionRawFreq.Checked) MEHv2.Properties.Settings.Default["ThresholdType"] = "GreaterThanRawFrequencyX";
+
+            
+            //MEHv2.Properties.Settings.Default["NgramThresholdParameter"] = ThresholdParameterTextbox.Text;
+
+            //MEHv2.Properties.Settings.Default.Save();
+
+        }
+
+
+
+
     }
+
+
+
 }
 

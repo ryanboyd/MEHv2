@@ -84,6 +84,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Settings.cs" />
     <Compile Include="SplashForm.cs">
       <SubType>Form</SubType>
     </Compile>

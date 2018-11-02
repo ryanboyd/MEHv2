@@ -34,7 +34,6 @@
             this.TitleLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.SplashTimer = new System.Windows.Forms.Timer(this.components);
-            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.SplashPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,27 +82,12 @@
             this.SplashTimer.Interval = 3000;
             this.SplashTimer.Tick += new System.EventHandler(this.SplashTimer_Tick);
             // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label3.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(446, 576);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(42, 15);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "BETA";
-            // 
             // SplashForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(494, 598);
             this.ControlBox = false;
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.TitleLabel);
             this.Controls.Add(this.SplashPictureBox);
@@ -132,6 +116,5 @@
         private System.Windows.Forms.Label TitleLabel;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Timer SplashTimer;
-        private System.Windows.Forms.Label label3;
     }
 }

@@ -457,10 +457,10 @@
             // 
             // ClearConversionsButton
             // 
-            this.ClearConversionsButton.Location = new System.Drawing.Point(417, 167);
+            this.ClearConversionsButton.Location = new System.Drawing.Point(417, 173);
             this.ClearConversionsButton.Margin = new System.Windows.Forms.Padding(2);
             this.ClearConversionsButton.Name = "ClearConversionsButton";
-            this.ClearConversionsButton.Size = new System.Drawing.Size(165, 23);
+            this.ClearConversionsButton.Size = new System.Drawing.Size(165, 34);
             this.ClearConversionsButton.TabIndex = 6;
             this.ClearConversionsButton.Text = "Clear Conversions List";
             this.ClearConversionsButton.UseVisualStyleBackColor = true;
@@ -468,10 +468,10 @@
             // 
             // LoadConversionsButton
             // 
-            this.LoadConversionsButton.Location = new System.Drawing.Point(417, 122);
+            this.LoadConversionsButton.Location = new System.Drawing.Point(417, 126);
             this.LoadConversionsButton.Margin = new System.Windows.Forms.Padding(2);
             this.LoadConversionsButton.Name = "LoadConversionsButton";
-            this.LoadConversionsButton.Size = new System.Drawing.Size(165, 23);
+            this.LoadConversionsButton.Size = new System.Drawing.Size(165, 34);
             this.LoadConversionsButton.TabIndex = 5;
             this.LoadConversionsButton.Text = "Load Selected Conversions";
             this.LoadConversionsButton.UseVisualStyleBackColor = true;
@@ -507,9 +507,9 @@
             this.label13.Location = new System.Drawing.Point(364, 28);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(223, 17);
+            this.label13.Size = new System.Drawing.Size(166, 17);
             this.label13.TabIndex = 2;
-            this.label13.Text = "Load Default Conversion List:";
+            this.label13.Text = "Load Conversion List:";
             // 
             // ConversionsTextbox
             // 
@@ -1412,6 +1412,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Meaning Extraction Helper";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.TabControlObject.ResumeLayout(false);
             this.InputOutputTab.ResumeLayout(false);
             this.InputOutputTab.PerformLayout();
