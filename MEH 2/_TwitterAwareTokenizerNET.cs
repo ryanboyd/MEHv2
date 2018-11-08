@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Net;
 using System.Text.RegularExpressions;
 
 namespace nltk.tokenize.casual.NET
@@ -92,7 +91,7 @@ namespace nltk.tokenize.casual.NET
         }
 
 
-        public string[] TokenizeWhitespace (string text)
+        public string[] TokenizeWhitespace(string text)
         {
 
             return text.Trim().Split(new char[0], options: StringSplitOptions.RemoveEmptyEntries);
@@ -106,3 +105,4 @@ namespace nltk.tokenize.casual.NET
 
 
 }
+

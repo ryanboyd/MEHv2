@@ -26,33 +26,18 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
+    <DebugType>none</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>Resources\mehv2.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="LemmaSharp, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\LemmaGen_v3.0_PrebuiltCompact\LemmaSharpPrebuilt\bin\Release\LemmaSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="LemmaSharpPrebuilt, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\LemmaGen_v3.0_PrebuiltCompact\LemmaSharpPrebuilt\bin\Release\LemmaSharpPrebuilt.dll</HintPath>
-    </Reference>
-    <Reference Include="LemmaSharpPrebuiltCompact, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\LemmaGen_v3.0_PrebuiltCompact\LemmaSharpPrebuilt\bin\Release\LemmaSharpPrebuiltCompact.dll</HintPath>
-    </Reference>
-    <Reference Include="Lzma#, Version=4.12.3884.11200, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\LemmaGen_v3.0_PrebuiltCompact\LemmaSharpPrebuilt\bin\Release\Lzma#.dll</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -94,7 +79,6 @@
     <Compile Include="TextConversionClass.cs" />
     <Compile Include="TextSegmentor.cs" />
     <Compile Include="ThreadsafeOutputWriter.cs" />
-    <Compile Include="TwitterAwareTokenizer.cs" />
     <Compile Include="WordCountCalculator.cs" />
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -195,6 +179,28 @@
     <None Include="Resources\lemmatization-lists-master\fixed\manual-lemmatization-uk.txt" />
     <Content Include="Resources\StopListCharacters.txt" />
     <Content Include="Resources\stoplist_mallet_en.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LemmaGen_v3.0_PrebuiltCompact\LemmaSharpPrebuilt\LemmaSharpPrebuilt.csproj">
+      <Project>{1e700d21-62d3-4525-93fe-c1fb0a1b0564}</Project>
+      <Name>LemmaSharpPrebuilt</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LemmaGen_v3.0_PrebuiltCompact\LemmaSharpPrebuilt\LemmaSharpPrebuiltCompact.csproj">
+      <Project>{9ba3f2c4-5dab-4d7b-b431-b072a0d8fc6a}</Project>
+      <Name>LemmaSharpPrebuiltCompact</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LemmaGen_v3.0_PrebuiltCompact\LemmaSharp\ExternalLibs\7zip\Compress\LzmaAlone\LzmaAlone.csproj">
+      <Project>{ce33df18-f9c8-4d6f-9057-dbb4db96e973}</Project>
+      <Name>LzmaAlone</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LemmaGen_v3.0_PrebuiltCompact\LemmaSharp\LemmaSharp.csproj">
+      <Project>{a39293c1-92d8-47b9-93a4-41f443b4f9e4}</Project>
+      <Name>LemmaSharp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TwitterAwareTokenizerNET\TwitterAwareTokenizerNET.csproj">
+      <Project>{8456e7c9-b73f-448d-9b28-edf06ab6730b}</Project>
+      <Name>TwitterAwareTokenizerNET</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

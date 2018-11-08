@@ -139,7 +139,7 @@ namespace MEH2
 
 
 
-
+        //this gets us our vertical tabs
         //https://stackoverflow.com/a/33100272
         private void tabControl_DrawItem(object sender, DrawItemEventArgs e)
         {
