@@ -35,7 +35,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Resources\mehv2.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\media\mehv2.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -106,54 +106,54 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bulgarianST.txt" />
+    <None Include="Resources\stoplists\bulgarianST.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\czechstoplist.txt" />
+    <None Include="Resources\stoplists\czechstoplist.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\frenchstoplist.txt" />
+    <None Include="Resources\stoplists\frenchstoplist.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\germanstoplist.txt" />
+    <None Include="Resources\stoplists\germanstoplist.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\hungarianST.txt" />
+    <None Include="Resources\stoplists\hungarianST.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\italianstoplist.txt" />
+    <None Include="Resources\stoplists\italianstoplist.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\persianST.txt" />
+    <None Include="Resources\stoplists\persianST.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\polishST.txt" />
+    <None Include="Resources\stoplists\polishST.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\russianstoplist.txt" />
+    <None Include="Resources\stoplists\russianstoplist.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\spanishstoplist.txt" />
+    <None Include="Resources\stoplists\spanishstoplist.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\stoplist_english.txt" />
+    <None Include="Resources\stoplists\stoplist_english.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\turkishstoplist.txt" />
+    <None Include="Resources\stoplists\turkishstoplist.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\conversions.txt" />
+    <None Include="Resources\default_conversion_lists\conversions.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\default_conversions-italian.txt" />
+    <None Include="Resources\default_conversion_lists\default_conversions-italian.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\default_conversions-turkish.txt" />
+    <None Include="Resources\default_conversion_lists\default_conversions-turkish.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\switch.wav" />
-    <None Include="Resources\mehv2.ico" />
-    <None Include="Resources\MEHSplash.png" />
+    <None Include="Resources\media\switch.wav" />
+    <None Include="Resources\media\mehv2.ico" />
+    <None Include="Resources\media\MEHSplash.png" />
     <None Include="Resources\lemmatization-lists-master\fixed\manual-lemmatization-ast.txt" />
     <None Include="Resources\lemmatization-lists-master\fixed\manual-lemmatization-bg.txt" />
     <None Include="Resources\lemmatization-lists-master\fixed\manual-lemmatization-ca.txt" />
@@ -177,8 +177,8 @@
     <None Include="Resources\lemmatization-lists-master\fixed\manual-lemmatization-sl.txt" />
     <None Include="Resources\lemmatization-lists-master\fixed\manual-lemmatization-sv.txt" />
     <None Include="Resources\lemmatization-lists-master\fixed\manual-lemmatization-uk.txt" />
-    <Content Include="Resources\StopListCharacters.txt" />
-    <Content Include="Resources\stoplist_mallet_en.txt" />
+    <Content Include="Resources\stoplists\StopListCharacters.txt" />
+    <Content Include="Resources\stoplists\stoplist_mallet_en.txt" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LemmaGen_v3.0_PrebuiltCompact\LemmaSharpPrebuilt\LemmaSharpPrebuilt.csproj">

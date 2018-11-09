@@ -23,7 +23,6 @@ namespace MEHv2
 
         private void SplashTimer_Tick(object sender, EventArgs e)
         {
-            
             this.Close();
         }
     }
