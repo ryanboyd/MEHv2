@@ -19,7 +19,7 @@ namespace MEH2
             Application.SetCompatibleTextRenderingDefault(false);
 
             Version version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
-            string VersionText = version.Major.ToString() + "." + version.Minor.ToString() + "." + version.Build.ToString();
+            string VersionText = version.Major.ToString() + "." + version.Minor.ToString() + "." + version.Build.ToString("D2");
 
 
             //check for updates

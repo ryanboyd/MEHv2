@@ -1039,7 +1039,7 @@ namespace MEH2
                                 StringBuilder readTextBuilder = new StringBuilder();
                                 string readText = "";
                                 foreach (int TextIndex in BGData.CSV_Text_Indices) readTextBuilder.Append(line[TextIndex] + Environment.NewLine);
-                                readText = readTextBuilder.ToString();
+                                readText = readTextBuilder.ToString().Replace("\r\n", " ").Replace("\r", " ").Replace("\n", " ");
                                 readTextBuilder.Clear();
 
                                 if (BGData.ConvertToLowerCase) readText = readText.ToLower();
