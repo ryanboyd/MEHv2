@@ -11,9 +11,16 @@ namespace MEH2
 
         //from the input file tab
         public string TextFileFolder { get; set; }
+        public bool AnalyzingSpreadsheet { get; set; }
+        public string CSVFilePath { get; set; }
+        public char CSVDelimiter { get; set; }
+        public char CSVQuote { get; set; }
+        public int[] CSV_Text_Indices { get; set; }
+        public int[] CSV_ID_Indices { get; set; }
         public string OutputFileLocation { get; set; }
         public Encoding SelectedEncoding { get; set; }
         public System.IO.SearchOption FolderSearchDepth { get; set; }
+
 
         //segmentation tab
         public string SegmentationType { get; set; }
@@ -80,9 +87,14 @@ namespace MEH2
 
         public Tuple<string, bool, Color> ValidateInputFolder(string inputfolder)
         {
-            if (inputfolder != "")
+
+            if (AnalyzingSpreadsheet)
             {
-                return new Tuple<string, bool, Color>("Checking input folder: OK", true, Color.Green);
+                return new Tuple<string, bool, Color>("Input data selection: Spreadsheet: OK", true, Color.Green);
+            }
+            else if (inputfolder != "")
+            {
+                return new Tuple<string, bool, Color>("Input data selection: Folder/.txt: OK", true, Color.Green);
             }
             else if (PreExistingDWL_Location != "")
             {
@@ -90,7 +102,7 @@ namespace MEH2
             }
             else
             {
-                return new Tuple<string, bool, Color>("Checking input folder: Error." + Environment.NewLine + "Please choose an input folder from the \"Input/Output File Settings\" tab.", false, Color.Red);
+                return new Tuple<string, bool, Color>("Checking input folder: Error." + Environment.NewLine + "Please choose an input folder or spreadsheet file from the \"Input File Settings\" tab.", false, Color.Red);
             }
         }
 
@@ -107,7 +119,7 @@ namespace MEH2
             }
             else
             {
-                return new Tuple<string, bool, Color>("Checking output folder: Error." + System.Environment.NewLine + "Please choose an output folder from the \"Input/Output File Settings\" tab.", false, Color.Red);
+                return new Tuple<string, bool, Color>("Checking output folder: Error." + System.Environment.NewLine + "Please choose an output folder from the \"Output File Settings\" tab.", false, Color.Red);
 
             }
         }

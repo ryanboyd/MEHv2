@@ -10,6 +10,7 @@ namespace MEH2
 
         private List<Tuple<Regex, string>> ConversionList_Regex { get; set; }
         public Dictionary<string, string> ConversionList_NoRegex { get; set; }
+        public bool LookupMethod { get; set; }
 
 
 
@@ -67,10 +68,12 @@ namespace MEH2
 
 
 
-        public void InitializeConversionList_Lookup(string RawConversionText)
+        public void InitializeConversionList_Lookup(string RawConversionText, bool LowerCaseMode)
         {
 
             Dictionary<string, string> ConversionList_Dictionary = new Dictionary<string, string>();
+
+            if (LowerCaseMode) RawConversionText = RawConversionText.ToLower();
 
             string[] ConversionListArray = RawConversionText.Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
 

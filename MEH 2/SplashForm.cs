@@ -14,7 +14,7 @@ namespace MEHv2
 
 
             Version version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
-            string VersionText = version.Major.ToString() + "." + version.Minor.ToString() + "." + version.Build.ToString();
+            string VersionText = version.Major.ToString() + "." + version.Minor.ToString() + "." + version.Build.ToString("D2");
 
             TitleLabel.Text = "Meaning Extraction Helper (v" + VersionText + ")";
 

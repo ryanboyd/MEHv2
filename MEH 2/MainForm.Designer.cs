@@ -30,19 +30,24 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.TabControlObject = new System.Windows.Forms.TabControl();
-            this.InputOutputTab = new System.Windows.Forms.TabPage();
+            this.InputFileTab = new System.Windows.Forms.TabPage();
+            this.InputSpreadsheetTextbox = new System.Windows.Forms.TextBox();
+            this.label40 = new System.Windows.Forms.Label();
+            this.ChooseSpreadsheetButton = new System.Windows.Forms.Button();
             this.label30 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.OutputFileTextbox = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.ChooseOutputFolderButton = new System.Windows.Forms.Button();
             this.SubfolderCheckbox = new System.Windows.Forms.CheckBox();
             this.InputFolderTextbox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.ChooseInputFolderButton = new System.Windows.Forms.Button();
             this.EncodingDropdown = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.OutputFileTab = new System.Windows.Forms.TabPage();
+            this.label39 = new System.Windows.Forms.Label();
+            this.OutputFileTextbox = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.ChooseOutputFolderButton = new System.Windows.Forms.Button();
             this.TextSegmentationTab = new System.Windows.Forms.TabPage();
             this.label17 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -130,8 +135,13 @@
             this.AboutMEHPictureBox = new System.Windows.Forms.PictureBox();
             this.label24 = new System.Windows.Forms.Label();
             this.BGWorker = new System.ComponentModel.BackgroundWorker();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.CSVDelimiterTextbox = new System.Windows.Forms.TextBox();
+            this.CSVQuoteTextbox = new System.Windows.Forms.TextBox();
             this.TabControlObject.SuspendLayout();
-            this.InputOutputTab.SuspendLayout();
+            this.InputFileTab.SuspendLayout();
+            this.OutputFileTab.SuspendLayout();
             this.TextSegmentationTab.SuspendLayout();
             this.ConversionListTab.SuspendLayout();
             this.StopListTab.SuspendLayout();
@@ -147,7 +157,8 @@
             // TabControlObject
             // 
             this.TabControlObject.Alignment = System.Windows.Forms.TabAlignment.Left;
-            this.TabControlObject.Controls.Add(this.InputOutputTab);
+            this.TabControlObject.Controls.Add(this.InputFileTab);
+            this.TabControlObject.Controls.Add(this.OutputFileTab);
             this.TabControlObject.Controls.Add(this.TextSegmentationTab);
             this.TabControlObject.Controls.Add(this.ConversionListTab);
             this.TabControlObject.Controls.Add(this.StopListTab);
@@ -169,33 +180,67 @@
             this.TabControlObject.TabIndex = 0;
             this.TabControlObject.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.tabControl_DrawItem);
             // 
-            // InputOutputTab
+            // InputFileTab
             // 
-            this.InputOutputTab.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.InputOutputTab.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.InputOutputTab.Controls.Add(this.label30);
-            this.InputOutputTab.Controls.Add(this.label29);
-            this.InputOutputTab.Controls.Add(this.label9);
-            this.InputOutputTab.Controls.Add(this.OutputFileTextbox);
-            this.InputOutputTab.Controls.Add(this.label3);
-            this.InputOutputTab.Controls.Add(this.ChooseOutputFolderButton);
-            this.InputOutputTab.Controls.Add(this.SubfolderCheckbox);
-            this.InputOutputTab.Controls.Add(this.InputFolderTextbox);
-            this.InputOutputTab.Controls.Add(this.label2);
-            this.InputOutputTab.Controls.Add(this.ChooseInputFolderButton);
-            this.InputOutputTab.Controls.Add(this.EncodingDropdown);
-            this.InputOutputTab.Controls.Add(this.label1);
-            this.InputOutputTab.Location = new System.Drawing.Point(229, 4);
-            this.InputOutputTab.Name = "InputOutputTab";
-            this.InputOutputTab.Padding = new System.Windows.Forms.Padding(3);
-            this.InputOutputTab.Size = new System.Drawing.Size(662, 454);
-            this.InputOutputTab.TabIndex = 0;
-            this.InputOutputTab.Text = "Input/Output File Settings";
+            this.InputFileTab.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.InputFileTab.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.InputFileTab.Controls.Add(this.CSVQuoteTextbox);
+            this.InputFileTab.Controls.Add(this.CSVDelimiterTextbox);
+            this.InputFileTab.Controls.Add(this.label42);
+            this.InputFileTab.Controls.Add(this.label41);
+            this.InputFileTab.Controls.Add(this.InputSpreadsheetTextbox);
+            this.InputFileTab.Controls.Add(this.label40);
+            this.InputFileTab.Controls.Add(this.ChooseSpreadsheetButton);
+            this.InputFileTab.Controls.Add(this.label30);
+            this.InputFileTab.Controls.Add(this.label29);
+            this.InputFileTab.Controls.Add(this.label9);
+            this.InputFileTab.Controls.Add(this.SubfolderCheckbox);
+            this.InputFileTab.Controls.Add(this.InputFolderTextbox);
+            this.InputFileTab.Controls.Add(this.label2);
+            this.InputFileTab.Controls.Add(this.ChooseInputFolderButton);
+            this.InputFileTab.Controls.Add(this.EncodingDropdown);
+            this.InputFileTab.Controls.Add(this.label1);
+            this.InputFileTab.Location = new System.Drawing.Point(229, 4);
+            this.InputFileTab.Name = "InputFileTab";
+            this.InputFileTab.Padding = new System.Windows.Forms.Padding(3);
+            this.InputFileTab.Size = new System.Drawing.Size(662, 454);
+            this.InputFileTab.TabIndex = 0;
+            this.InputFileTab.Text = "Input File Settings";
+            // 
+            // InputSpreadsheetTextbox
+            // 
+            this.InputSpreadsheetTextbox.Enabled = false;
+            this.InputSpreadsheetTextbox.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InputSpreadsheetTextbox.Location = new System.Drawing.Point(10, 339);
+            this.InputSpreadsheetTextbox.MaxLength = 2147483647;
+            this.InputSpreadsheetTextbox.Name = "InputSpreadsheetTextbox";
+            this.InputSpreadsheetTextbox.Size = new System.Drawing.Size(465, 20);
+            this.InputSpreadsheetTextbox.TabIndex = 14;
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label40.Location = new System.Drawing.Point(8, 287);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(321, 17);
+            this.label40.TabIndex = 13;
+            this.label40.Text = "Select Delimited Spreadsheet (e.g., .txt, .csv, .tsv)";
+            // 
+            // ChooseSpreadsheetButton
+            // 
+            this.ChooseSpreadsheetButton.Location = new System.Drawing.Point(10, 309);
+            this.ChooseSpreadsheetButton.Name = "ChooseSpreadsheetButton";
+            this.ChooseSpreadsheetButton.Size = new System.Drawing.Size(135, 23);
+            this.ChooseSpreadsheetButton.TabIndex = 12;
+            this.ChooseSpreadsheetButton.Text = "Choose Input File";
+            this.ChooseSpreadsheetButton.UseVisualStyleBackColor = true;
+            this.ChooseSpreadsheetButton.Click += new System.EventHandler(this.ChooseSpreadsheetButton_Click);
             // 
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(12, 243);
+            this.label30.Location = new System.Drawing.Point(12, 246);
             this.label30.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(777, 15);
@@ -220,45 +265,15 @@
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(6, 3);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(217, 20);
+            this.label9.Size = new System.Drawing.Size(157, 20);
             this.label9.TabIndex = 9;
-            this.label9.Text = "Input/Output File Settings";
-            // 
-            // OutputFileTextbox
-            // 
-            this.OutputFileTextbox.Enabled = false;
-            this.OutputFileTextbox.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OutputFileTextbox.Location = new System.Drawing.Point(10, 323);
-            this.OutputFileTextbox.MaxLength = 2147483647;
-            this.OutputFileTextbox.Name = "OutputFileTextbox";
-            this.OutputFileTextbox.Size = new System.Drawing.Size(465, 20);
-            this.OutputFileTextbox.TabIndex = 8;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(11, 275);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(152, 17);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Select Output Location";
-            // 
-            // ChooseOutputFolderButton
-            // 
-            this.ChooseOutputFolderButton.Location = new System.Drawing.Point(10, 294);
-            this.ChooseOutputFolderButton.Name = "ChooseOutputFolderButton";
-            this.ChooseOutputFolderButton.Size = new System.Drawing.Size(135, 23);
-            this.ChooseOutputFolderButton.TabIndex = 6;
-            this.ChooseOutputFolderButton.Text = "Choose Folder";
-            this.ChooseOutputFolderButton.UseVisualStyleBackColor = true;
-            this.ChooseOutputFolderButton.Click += new System.EventHandler(this.ChooseOutputFolderButton_Click);
+            this.label9.Text = "Input File Settings";
             // 
             // SubfolderCheckbox
             // 
             this.SubfolderCheckbox.AutoSize = true;
             this.SubfolderCheckbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SubfolderCheckbox.Location = new System.Drawing.Point(10, 210);
+            this.SubfolderCheckbox.Location = new System.Drawing.Point(10, 213);
             this.SubfolderCheckbox.Name = "SubfolderCheckbox";
             this.SubfolderCheckbox.Size = new System.Drawing.Size(144, 21);
             this.SubfolderCheckbox.TabIndex = 5;
@@ -269,7 +284,7 @@
             // 
             this.InputFolderTextbox.Enabled = false;
             this.InputFolderTextbox.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InputFolderTextbox.Location = new System.Drawing.Point(10, 184);
+            this.InputFolderTextbox.Location = new System.Drawing.Point(10, 187);
             this.InputFolderTextbox.MaxLength = 2147483647;
             this.InputFolderTextbox.Name = "InputFolderTextbox";
             this.InputFolderTextbox.Size = new System.Drawing.Size(465, 20);
@@ -287,7 +302,7 @@
             // 
             // ChooseInputFolderButton
             // 
-            this.ChooseInputFolderButton.Location = new System.Drawing.Point(10, 154);
+            this.ChooseInputFolderButton.Location = new System.Drawing.Point(10, 157);
             this.ChooseInputFolderButton.Name = "ChooseInputFolderButton";
             this.ChooseInputFolderButton.Size = new System.Drawing.Size(135, 23);
             this.ChooseInputFolderButton.TabIndex = 2;
@@ -316,6 +331,59 @@
             this.label1.Size = new System.Drawing.Size(196, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Text Encoding of Input File(s):";
+            // 
+            // OutputFileTab
+            // 
+            this.OutputFileTab.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.OutputFileTab.Controls.Add(this.label39);
+            this.OutputFileTab.Controls.Add(this.OutputFileTextbox);
+            this.OutputFileTab.Controls.Add(this.label3);
+            this.OutputFileTab.Controls.Add(this.ChooseOutputFolderButton);
+            this.OutputFileTab.Location = new System.Drawing.Point(229, 4);
+            this.OutputFileTab.Name = "OutputFileTab";
+            this.OutputFileTab.Size = new System.Drawing.Size(662, 454);
+            this.OutputFileTab.TabIndex = 10;
+            this.OutputFileTab.Text = "Output Location";
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label39.Location = new System.Drawing.Point(6, 3);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(170, 20);
+            this.label39.TabIndex = 12;
+            this.label39.Text = "Output File Settings";
+            // 
+            // OutputFileTextbox
+            // 
+            this.OutputFileTextbox.Enabled = false;
+            this.OutputFileTextbox.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OutputFileTextbox.Location = new System.Drawing.Point(13, 93);
+            this.OutputFileTextbox.MaxLength = 2147483647;
+            this.OutputFileTextbox.Name = "OutputFileTextbox";
+            this.OutputFileTextbox.Size = new System.Drawing.Size(465, 20);
+            this.OutputFileTextbox.TabIndex = 11;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(10, 41);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(152, 17);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Select Output Location";
+            // 
+            // ChooseOutputFolderButton
+            // 
+            this.ChooseOutputFolderButton.Location = new System.Drawing.Point(13, 64);
+            this.ChooseOutputFolderButton.Name = "ChooseOutputFolderButton";
+            this.ChooseOutputFolderButton.Size = new System.Drawing.Size(135, 23);
+            this.ChooseOutputFolderButton.TabIndex = 9;
+            this.ChooseOutputFolderButton.Text = "Choose Folder";
+            this.ChooseOutputFolderButton.UseVisualStyleBackColor = true;
+            this.ChooseOutputFolderButton.Click += new System.EventHandler(this.ChooseOutputFolderButton_Click);
             // 
             // TextSegmentationTab
             // 
@@ -1345,7 +1413,7 @@
             this.AboutLabel.Name = "AboutLabel";
             this.AboutLabel.Size = new System.Drawing.Size(325, 51);
             this.AboutLabel.TabIndex = 3;
-            this.AboutLabel.Text = "Boyd, R. L. (2018). MEH: Meaning Extraction\r\n      Helper (version 2.0.6b) [Softw" +
+            this.AboutLabel.Text = "Boyd, R. L. (2018). MEH: Meaning Extraction\r\n      Helper (version x.x.xx) [Softw" +
     "are].\r\n      Available from https://meh.ryanb.cc";
             // 
             // label31
@@ -1396,6 +1464,46 @@
             this.BGWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.BGWorker_ProgressChanged);
             this.BGWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BGWorker_RunWorkerCompleted);
             // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(10, 379);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(60, 15);
+            this.label41.TabIndex = 15;
+            this.label41.Text = "Delimiter:";
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(95, 379);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(43, 15);
+            this.label42.TabIndex = 16;
+            this.label42.Text = "Quote:";
+            // 
+            // CSVDelimiterTextbox
+            // 
+            this.CSVDelimiterTextbox.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CSVDelimiterTextbox.Location = new System.Drawing.Point(11, 397);
+            this.CSVDelimiterTextbox.MaxLength = 1;
+            this.CSVDelimiterTextbox.Name = "CSVDelimiterTextbox";
+            this.CSVDelimiterTextbox.Size = new System.Drawing.Size(65, 20);
+            this.CSVDelimiterTextbox.TabIndex = 17;
+            this.CSVDelimiterTextbox.Text = ",";
+            this.CSVDelimiterTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // CSVQuoteTextbox
+            // 
+            this.CSVQuoteTextbox.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CSVQuoteTextbox.Location = new System.Drawing.Point(98, 397);
+            this.CSVQuoteTextbox.MaxLength = 1;
+            this.CSVQuoteTextbox.Name = "CSVQuoteTextbox";
+            this.CSVQuoteTextbox.Size = new System.Drawing.Size(65, 20);
+            this.CSVQuoteTextbox.TabIndex = 18;
+            this.CSVQuoteTextbox.Text = "\"";
+            this.CSVQuoteTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1414,8 +1522,10 @@
             this.Text = "Meaning Extraction Helper";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.TabControlObject.ResumeLayout(false);
-            this.InputOutputTab.ResumeLayout(false);
-            this.InputOutputTab.PerformLayout();
+            this.InputFileTab.ResumeLayout(false);
+            this.InputFileTab.PerformLayout();
+            this.OutputFileTab.ResumeLayout(false);
+            this.OutputFileTab.PerformLayout();
             this.TextSegmentationTab.ResumeLayout(false);
             this.TextSegmentationTab.PerformLayout();
             this.ConversionListTab.ResumeLayout(false);
@@ -1442,7 +1552,7 @@
         #endregion
 
         private System.Windows.Forms.TabControl TabControlObject;
-        private System.Windows.Forms.TabPage InputOutputTab;
+        private System.Windows.Forms.TabPage InputFileTab;
         private System.Windows.Forms.TabPage TextSegmentationTab;
         private System.Windows.Forms.ComboBox EncodingDropdown;
         private System.Windows.Forms.Label label1;
@@ -1455,9 +1565,6 @@
         private System.Windows.Forms.RadioButton SegmentationOptionEqualSegments;
         private System.Windows.Forms.RadioButton SegmentationOptionWordsPerSegment;
         private System.Windows.Forms.RadioButton SegmentationOptionNone;
-        private System.Windows.Forms.TextBox OutputFileTextbox;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button ChooseOutputFolderButton;
         private System.Windows.Forms.TabPage ConversionListTab;
         private System.Windows.Forms.TabPage StopListTab;
         private System.Windows.Forms.TabPage DictionaryListTab;
@@ -1521,7 +1628,6 @@
         private System.Windows.Forms.TextBox NgramTextboxMaximum;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Button CancelAnalysisButton;
         private System.Windows.Forms.RadioButton ThresholdOptionRawFreq;
         private System.Windows.Forms.Button ClearDWLSelectionButton;
@@ -1542,6 +1648,19 @@
         private System.Windows.Forms.ComboBox TokenizerSelectionDropdown;
         private System.Windows.Forms.CheckBox Conversions_Use_Lookup_Checkbox;
         private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.TabPage OutputFileTab;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.TextBox OutputFileTextbox;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button ChooseOutputFolderButton;
+        private System.Windows.Forms.TextBox InputSpreadsheetTextbox;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.Button ChooseSpreadsheetButton;
+        private System.Windows.Forms.TextBox CSVQuoteTextbox;
+        private System.Windows.Forms.TextBox CSVDelimiterTextbox;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Label label41;
     }
 }
 

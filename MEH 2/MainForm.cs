@@ -22,7 +22,7 @@ namespace MEH2
             
 
             Version version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
-            string VersionText = version.Major.ToString() + "." + version.Minor.ToString() + "." + version.Build.ToString();
+            string VersionText = version.Major.ToString() + "." + version.Minor.ToString() + "." + version.Build.ToString("D2");
 
 
 
@@ -153,12 +153,11 @@ namespace MEH2
             g.DrawString(text, this.TabControlObject.Font, Brushes.Black, x, y);
         }
 
-
-
-
         private void SelectInputFolderButtonClick(object sender, EventArgs e)
         {
             InputFolderTextbox.Text = "";
+            InputSpreadsheetTextbox.Text = "";
+            this.CSV_AnalyzingSpreadsheet = false;
 
 
             using (var dialog = new FolderBrowserDialog())
@@ -177,7 +176,6 @@ namespace MEH2
 
         }
 
-
         private void ChooseOutputFolderButton_Click(object sender, EventArgs e)
         {
 
@@ -186,8 +184,17 @@ namespace MEH2
 
             using (var dialog = new FolderBrowserDialog())
             {
-                if (InputFolderTextbox.Text != "") dialog.SelectedPath = InputFolderTextbox.Text;
+                if (InputFolderTextbox.Text != "")
+                {
+                    dialog.SelectedPath = InputFolderTextbox.Text;
+                }
+                else if (InputSpreadsheetTextbox.Text != "")
+                {
+                    dialog.SelectedPath = Path.GetDirectoryName(InputSpreadsheetTextbox.Text);
+                }
+
                 dialog.ShowNewFolderButton = true;
+
                 dialog.Description = "Please choose the folder where your output will be saved";
                 if (dialog.ShowDialog() == DialogResult.OK)
                 {
@@ -199,9 +206,7 @@ namespace MEH2
 
             }
         }
-
-
-
+               
         private void ChooseDWLButton_Click(object sender, EventArgs e)
         {
             PregeneratedDWLTextbox.Text = "";
@@ -230,10 +235,6 @@ namespace MEH2
 
             }
         }
-
-
-
-
 
         private void LoadStoplistButton_Click(object sender, EventArgs e)
         {
@@ -487,8 +488,6 @@ namespace MEH2
 
         private void StartButton_Click(object sender, EventArgs e)
         {
-
-
             if (!BGWorker.IsBusy) {
 
                 ProgressBar.Value = 0;
@@ -504,9 +503,16 @@ namespace MEH2
                 BGWorkerData BGData = new BGWorkerData();
 
                 BGData.TextFileFolder = InputFolderTextbox.Text;
+                BGData.CSVFilePath = InputSpreadsheetTextbox.Text;
+                BGData.CSVDelimiter = CSVDelimiterTextbox.Text[0];
+                BGData.CSVQuote = CSVQuoteTextbox.Text[0];
                 BGData.OutputFileLocation = OutputFileTextbox.Text;
                 BGData.SelectedEncoding = Encoding.GetEncoding(EncodingDropdown.SelectedItem.ToString());
                 BGData.RetainOnlyDictionaryWords = KeepOnlyDictionaryWordsCheckbox.Checked;
+                BGData.AnalyzingSpreadsheet = this.CSV_AnalyzingSpreadsheet;
+                BGData.CSV_ID_Indices = this.CSV_ID_Indices;
+                BGData.CSV_Text_Indices = this.CSV_Text_Indices;
+
 
                 if (SubfolderCheckbox.Checked)
                 {
@@ -599,6 +605,11 @@ namespace MEH2
                 RichTextboxLog.Text = "";
 
                 RichTextboxLog.AppendText(DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss tt") + ": Launching analysis." + Environment.NewLine);
+
+                Random rnd = new Random();
+                if (rnd.Next(443556 - 50, 443556 + 50) == 443556) RichTextboxLog.AppendText(DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss tt") + ": And As It Is Such, So Also As Such Is It Unto You" + Environment.NewLine);
+
+
                 RichTextboxLog.Select(RichTextboxLog.Text.Length, 0);
                 RichTextboxLog.ScrollToCaret();
                 
@@ -634,7 +645,6 @@ namespace MEH2
                     RichTextboxLog.ScrollToCaret();
                 }
             }
-
         }
 
 
@@ -650,14 +660,21 @@ namespace MEH2
 
             try { 
             
+
                 BGWorkerData BGData = (BGWorkerData)e.Argument;
 
 
+                //   ____                  _     ___                   _     ___ _                     
+                //  / ___|___  _   _ _ __ | |_  |_ _|_ __  _ __  _   _| |_  |_ _| |_ ___ _ __ ___  ___ 
+                // | |   / _ \| | | | '_ \| __|  | || '_ \| '_ \| | | | __|  | || __/ _ \ '_ ` _ \/ __|
+                // | |__| (_) | |_| | | | | |_   | || | | | |_) | |_| | |_   | || ||  __/ | | | | \__ \
+                //  \____\___/ \__,_|_| |_|\__| |___|_| |_| .__/ \__,_|\__| |___|\__\___|_| |_| |_|___/
+                //                                        |_|                                          
+
                 int NumberOfFiles = 0;
-
                 //make sure that we set up the progressbar
-
-                if (BGData.PreExistingDWL_Location == "")
+                //Each of these sections will count up how much work there is to be done
+                if (BGData.PreExistingDWL_Location == "" && !BGData.AnalyzingSpreadsheet)
                 {
 
                     this.Invoke((MethodInvoker)delegate ()
@@ -682,22 +699,100 @@ namespace MEH2
                                 RichTextboxLog.SelectionColor = Color.White;
                                 RichTextboxLog.Select(BoxEnd, 0);
                                 RichTextboxLog.ScrollToCaret();
+
+                                RichTextboxLog.Invalidate();
+                                RichTextboxLog.Update();
+                                RichTextboxLog.Refresh();
+                                Application.DoEvents();
                             }
                         }
 
-                        RichTextboxLog.SelectionColor = Color.White;
-                        RichTextboxLog.AppendText("Found " + NumberOfFiles.ToString() + " files... " + Environment.NewLine);
-                        RichTextboxLog.Select(RichTextboxLog.Text.Length, 0);
-                        RichTextboxLog.ScrollToCaret();
-
-
-                        ProgressBar.Maximum = NumberOfFiles;
                     });
 
                 }
+                else if (BGData.AnalyzingSpreadsheet)
+                {
+                    this.Invoke((MethodInvoker)delegate ()
+                    {
+
+                        RichTextboxLog.SelectionColor = Color.White;
+                        RichTextboxLog.AppendText(Environment.NewLine + "Counting number of rows... please wait..." + Environment.NewLine);
+                        RichTextboxLog.Invalidate();
+                        RichTextboxLog.Update();
+                        RichTextboxLog.Refresh();
+                        Application.DoEvents();
+
+                        ProgressBar.Minimum = 0;
+
+                            using (var stream = File.OpenRead(BGData.CSVFilePath))
+                            using (var reader = new StreamReader(stream))
+                            {
+                                var data = MEHv2.CsvParser.ParseHeadAndTail(reader, BGData.CSVDelimiter, BGData.CSVQuote);
+
+                                var header = data.Item1;
+                                var lines = data.Item2;
+
+                                foreach (var line in lines)
+                                {
+                                    try
+                                    {
+                                        NumberOfFiles++;
 
 
+                                        if (NumberOfFiles % 100000 == 0)
+                                        {
 
+                                            int BoxStart = RichTextboxLog.Text.Length;
+                                            RichTextboxLog.AppendText("Counting number of rows... " + NumberOfFiles.ToString() + Environment.NewLine);
+                                            int BoxEnd = RichTextboxLog.Text.Length;
+                                            RichTextboxLog.Select(BoxStart, BoxEnd - BoxStart);
+                                            RichTextboxLog.SelectionColor = Color.White;
+                                            RichTextboxLog.Select(BoxEnd, 0);
+                                            RichTextboxLog.ScrollToCaret();
+
+                                            RichTextboxLog.Invalidate();
+                                            RichTextboxLog.Update();
+                                            RichTextboxLog.Refresh();
+                                            Application.DoEvents();
+
+                                        }
+                                    }
+                                    catch
+                                    {
+                                        int BoxStart = RichTextboxLog.Text.Length;
+                                        RichTextboxLog.AppendText("There appears to be an error on row " + NumberOfFiles.ToString() + Environment.NewLine);
+                                        int BoxEnd = RichTextboxLog.Text.Length;
+                                        RichTextboxLog.Select(BoxStart, BoxEnd - BoxStart);
+                                        RichTextboxLog.SelectionColor = Color.Red;
+                                        RichTextboxLog.Select(BoxEnd, 0);
+                                        RichTextboxLog.ScrollToCaret();
+                                    }
+
+
+                                }
+                                
+                                
+                            }
+                        
+                    });
+                }
+                if (BGData.PreExistingDWL_Location == "")
+                {
+
+                    this.Invoke((MethodInvoker)delegate ()
+                    {
+                        RichTextboxLog.SelectionColor = Color.White;
+
+                        string ItemType = "files";
+                        if (BGData.AnalyzingSpreadsheet) ItemType = "rows";
+
+                        RichTextboxLog.AppendText("Found " + NumberOfFiles.ToString() + " " + ItemType + "... " + Environment.NewLine);
+                        RichTextboxLog.Select(RichTextboxLog.Text.Length, 0);
+                        RichTextboxLog.ScrollToCaret();
+
+                        ProgressBar.Maximum = NumberOfFiles;
+                    });
+                }
 
 
                 //  ____        _ _     _   ____  _      _   _                                _     _     _   
@@ -705,9 +800,6 @@ namespace MEH2
                 // |  _ \| | | | | |/ _` | | | | | |/ __| __| |/ _ \| '_ \ / _` | '__| | | | | |   | / __| __|
                 // | |_) | |_| | | | (_| | | |_| | | (__| |_| | (_) | | | | (_| | |  | |_| | | |___| \__ \ |_ 
                 // |____/ \__,_|_|_|\__,_| |____/|_|\___|\__|_|\___/|_| |_|\__,_|_|   \__, | |_____|_|___/\__|
-                //                                                                    |___/                   
-
-
 
                 HashSet<string> DictionaryList = new HashSet<string>();
                 foreach (string DictionaryWord in BGData.DictionaryListString.Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries))
@@ -757,13 +849,10 @@ namespace MEH2
 
 
 
-
-
-
-
-
                 //set up our output location
                 string DWL_Output_Location = BGData.OutputFileLocation + Path.DirectorySeparatorChar + DateTime.Now.ToString("yyyy-MM-dd_") + "MEH DWL.ndjson";
+
+
 
 
                 //set up all of the things that are going to be used while we're tokenizing
@@ -775,25 +864,24 @@ namespace MEH2
                 LogWriter.setmainform(this);
                 WordCountCalculator WC_Calc = new WordCountCalculator();
                 TextSegmentor Segmentor = new TextSegmentor();
+
                 if (BGData.SegmentationType == "Regex") Segmentor.SetRegex(BGData.SegmentationParameter);
 
                 LemmatizerChooser LemmaChoose = new LemmatizerChooser();
                 LemmaSharp.LemmatizerPrebuiltCompact Lemmatizer = LemmaChoose.LemmaGenChoice(BGData.LemmatizationModel);
 
+                //create a new ngram builder
+                MEHv2.NgramDictionaryBuilder NgramBuilder = new MEHv2.NgramDictionaryBuilder();
+                //Set the properties for the text conversions within the ngram dictionary builder
+                NgramBuilder.SetConverterMode(BGData.ConversionList_LookupMethod, BGData.ConversionListString, BGData.ConvertToLowerCase);
+
 
 
                 //report that we're getting ready to start
                 LogWriter.WriteToLog(Environment.NewLine + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss tt") + ": " + "Initializing / validating all items in Conversions box...", Color.Orange);
-                TextConversionClass Converter = new TextConversionClass();
+                
 
-                if (BGData.ConversionList_LookupMethod)
-                {
-                    Converter.InitializeConversionList_Lookup(BGData.ConversionListString);
-                }
-                else
-                {
-                    Converter.InitializeConversionList_Regex(BGData.ConversionListString, BGData.ConvertToLowerCase);
-                }
+                
 
 
 
@@ -814,162 +902,235 @@ namespace MEH2
 
                     ThreadsafeOutputWriter OutputWriter = new ThreadsafeOutputWriter(DWL_Output_Location, BGData.SelectedEncoding);
 
-                    var files = Directory.EnumerateFiles(BGData.TextFileFolder, "*.txt", BGData.FolderSearchDepth);
+
+
 
                     //report that we're getting ready to start
                     LogWriter.WriteToLog(Environment.NewLine + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss tt") + ": " + "Preprocessing and Tokenizing all texts...", Color.LightBlue);
 
+                    //analyze texts from files
+                    if (!BGData.AnalyzingSpreadsheet)
+                    {
+                        var files = Directory.EnumerateFiles(BGData.TextFileFolder, "*.txt", BGData.FolderSearchDepth);
+                        Parallel.ForEach(files, new ParallelOptions { MaxDegreeOfParallelism = (int)System.Math.Floor((double)(Environment.ProcessorCount / 1.25)) }, (inputfile, state) =>
+                        {
+
+                            if (BGWorker.CancellationPending) state.Break();
+
+                            var currIndex = Interlocked.Increment(ref filecounter);
+
+                            //read our input
+                            string readText = File.ReadAllText(inputfile, BGData.SelectedEncoding).Replace("\r\n", " ").Replace("\r", " ").Replace("\n", " ");
+                            if (BGData.ConvertToLowerCase) readText = readText.ToLower();
 
 
-                    Parallel.ForEach(files, new ParallelOptions { MaxDegreeOfParallelism = (int)System.Math.Floor((double)(Environment.ProcessorCount / 1.25)) }, (inputfile, state) =>
+                            //run the conversions from the converter here, but only if we're using the RegEx method (this is the default)
+                            if (!BGData.ConversionList_LookupMethod) readText = NgramBuilder.RunRegexConversions(readText);
+
+
+                            //tokenize the text
+                            string[] TokenizedText = new string[] { };
+
+                            switch (BGData.Tokenizer)
+                            {
+                                case "Twitter-Aware Tokenizer":
+                                    TokenizedText = Tokenizer.tokenize(readText, preserve_case: BGData.ConvertToLowerCase == false, reduce_lengthening: true);
+                                    break;
+
+                                case "Whitespace Tokenizer":
+                                    TokenizedText = Tokenizer.TokenizeWhitespace(text: readText);
+                                    break;
+                            }
+
+
+
+
+                            //now, we want to remove empty entries (if any)
+                            TokenizedText = TokenizedText.Where(x => !string.IsNullOrWhiteSpace(x)).ToArray();
+                            //at one point, we were also removing stop list entries here. this has been changed
+                            //so that stop words are removed further downstream. this will help keep things sane
+                            //TokenizedText = TokenizedText.Where(x => !StopList.Contains(x)).ToArray();
+
+
+                            if (BGData.UseLemmatization && BGData.ConvertToLowerCase)
+                            {
+                                for (int i = 0; i < TokenizedText.Length; i++)
+                                {
+                                    //for some reason, the lemmatizer will occasionally turn a character (e.g., 'd')
+                                    //into a blank. so, we really want to remove that behavior. sanity checking to omit
+                                    //these cases. I suspect that it's interpreting a floating 'd' as part of something like
+                                    //you'd, and so it assumes that since it's a tail it should be dropped. Some specific rule
+                                    //that we can certainly bypass
+                                    string lemmatized_token = Lemmatizer.Lemmatize(TokenizedText[i]);
+                                    //if (lemmatized_token.Contains("+not") && !notlist.Contains(TokenizedText[i])) notlist.Add(TokenizedText[i]);
+                                    if (lemmatized_token != "") TokenizedText[i] = lemmatized_token;
+                                }
+                            }
+
+                            string[][] SegmentedTokenText = Segmentor.Segment(TokenizedText, BGData.SegmentationType, BGData.SegmentationParameter);
+
+                            for (int segment_number = 0; segment_number < SegmentedTokenText.Length; segment_number++)
+                            {
+
+
+                                //We drop the stop words here, prior to the generation of n-grams, to ensure that
+                                //everything is removed prior to building higher-order n-grams.
+                                string[] TokenizedText_For_Ngrams = SegmentedTokenText[segment_number].Where(x => !StopList.Contains(x)).ToArray();
+
+                                Dictionary<string, Dictionary<string, long>> FileTokenData = new Dictionary<string, Dictionary<string, long>>();
+
+                                //add filename and WC to dictionary
+                                FileTokenData.Add("Filename", new Dictionary<string, long> { { Path.GetFileName(inputfile), WC_Calc.GetWC(readText) } });
+                                FileTokenData.Add("TokenInfo", new Dictionary<string, long>());
+
+                                //add number of tokens to dictionary
+                                FileTokenData.Add("FileInfo", new Dictionary<string, long> { { "RawTokenCount", SegmentedTokenText[segment_number].Length } });
+                                FileTokenData["FileInfo"].Add("Segment", segment_number + 1);
+
+
+                                //Use the NgramBuilder's method to actually iterate through the string array
+                                //and return to us a dictionary that is ready to write
+                                FileTokenData = NgramBuilder.BuildNgramDictionary(TokenizedText_For_Ngrams,
+                                                                                  FileTokenData,
+                                                                                  BGData.Ngram_N_Min, BGData.Ngram_N_Max);
+
+
+                                //write output to ndjson file
+                                string outputline = JsonConvert.SerializeObject(FileTokenData);
+                                OutputWriter.WriteString(outputline);
+                            }
+
+
+                            BGWorker.ReportProgress((int)filecounter);
+
+
+                        });
+                    }
+                    //analyze texts from spreadsheets
+                    else
                     {
 
-                        if (BGWorker.CancellationPending) state.Break();
-
-                        var currIndex = Interlocked.Increment(ref filecounter);
-
-
-
-
-
-
-
-                        //read our input
-                        string readText = File.ReadAllText(inputfile, BGData.SelectedEncoding).Replace("\r\n", " ").Replace("\r", " ").Replace("\n", " ");
-                        if (BGData.ConvertToLowerCase) readText = readText.ToLower();
-
-
-                        //run the conversions from the converter here, but only if we're using the RegEx method (this is the default)
-                        if (!BGData.ConversionList_LookupMethod) readText = Converter.RunConversions(readText);
-
-
-
-
-
-
-                        //tokenize the text
-                        string[] TokenizedText = new string[] { };
-                        
-                        switch (BGData.Tokenizer)
+                        using (var stream = File.OpenRead(BGData.CSVFilePath))
+                        using (var reader = new StreamReader(stream))
                         {
-                            case "Twitter-Aware Tokenizer":
-                                TokenizedText = Tokenizer.tokenize(readText, preserve_case: BGData.ConvertToLowerCase == false, reduce_lengthening: true);
-                                break;
+                            var data = MEHv2.CsvParser.ParseHeadAndTail(reader, BGData.CSVDelimiter, BGData.CSVQuote);
 
-                            case "Whitespace Tokenizer":
-                                TokenizedText = Tokenizer.TokenizeWhitespace(text: readText);
-                                break;
-                        }
-                        
+                            var header = data.Item1;
+                            var lines = data.Item2;
 
-
-
-                        //now, we want to remove empty entries (if any)
-                        TokenizedText = TokenizedText.Where(x => !string.IsNullOrWhiteSpace(x)).ToArray();
-                        //at one point, we were also removing stop list entries here. this has been changed
-                        //so that stop words are removed further downstream. this will help keep things sane
-                        //TokenizedText = TokenizedText.Where(x => !StopList.Contains(x)).ToArray();
-
-
-                        
-                        
-                        
-
-
-
-                        
-                        if (BGData.UseLemmatization && BGData.ConvertToLowerCase)
-                        {
-                            for (int i = 0; i < TokenizedText.Length; i++)
+                            Parallel.ForEach(lines, new ParallelOptions { MaxDegreeOfParallelism = (int)System.Math.Floor((double)(Environment.ProcessorCount / 1.25)) }, (line, state) =>
                             {
-                                //for some reason, the lemmatizer will occasionally turn a character (e.g., 'd')
-                                //into a blank. so, we really want to remove that behavior. sanity checking to omit
-                                //these cases. I suspect that it's interpreting a floating 'd' as part of something like
-                                //you'd, and so it assumes that since it's a tail it should be dropped. Some specific rule
-                                //that we can certainly bypass
-                                string lemmatized_token = Lemmatizer.Lemmatize(TokenizedText[i]);
-                                //if (lemmatized_token.Contains("+not") && !notlist.Contains(TokenizedText[i])) notlist.Add(TokenizedText[i]);
-                                if (lemmatized_token != "") TokenizedText[i] = lemmatized_token;
-                            }
-                        }
+
+                                if (BGWorker.CancellationPending) state.Break();
+
+                                var currIndex = Interlocked.Increment(ref filecounter);
 
 
-
-                        string[][] SegmentedTokenText = Segmentor.Segment(TokenizedText, BGData.SegmentationType, BGData.SegmentationParameter);
-
-                        for (int segment_number = 0; segment_number < SegmentedTokenText.Length; segment_number++) {
-
-
-                            //We drop the stop words here, prior to the generation of n-grams, to ensure that
-                            //everything is removed prior to building higher-order n-grams.
-                            string[] TokenizedText_For_Ngrams = SegmentedTokenText[segment_number].Where(x => !StopList.Contains(x)).ToArray();
-
-
-                            Dictionary<string, Dictionary<string, long>> FileTokenData = new Dictionary<string, Dictionary<string, long>>();
-
-                            //add filename and WC to dictionary
-                            FileTokenData.Add("Filename", new Dictionary<string, long> { { Path.GetFileName(inputfile), WC_Calc.GetWC(readText) } });
-                            FileTokenData.Add("TokenInfo", new Dictionary<string, long>());
-
-                            //add number of tokens to dictionary
-                            FileTokenData.Add("FileInfo", new Dictionary<string, long> { { "RawTokenCount", SegmentedTokenText[segment_number].Length } });
-                            FileTokenData["FileInfo"].Add("Segment", segment_number + 1);
-
-
-                            //General nested look to fill out our dictionary with ngrams
-                            for (long i = 0; i < TokenizedText_For_Ngrams.Length; i++)
-                            {
-                                //builds our ngrams...
-                                for (int j = BGData.Ngram_N_Max; j > BGData.Ngram_N_Min - 1; j--)
+                                //Generate a row ID, either by using the spreadsheet or just the row number
+                                string RowIdentifier = currIndex.ToString();
+                                if (BGData.CSV_ID_Indices.Length > 0)
                                 {
-                                    if (i + j <= TokenizedText_For_Ngrams.Length)
-                                    {
-                                        string[] token_builder = new string[j];
-                                        Array.Copy(TokenizedText_For_Ngrams, i, token_builder, 0, j);
-
-                                        string token = string.Join(" ", token_builder);
-
-
-
-
-
-                                        //if we're using the "lookup" method for conversions, we want to do those here
-                                        if (BGData.ConversionList_LookupMethod && Converter.ConversionList_NoRegex.Count > 0 && Converter.ConversionList_NoRegex.ContainsKey(token))
-                                        {
-                                            token = Converter.ConversionList_NoRegex[token];
-                                            
-                                        }
-
-
-
-
-
-                                        if (FileTokenData["TokenInfo"].ContainsKey(token))
-                                        {
-                                            FileTokenData["TokenInfo"][token]++;
-                                        }
-                                        else
-                                        {
-                                            FileTokenData["TokenInfo"].Add(token, 1);
-                                        }
-
-                                    }
+                                    foreach (int IDIndex in BGData.CSV_ID_Indices) RowIdentifier += line[IDIndex] + ";";
+                                    RowIdentifier.TrimEnd(';');
                                 }
 
 
-                            }
+                                //read our input
+                                StringBuilder readTextBuilder = new StringBuilder();
+                                string readText = "";
+                                foreach (int TextIndex in BGData.CSV_Text_Indices) readTextBuilder.Append(line[TextIndex] + Environment.NewLine);
+                                readText = readTextBuilder.ToString();
+                                readTextBuilder.Clear();
+
+                                if (BGData.ConvertToLowerCase) readText = readText.ToLower();
 
 
-                            //write output to ndjson file
-                            string outputline = JsonConvert.SerializeObject(FileTokenData);
-                            OutputWriter.WriteString(outputline);
+                                //run the conversions from the converter here, but only if we're using the RegEx method (this is the default)
+                                if (!BGData.ConversionList_LookupMethod) readText = NgramBuilder.RunRegexConversions(readText);
+
+
+                                //tokenize the text
+                                string[] TokenizedText = new string[] { };
+
+                                switch (BGData.Tokenizer)
+                                {
+                                    case "Twitter-Aware Tokenizer":
+                                        TokenizedText = Tokenizer.tokenize(readText, preserve_case: BGData.ConvertToLowerCase == false, reduce_lengthening: true);
+                                        break;
+
+                                    case "Whitespace Tokenizer":
+                                        TokenizedText = Tokenizer.TokenizeWhitespace(text: readText);
+                                        break;
+                                }
+
+
+
+
+                                //now, we want to remove empty entries (if any)
+                                TokenizedText = TokenizedText.Where(x => !string.IsNullOrWhiteSpace(x)).ToArray();
+                                //at one point, we were also removing stop list entries here. this has been changed
+                                //so that stop words are removed further downstream. this will help keep things sane
+                                //TokenizedText = TokenizedText.Where(x => !StopList.Contains(x)).ToArray();
+
+
+                                if (BGData.UseLemmatization && BGData.ConvertToLowerCase)
+                                {
+                                    for (int i = 0; i < TokenizedText.Length; i++)
+                                    {
+                                        //for some reason, the lemmatizer will occasionally turn a character (e.g., 'd')
+                                        //into a blank. so, we really want to remove that behavior. sanity checking to omit
+                                        //these cases. I suspect that it's interpreting a floating 'd' as part of something like
+                                        //you'd, and so it assumes that since it's a tail it should be dropped. Some specific rule
+                                        //that we can certainly bypass
+                                        string lemmatized_token = Lemmatizer.Lemmatize(TokenizedText[i]);
+                                        //if (lemmatized_token.Contains("+not") && !notlist.Contains(TokenizedText[i])) notlist.Add(TokenizedText[i]);
+                                        if (lemmatized_token != "") TokenizedText[i] = lemmatized_token;
+                                    }
+                                }
+
+                                string[][] SegmentedTokenText = Segmentor.Segment(TokenizedText, BGData.SegmentationType, BGData.SegmentationParameter);
+
+                                for (int segment_number = 0; segment_number < SegmentedTokenText.Length; segment_number++)
+                                {
+
+
+                                    //We drop the stop words here, prior to the generation of n-grams, to ensure that
+                                    //everything is removed prior to building higher-order n-grams.
+                                    string[] TokenizedText_For_Ngrams = SegmentedTokenText[segment_number].Where(x => !StopList.Contains(x)).ToArray();
+
+                                    Dictionary<string, Dictionary<string, long>> FileTokenData = new Dictionary<string, Dictionary<string, long>>();
+
+                                    //add filename and WC to dictionary
+                                    FileTokenData.Add("Filename", new Dictionary<string, long> { { RowIdentifier, WC_Calc.GetWC(readText) } });
+                                    FileTokenData.Add("TokenInfo", new Dictionary<string, long>());
+
+                                    //add number of tokens to dictionary
+                                    FileTokenData.Add("FileInfo", new Dictionary<string, long> { { "RawTokenCount", SegmentedTokenText[segment_number].Length } });
+                                    FileTokenData["FileInfo"].Add("Segment", segment_number + 1);
+
+
+                                    //Use the NgramBuilder's method to actually iterate through the string array
+                                    //and return to us a dictionary that is ready to write
+                                    FileTokenData = NgramBuilder.BuildNgramDictionary(TokenizedText_For_Ngrams,
+                                                                                      FileTokenData,
+                                                                                      BGData.Ngram_N_Min, BGData.Ngram_N_Max);
+
+
+                                    //write output to ndjson file
+                                    string outputline = JsonConvert.SerializeObject(FileTokenData);
+                                    OutputWriter.WriteString(outputline);
+                                }
+
+
+                                BGWorker.ReportProgress((int)filecounter);
+
+
+                            });
                         }
 
+                     }
+                    
 
-                        BGWorker.ReportProgress((int)filecounter);
-
-
-                    });
 
                     OutputWriter.Dispose();
                     LogWriter.WriteToLog(DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss tt") + ": Tokenization Complete.", Color.Green);
@@ -1520,6 +1681,11 @@ namespace MEH2
                 LogWriter.setmainform(this);
                 LogWriter.WriteToLog(Environment.NewLine + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss tt") + ": Cancellation button has been clicked. Cancelling...", Color.Yellow);
             }
+            else
+            {
+                var result = MessageBox.Show("Are you sure that you want to clear the output window?", "Clear Output Window?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes) RichTextboxLog.Text = "";
+            }
 
         }
 
@@ -1704,6 +1870,108 @@ namespace MEH2
         }
 
 
+
+
+
+
+
+
+        private int[] CSV_ID_Indices = new int[0];
+        private int[] CSV_Text_Indices = new int[0];
+        private bool CSV_AnalyzingSpreadsheet = false;
+
+
+        private void ChooseSpreadsheetButton_Click(object sender, EventArgs e)
+        {
+
+            this.CSV_AnalyzingSpreadsheet = false;
+            CSV_ID_Indices = new int[0];
+            CSV_Text_Indices = new int[0];
+
+            InputSpreadsheetTextbox.Text = "";
+            InputFolderTextbox.Text = "";
+
+            if (CSVDelimiterTextbox.TextLength < 1 || CSVQuoteTextbox.TextLength < 1)
+            {
+                MessageBox.Show("You must enter characters for your delimiter and quotes, respectively. MEH does not know how to read a delimited spreadsheet without this information.", "I need details for your spreadsheet!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+
+            OpenFileDialog SpreadsheetChooser = new OpenFileDialog();
+            SpreadsheetChooser.FileName = "Dataset.csv";
+            SpreadsheetChooser.Multiselect = false;
+            SpreadsheetChooser.RestoreDirectory = true;
+            SpreadsheetChooser.Filter = "Delimited Spreadsheet | *.txt; *.csv; *.tsv";
+            SpreadsheetChooser.Title = "Please select the spreadsheet that you would like to analyze";
+
+            string filename = "";
+
+            if (SpreadsheetChooser.ShowDialog() == DialogResult.OK)
+            {
+                filename = SpreadsheetChooser.FileName;
+
+
+
+
+                try
+                {
+                    using (var stream = File.OpenRead(filename))
+                    using (var reader = new StreamReader(stream))
+                    {
+                        var data = MEHv2.CsvParser.ParseHeadAndTail(reader, CSVDelimiterTextbox.Text[0], CSVQuoteTextbox.Text[0]);
+
+                        var header = data.Item1;
+                        var lines = data.Item2;
+
+                        MEHv2.CSVDetailsForm CSVDetails = new MEHv2.CSVDetailsForm(header.ToArray<string>());
+
+                        var CSVDetailsResults = CSVDetails.ShowDialog();
+
+                        if (CSVDetailsResults == DialogResult.OK)
+                        {
+
+                            if (CSVDetails.CSVDetailsDialogResult["Text"].Length >= 1) { 
+
+                                InputSpreadsheetTextbox.Text = filename;
+                                CSV_AnalyzingSpreadsheet = true;
+                                this.CSV_ID_Indices = CSVDetails.CSVDetailsDialogResult["ID"];
+                                this.CSV_Text_Indices = CSVDetails.CSVDetailsDialogResult["Text"];
+                            }
+                            else
+                            {
+                                MessageBox.Show("It does not appear as though you have selected any columns for your Texts. MEH needs at least one Text column before it can analyze your spreadsheet.", "No selections made!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                        else
+                        {
+                            CSV_AnalyzingSpreadsheet = false;
+                        }
+
+
+                    }
+
+                }
+                catch
+                {
+                    CSV_AnalyzingSpreadsheet = false;
+                    MessageBox.Show("There was an error while trying to read your spreadsheet file. It is possible that your spreadsheet is not correctly formatted, or that your selections for delimiters and quotes are not the same as what is used in your spreadsheet.", "Error reading spreadsheet", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+
+                
+            }
+
+
+
+            
+
+
+
+
+
+        }
 
 
     }
