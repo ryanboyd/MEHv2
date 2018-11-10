@@ -15,6 +15,7 @@ namespace MEH2
         public string CSVFilePath { get; set; }
         public char CSVDelimiter { get; set; }
         public char CSVQuote { get; set; }
+        public bool CSVSeparateColumns { get; set; }
         public int[] CSV_Text_Indices { get; set; }
         public int[] CSV_ID_Indices { get; set; }
         public string OutputFileLocation { get; set; }

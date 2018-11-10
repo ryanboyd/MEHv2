@@ -41,6 +41,12 @@ namespace MEHv2
         }
 
 
+        public bool ColumnsAsSeparateTexts
+        {
+            get { return ColumnsAsSeparateTextsCheckbox.Checked; }
+        }
+
+
 
         private void OKButton_Click(object sender, EventArgs e)
         {

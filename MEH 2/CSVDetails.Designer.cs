@@ -35,11 +35,12 @@
             this.Text_CheckedListBox = new System.Windows.Forms.CheckedListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.ColumnsAsSeparateTextsCheckbox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // OKButton
             // 
-            this.OKButton.Location = new System.Drawing.Point(360, 406);
+            this.OKButton.Location = new System.Drawing.Point(360, 428);
             this.OKButton.Name = "OKButton";
             this.OKButton.Size = new System.Drawing.Size(75, 23);
             this.OKButton.TabIndex = 0;
@@ -50,7 +51,7 @@
             // CancelButton
             // 
             this.CancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.CancelButton.Location = new System.Drawing.Point(237, 406);
+            this.CancelButton.Location = new System.Drawing.Point(237, 428);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(75, 23);
             this.CancelButton.TabIndex = 1;
@@ -99,13 +100,25 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Column(s) Containing Text:";
             // 
+            // ColumnsAsSeparateTextsCheckbox
+            // 
+            this.ColumnsAsSeparateTextsCheckbox.AutoSize = true;
+            this.ColumnsAsSeparateTextsCheckbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ColumnsAsSeparateTextsCheckbox.Location = new System.Drawing.Point(373, 381);
+            this.ColumnsAsSeparateTextsCheckbox.Name = "ColumnsAsSeparateTextsCheckbox";
+            this.ColumnsAsSeparateTextsCheckbox.Size = new System.Drawing.Size(258, 20);
+            this.ColumnsAsSeparateTextsCheckbox.TabIndex = 6;
+            this.ColumnsAsSeparateTextsCheckbox.Text = "Treat Each Column as a Separate Text";
+            this.ColumnsAsSeparateTextsCheckbox.UseVisualStyleBackColor = true;
+            // 
             // CSVDetailsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.ClientSize = new System.Drawing.Size(676, 450);
+            this.ClientSize = new System.Drawing.Size(676, 476);
             this.ControlBox = false;
+            this.Controls.Add(this.ColumnsAsSeparateTextsCheckbox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Text_CheckedListBox);
@@ -115,12 +128,15 @@
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(692, 515);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(692, 515);
             this.Name = "CSVDetailsForm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CSVDetails";
+            this.Text = "Spreadsheet Details";
             this.TopMost = true;
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -135,5 +151,6 @@
         private System.Windows.Forms.CheckedListBox Text_CheckedListBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.CheckBox ColumnsAsSeparateTextsCheckbox;
     }
 }

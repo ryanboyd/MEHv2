@@ -33,7 +33,7 @@ namespace MEH2
 
                 if (content != VersionText)
                 {
-                    var result = MessageBox.Show("A new version of MEH is available at https://meh.ryanb.cc" + Environment.NewLine + Environment.NewLine + "Would you like to download the update?", "Update Available", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    var result = MessageBox.Show("A new version of MEH (v" + content + ") is available at https://meh.ryanb.cc" + Environment.NewLine + Environment.NewLine + "Would you like to download the update?", "Update Available", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                     if (result == DialogResult.Yes)
                     {
