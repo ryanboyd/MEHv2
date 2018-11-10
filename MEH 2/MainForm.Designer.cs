@@ -31,6 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.TabControlObject = new System.Windows.Forms.TabControl();
             this.InputFileTab = new System.Windows.Forms.TabPage();
+            this.CSVQuoteTextbox = new System.Windows.Forms.TextBox();
+            this.CSVDelimiterTextbox = new System.Windows.Forms.TextBox();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
             this.InputSpreadsheetTextbox = new System.Windows.Forms.TextBox();
             this.label40 = new System.Windows.Forms.Label();
             this.ChooseSpreadsheetButton = new System.Windows.Forms.Button();
@@ -135,10 +139,9 @@
             this.AboutMEHPictureBox = new System.Windows.Forms.PictureBox();
             this.label24 = new System.Windows.Forms.Label();
             this.BGWorker = new System.ComponentModel.BackgroundWorker();
-            this.label41 = new System.Windows.Forms.Label();
-            this.label42 = new System.Windows.Forms.Label();
-            this.CSVDelimiterTextbox = new System.Windows.Forms.TextBox();
-            this.CSVQuoteTextbox = new System.Windows.Forms.TextBox();
+            this.ProcessingPowerTrackbar = new System.Windows.Forms.TrackBar();
+            this.label43 = new System.Windows.Forms.Label();
+            this.ProcessingPowerLabel = new System.Windows.Forms.Label();
             this.TabControlObject.SuspendLayout();
             this.InputFileTab.SuspendLayout();
             this.OutputFileTab.SuspendLayout();
@@ -152,6 +155,7 @@
             this.BeginAnalysisTab.SuspendLayout();
             this.AboutMEHTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AboutMEHPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProcessingPowerTrackbar)).BeginInit();
             this.SuspendLayout();
             // 
             // TabControlObject
@@ -206,6 +210,46 @@
             this.InputFileTab.Size = new System.Drawing.Size(662, 454);
             this.InputFileTab.TabIndex = 0;
             this.InputFileTab.Text = "Input File Settings";
+            // 
+            // CSVQuoteTextbox
+            // 
+            this.CSVQuoteTextbox.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CSVQuoteTextbox.Location = new System.Drawing.Point(98, 397);
+            this.CSVQuoteTextbox.MaxLength = 1;
+            this.CSVQuoteTextbox.Name = "CSVQuoteTextbox";
+            this.CSVQuoteTextbox.Size = new System.Drawing.Size(65, 20);
+            this.CSVQuoteTextbox.TabIndex = 18;
+            this.CSVQuoteTextbox.Text = "\"";
+            this.CSVQuoteTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // CSVDelimiterTextbox
+            // 
+            this.CSVDelimiterTextbox.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CSVDelimiterTextbox.Location = new System.Drawing.Point(11, 397);
+            this.CSVDelimiterTextbox.MaxLength = 1;
+            this.CSVDelimiterTextbox.Name = "CSVDelimiterTextbox";
+            this.CSVDelimiterTextbox.Size = new System.Drawing.Size(65, 20);
+            this.CSVDelimiterTextbox.TabIndex = 17;
+            this.CSVDelimiterTextbox.Text = ",";
+            this.CSVDelimiterTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(95, 379);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(43, 15);
+            this.label42.TabIndex = 16;
+            this.label42.Text = "Quote:";
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(10, 379);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(60, 15);
+            this.label41.TabIndex = 15;
+            this.label41.Text = "Delimiter:";
             // 
             // InputSpreadsheetTextbox
             // 
@@ -335,6 +379,9 @@
             // OutputFileTab
             // 
             this.OutputFileTab.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.OutputFileTab.Controls.Add(this.ProcessingPowerLabel);
+            this.OutputFileTab.Controls.Add(this.label43);
+            this.OutputFileTab.Controls.Add(this.ProcessingPowerTrackbar);
             this.OutputFileTab.Controls.Add(this.label39);
             this.OutputFileTab.Controls.Add(this.OutputFileTextbox);
             this.OutputFileTab.Controls.Add(this.label3);
@@ -343,7 +390,7 @@
             this.OutputFileTab.Name = "OutputFileTab";
             this.OutputFileTab.Size = new System.Drawing.Size(662, 454);
             this.OutputFileTab.TabIndex = 10;
-            this.OutputFileTab.Text = "Output Location";
+            this.OutputFileTab.Text = "Output Generation";
             // 
             // label39
             // 
@@ -1464,45 +1511,42 @@
             this.BGWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.BGWorker_ProgressChanged);
             this.BGWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BGWorker_RunWorkerCompleted);
             // 
-            // label41
+            // ProcessingPowerTrackbar
             // 
-            this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(10, 379);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(60, 15);
-            this.label41.TabIndex = 15;
-            this.label41.Text = "Delimiter:";
+            this.ProcessingPowerTrackbar.BackColor = System.Drawing.Color.SlateGray;
+            this.ProcessingPowerTrackbar.LargeChange = 20;
+            this.ProcessingPowerTrackbar.Location = new System.Drawing.Point(13, 214);
+            this.ProcessingPowerTrackbar.Maximum = 100;
+            this.ProcessingPowerTrackbar.Minimum = 5;
+            this.ProcessingPowerTrackbar.Name = "ProcessingPowerTrackbar";
+            this.ProcessingPowerTrackbar.Size = new System.Drawing.Size(465, 45);
+            this.ProcessingPowerTrackbar.SmallChange = 5;
+            this.ProcessingPowerTrackbar.TabIndex = 13;
+            this.ProcessingPowerTrackbar.TickFrequency = 5;
+            this.ProcessingPowerTrackbar.TickStyle = System.Windows.Forms.TickStyle.Both;
+            this.ProcessingPowerTrackbar.Value = 75;
+            this.ProcessingPowerTrackbar.Scroll += new System.EventHandler(this.ProcessingPowerTrackbar_Scroll);
             // 
-            // label42
+            // label43
             // 
-            this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(95, 379);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(43, 15);
-            this.label42.TabIndex = 16;
-            this.label42.Text = "Quote:";
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label43.Location = new System.Drawing.Point(10, 185);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(169, 16);
+            this.label43.TabIndex = 14;
+            this.label43.Text = "Parallel Processing Power:";
             // 
-            // CSVDelimiterTextbox
+            // ProcessingPowerLabel
             // 
-            this.CSVDelimiterTextbox.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CSVDelimiterTextbox.Location = new System.Drawing.Point(11, 397);
-            this.CSVDelimiterTextbox.MaxLength = 1;
-            this.CSVDelimiterTextbox.Name = "CSVDelimiterTextbox";
-            this.CSVDelimiterTextbox.Size = new System.Drawing.Size(65, 20);
-            this.CSVDelimiterTextbox.TabIndex = 17;
-            this.CSVDelimiterTextbox.Text = ",";
-            this.CSVDelimiterTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // CSVQuoteTextbox
-            // 
-            this.CSVQuoteTextbox.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CSVQuoteTextbox.Location = new System.Drawing.Point(98, 397);
-            this.CSVQuoteTextbox.MaxLength = 1;
-            this.CSVQuoteTextbox.Name = "CSVQuoteTextbox";
-            this.CSVQuoteTextbox.Size = new System.Drawing.Size(65, 20);
-            this.CSVQuoteTextbox.TabIndex = 18;
-            this.CSVQuoteTextbox.Text = "\"";
-            this.CSVQuoteTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ProcessingPowerLabel.AutoSize = true;
+            this.ProcessingPowerLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ProcessingPowerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProcessingPowerLabel.Location = new System.Drawing.Point(185, 185);
+            this.ProcessingPowerLabel.Name = "ProcessingPowerLabel";
+            this.ProcessingPowerLabel.Size = new System.Drawing.Size(158, 18);
+            this.ProcessingPowerLabel.TabIndex = 15;
+            this.ProcessingPowerLabel.Text = "75% (Recommended)";
             // 
             // MainForm
             // 
@@ -1545,6 +1589,7 @@
             this.AboutMEHTab.ResumeLayout(false);
             this.AboutMEHTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AboutMEHPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProcessingPowerTrackbar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1661,6 +1706,9 @@
         private System.Windows.Forms.TextBox CSVDelimiterTextbox;
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.Label ProcessingPowerLabel;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.TrackBar ProcessingPowerTrackbar;
     }
 }
 

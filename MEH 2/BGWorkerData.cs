@@ -18,10 +18,12 @@ namespace MEH2
         public bool CSVSeparateColumns { get; set; }
         public int[] CSV_Text_Indices { get; set; }
         public int[] CSV_ID_Indices { get; set; }
-        public string OutputFileLocation { get; set; }
         public Encoding SelectedEncoding { get; set; }
         public System.IO.SearchOption FolderSearchDepth { get; set; }
 
+        //Output and Processing Power Tab
+        public string OutputFileLocation { get; set; }
+        public int ProcessingPower { get; set; }
 
         //segmentation tab
         public string SegmentationType { get; set; }

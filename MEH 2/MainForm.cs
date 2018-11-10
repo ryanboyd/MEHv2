@@ -513,6 +513,8 @@ namespace MEH2
                 BGData.CSV_Text_Indices = this.CSV_Text_Indices;
                 BGData.CSVSeparateColumns = this.CSVSeparateColumns;
 
+                BGData.ProcessingPower = ProcessingPowerTrackbar.Value;
+
 
                 if (SubfolderCheckbox.Checked)
                 {
@@ -662,6 +664,10 @@ namespace MEH2
             
 
                 BGWorkerData BGData = (BGWorkerData)e.Argument;
+
+                int ParallelismPower = 1;
+                if ((int)System.Math.Floor((double)(Environment.ProcessorCount * ((double)BGData.ProcessingPower / 100.0))) > 1)
+                    ParallelismPower = (int)System.Math.Floor((double)(Environment.ProcessorCount * ((double)BGData.ProcessingPower / 100.0)));
 
 
                 //   ____                  _     ___                   _     ___ _                     
@@ -926,7 +932,7 @@ namespace MEH2
                     if (!BGData.AnalyzingSpreadsheet)
                     {
                         var files = Directory.EnumerateFiles(BGData.TextFileFolder, "*.txt", BGData.FolderSearchDepth);
-                        Parallel.ForEach(files, new ParallelOptions { MaxDegreeOfParallelism = (int)System.Math.Floor((double)(Environment.ProcessorCount / 1.25)) }, (inputfile, state) =>
+                        Parallel.ForEach(files, new ParallelOptions { MaxDegreeOfParallelism = ParallelismPower }, (inputfile, state) =>
                         {
 
                             if (BGWorker.CancellationPending) state.Break();
@@ -1032,7 +1038,7 @@ namespace MEH2
                             var header = data.Item1;
                             var lines = data.Item2;
 
-                            Parallel.ForEach(lines, new ParallelOptions { MaxDegreeOfParallelism = (int)System.Math.Floor((double)(Environment.ProcessorCount / 1.25)) }, (line, state) =>
+                            Parallel.ForEach(lines, new ParallelOptions { MaxDegreeOfParallelism = ParallelismPower}, (line, state) =>
                             {
 
                                 if (BGWorker.CancellationPending) state.Break();
@@ -2016,7 +2022,24 @@ namespace MEH2
 
         }
 
-
+        private void ProcessingPowerTrackbar_Scroll(object sender, EventArgs e)
+        {
+            if (ProcessingPowerTrackbar.Value > 75)
+            {
+                ProcessingPowerLabel.ForeColor = Color.Red;
+                ProcessingPowerLabel.Text = ProcessingPowerTrackbar.Value.ToString() + "% (NOT RECOMMENDED)";
+            }
+            else if (ProcessingPowerTrackbar.Value == 75)
+            {
+                ProcessingPowerLabel.ForeColor = Color.Black;
+                ProcessingPowerLabel.Text = ProcessingPowerTrackbar.Value.ToString() + "% (Recommended)";
+            }
+            else
+            {
+                ProcessingPowerLabel.ForeColor = Color.Black;
+                ProcessingPowerLabel.Text = ProcessingPowerTrackbar.Value.ToString() + "%";
+            }
+        }
     }
 
 
