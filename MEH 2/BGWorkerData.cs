@@ -274,6 +274,20 @@ namespace MEH2
 
 
 
+        public Tuple<string, bool, Color> ValidateOutputTypes()
+        {
+            if ((this.GenerateBinary || this.GenerateVerbose || this.GenerateRawDTM) && (!this.GenerateFreqList))
+            {
+                return new Tuple<string, bool, Color>("Checking output settings: Error" + Environment.NewLine + "To generate the output that you have selected, you must also choose to generate a Frequency List.", false, Color.Red);
+            }
+            else
+            {
+                return new Tuple<string, bool, Color>("Checking output settings: OK", true, Color.Green);
+            }
+
+        }
+
+
 
 
 

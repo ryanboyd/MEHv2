@@ -561,6 +561,8 @@ namespace MEH2
                 BGData.GenerateTFIDF = TFIDFOutputCheckbox.Checked;
                 BGData.PreExistingDWL_Location = PregeneratedDWLTextbox.Text;
 
+                
+
                 if (ThresholdOptionMostFrequentByPercentOfDocuments.Checked) BGData.ThresholdType = "TopNDocumentFrequency";
                 if (ThresholdOptionMostFrequentByRawFrequency.Checked) BGData.ThresholdType = "TopNRawFrequency";
                 if (ThresholdOptionPercentOfDocuments.Checked) BGData.ThresholdType = "PercentOfDocs";
@@ -571,6 +573,7 @@ namespace MEH2
                 ValidationList.Add(BGData.ValidateInputFolder(BGData.TextFileFolder));
                 ValidationList.Add(BGData.ValidateOutputFolder(BGData.OutputFileLocation));
                 ValidationList.Add(BGData.ValidateSegmentationOptions(BGData.SegmentationType, BGData.SegmentationParameter));
+                ValidationList.Add(BGData.ValidateOutputTypes());
 
                 //here are the items that absolutely require validation prior to assignment in the BGData object
                 ValidationList.Add(BGData.ValidateThresholdOptions(BGData.ThresholdType, ThresholdParameterTextbox.Text));
@@ -1767,7 +1770,7 @@ namespace MEH2
             StartButton.Enabled = true;
 
             string[] ControlsToKeepDisabled = new string[] { "InputFolderTextbox", "OutputFileTextbox",
-                                                             "PregeneratedDWLTextbox", "DocumentWordListsOutputCheckbox" };
+                                                             "PregeneratedDWLTextbox", "DocumentWordListsOutputCheckbox", "InputSpreadsheetTextbox" };
             foreach (TabPage Tab in TabControlObject.TabPages)
             {
                 if (Tab.Name != "BeginAnalysisTab" && Tab.Name != "AboutMEHTab")
