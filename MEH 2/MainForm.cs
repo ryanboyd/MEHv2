@@ -2031,16 +2031,19 @@ namespace MEH2
             {
                 ProcessingPowerLabel.ForeColor = Color.Red;
                 ProcessingPowerLabel.Text = ProcessingPowerTrackbar.Value.ToString() + "% (NOT RECOMMENDED)";
+                ParallelProcessingWarningLabel.Visible = true;
             }
             else if (ProcessingPowerTrackbar.Value == 75)
             {
                 ProcessingPowerLabel.ForeColor = Color.Black;
                 ProcessingPowerLabel.Text = ProcessingPowerTrackbar.Value.ToString() + "% (Recommended)";
+                ParallelProcessingWarningLabel.Visible = false;
             }
             else
             {
                 ProcessingPowerLabel.ForeColor = Color.Black;
                 ProcessingPowerLabel.Text = ProcessingPowerTrackbar.Value.ToString() + "%";
+                ParallelProcessingWarningLabel.Visible = false;
             }
         }
     }

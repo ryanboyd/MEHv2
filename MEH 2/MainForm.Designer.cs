@@ -48,6 +48,9 @@
             this.EncodingDropdown = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.OutputFileTab = new System.Windows.Forms.TabPage();
+            this.ProcessingPowerLabel = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
+            this.ProcessingPowerTrackbar = new System.Windows.Forms.TrackBar();
             this.label39 = new System.Windows.Forms.Label();
             this.OutputFileTextbox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -139,12 +142,11 @@
             this.AboutMEHPictureBox = new System.Windows.Forms.PictureBox();
             this.label24 = new System.Windows.Forms.Label();
             this.BGWorker = new System.ComponentModel.BackgroundWorker();
-            this.ProcessingPowerTrackbar = new System.Windows.Forms.TrackBar();
-            this.label43 = new System.Windows.Forms.Label();
-            this.ProcessingPowerLabel = new System.Windows.Forms.Label();
+            this.ParallelProcessingWarningLabel = new System.Windows.Forms.Label();
             this.TabControlObject.SuspendLayout();
             this.InputFileTab.SuspendLayout();
             this.OutputFileTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ProcessingPowerTrackbar)).BeginInit();
             this.TextSegmentationTab.SuspendLayout();
             this.ConversionListTab.SuspendLayout();
             this.StopListTab.SuspendLayout();
@@ -155,7 +157,6 @@
             this.BeginAnalysisTab.SuspendLayout();
             this.AboutMEHTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AboutMEHPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ProcessingPowerTrackbar)).BeginInit();
             this.SuspendLayout();
             // 
             // TabControlObject
@@ -379,6 +380,7 @@
             // OutputFileTab
             // 
             this.OutputFileTab.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.OutputFileTab.Controls.Add(this.ParallelProcessingWarningLabel);
             this.OutputFileTab.Controls.Add(this.ProcessingPowerLabel);
             this.OutputFileTab.Controls.Add(this.label43);
             this.OutputFileTab.Controls.Add(this.ProcessingPowerTrackbar);
@@ -391,6 +393,43 @@
             this.OutputFileTab.Size = new System.Drawing.Size(662, 454);
             this.OutputFileTab.TabIndex = 10;
             this.OutputFileTab.Text = "Output Generation";
+            // 
+            // ProcessingPowerLabel
+            // 
+            this.ProcessingPowerLabel.AutoSize = true;
+            this.ProcessingPowerLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ProcessingPowerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProcessingPowerLabel.Location = new System.Drawing.Point(185, 185);
+            this.ProcessingPowerLabel.Name = "ProcessingPowerLabel";
+            this.ProcessingPowerLabel.Size = new System.Drawing.Size(158, 18);
+            this.ProcessingPowerLabel.TabIndex = 15;
+            this.ProcessingPowerLabel.Text = "75% (Recommended)";
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label43.Location = new System.Drawing.Point(10, 185);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(169, 16);
+            this.label43.TabIndex = 14;
+            this.label43.Text = "Parallel Processing Power:";
+            // 
+            // ProcessingPowerTrackbar
+            // 
+            this.ProcessingPowerTrackbar.BackColor = System.Drawing.Color.SlateGray;
+            this.ProcessingPowerTrackbar.LargeChange = 20;
+            this.ProcessingPowerTrackbar.Location = new System.Drawing.Point(13, 214);
+            this.ProcessingPowerTrackbar.Maximum = 100;
+            this.ProcessingPowerTrackbar.Minimum = 5;
+            this.ProcessingPowerTrackbar.Name = "ProcessingPowerTrackbar";
+            this.ProcessingPowerTrackbar.Size = new System.Drawing.Size(465, 45);
+            this.ProcessingPowerTrackbar.SmallChange = 5;
+            this.ProcessingPowerTrackbar.TabIndex = 13;
+            this.ProcessingPowerTrackbar.TickFrequency = 5;
+            this.ProcessingPowerTrackbar.TickStyle = System.Windows.Forms.TickStyle.Both;
+            this.ProcessingPowerTrackbar.Value = 75;
+            this.ProcessingPowerTrackbar.Scroll += new System.EventHandler(this.ProcessingPowerTrackbar_Scroll);
             // 
             // label39
             // 
@@ -1511,42 +1550,20 @@
             this.BGWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.BGWorker_ProgressChanged);
             this.BGWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BGWorker_RunWorkerCompleted);
             // 
-            // ProcessingPowerTrackbar
+            // ParallelProcessingWarningLabel
             // 
-            this.ProcessingPowerTrackbar.BackColor = System.Drawing.Color.SlateGray;
-            this.ProcessingPowerTrackbar.LargeChange = 20;
-            this.ProcessingPowerTrackbar.Location = new System.Drawing.Point(13, 214);
-            this.ProcessingPowerTrackbar.Maximum = 100;
-            this.ProcessingPowerTrackbar.Minimum = 5;
-            this.ProcessingPowerTrackbar.Name = "ProcessingPowerTrackbar";
-            this.ProcessingPowerTrackbar.Size = new System.Drawing.Size(465, 45);
-            this.ProcessingPowerTrackbar.SmallChange = 5;
-            this.ProcessingPowerTrackbar.TabIndex = 13;
-            this.ProcessingPowerTrackbar.TickFrequency = 5;
-            this.ProcessingPowerTrackbar.TickStyle = System.Windows.Forms.TickStyle.Both;
-            this.ProcessingPowerTrackbar.Value = 75;
-            this.ProcessingPowerTrackbar.Scroll += new System.EventHandler(this.ProcessingPowerTrackbar_Scroll);
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label43.Location = new System.Drawing.Point(10, 185);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(169, 16);
-            this.label43.TabIndex = 14;
-            this.label43.Text = "Parallel Processing Power:";
-            // 
-            // ProcessingPowerLabel
-            // 
-            this.ProcessingPowerLabel.AutoSize = true;
-            this.ProcessingPowerLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ProcessingPowerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProcessingPowerLabel.Location = new System.Drawing.Point(185, 185);
-            this.ProcessingPowerLabel.Name = "ProcessingPowerLabel";
-            this.ProcessingPowerLabel.Size = new System.Drawing.Size(158, 18);
-            this.ProcessingPowerLabel.TabIndex = 15;
-            this.ProcessingPowerLabel.Text = "75% (Recommended)";
+            this.ParallelProcessingWarningLabel.AutoSize = true;
+            this.ParallelProcessingWarningLabel.BackColor = System.Drawing.Color.Black;
+            this.ParallelProcessingWarningLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ParallelProcessingWarningLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ParallelProcessingWarningLabel.ForeColor = System.Drawing.Color.Red;
+            this.ParallelProcessingWarningLabel.Location = new System.Drawing.Point(13, 280);
+            this.ParallelProcessingWarningLabel.Name = "ParallelProcessingWarningLabel";
+            this.ParallelProcessingWarningLabel.Padding = new System.Windows.Forms.Padding(5);
+            this.ParallelProcessingWarningLabel.Size = new System.Drawing.Size(540, 156);
+            this.ParallelProcessingWarningLabel.TabIndex = 16;
+            this.ParallelProcessingWarningLabel.Text = resources.GetString("ParallelProcessingWarningLabel.Text");
+            this.ParallelProcessingWarningLabel.Visible = false;
             // 
             // MainForm
             // 
@@ -1570,6 +1587,7 @@
             this.InputFileTab.PerformLayout();
             this.OutputFileTab.ResumeLayout(false);
             this.OutputFileTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ProcessingPowerTrackbar)).EndInit();
             this.TextSegmentationTab.ResumeLayout(false);
             this.TextSegmentationTab.PerformLayout();
             this.ConversionListTab.ResumeLayout(false);
@@ -1589,7 +1607,6 @@
             this.AboutMEHTab.ResumeLayout(false);
             this.AboutMEHTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AboutMEHPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ProcessingPowerTrackbar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1709,6 +1726,7 @@
         private System.Windows.Forms.Label ProcessingPowerLabel;
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.TrackBar ProcessingPowerTrackbar;
+        private System.Windows.Forms.Label ParallelProcessingWarningLabel;
     }
 }
 
