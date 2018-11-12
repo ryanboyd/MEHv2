@@ -1052,15 +1052,16 @@ namespace MEH2
 
                                 //Generate a row ID, either by using the spreadsheet or just the row number
                                 string RowIdentifier = currIndex.ToString();
-                                int RowIDItemCounter = 0;
+                                bool AppendSemicolon = false;
                                 if (BGData.CSV_ID_Indices.Length > 0)
                                 {
                                     RowIdentifier = "";
-                                    foreach (int IDIndex in BGData.CSV_ID_Indices)
+                                    for (int IDIndex = 0; IDIndex < BGData.CSV_ID_Indices.Length; IDIndex++)
                                     {
-                                        if (RowIDItemCounter > 0) RowIdentifier += ";";
-                                        RowIdentifier += line[IDIndex];
-                                        RowIDItemCounter++;
+                                        if (AppendSemicolon) RowIdentifier += ";";
+
+                                        RowIdentifier += line[BGData.CSV_ID_Indices[IDIndex]];
+                                        AppendSemicolon = true;
                                     }
                                 }
 
@@ -1070,12 +1071,12 @@ namespace MEH2
                                 //read our input
                                 if (BGData.CSVSeparateColumns)
                                 {
-                                    foreach (int TextIndex in BGData.CSV_Text_Indices) readTextList.Add(line[TextIndex].Replace("\r\n", " ").Replace("\r", " ").Replace("\n", " "));
+                                    for (int TextIndex = 0; TextIndex < BGData.CSV_Text_Indices.Length; TextIndex++) readTextList.Add(line[BGData.CSV_Text_Indices[TextIndex]].Replace("\r\n", " ").Replace("\r", " ").Replace("\n", " "));
                                 }
                                 else
                                 {
                                     StringBuilder readTextBuilder = new StringBuilder();
-                                    foreach (int TextIndex in BGData.CSV_Text_Indices) readTextBuilder.Append(line[TextIndex] + Environment.NewLine);
+                                    for (int TextIndex = 0; TextIndex < BGData.CSV_Text_Indices.Length; TextIndex++) readTextBuilder.AppendLine(line[BGData.CSV_Text_Indices[TextIndex]]);
                                     readTextList.Add(readTextBuilder.ToString().Replace("\r\n", " ").Replace("\r", " ").Replace("\n", " "));
                                     readTextBuilder.Clear();
                                 }
@@ -1247,7 +1248,7 @@ namespace MEH2
                                 {
 
                                 LogWriter.WriteToLog(DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss tt") + ": Pruning rare N-grams...", Color.Yellow);
-                                long itemcount = FreqListDictionary.Count;
+                                //long itemcount = FreqListDictionary.Count;
                                 List<string> ItemsToPrune = new List<string>();
                                     foreach (var token in FreqListDictionary)
                                     {
@@ -1334,7 +1335,7 @@ namespace MEH2
                         {
                             
                             LogWriter.WriteToLog(DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss tt") + ": Pruning rare N-grams...", Color.Yellow);
-                            long itemcount = FreqListDictionary.Count;
+                            //long itemcount = FreqListDictionary.Count;
                             List<string> ItemsToPrune = new List<string>();
                             foreach (var token in FreqListDictionary)
                             {
