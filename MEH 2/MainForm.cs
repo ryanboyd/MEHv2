@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using System.Media;
 using System.Linq;
+using System.Diagnostics;
 
 
 namespace MEH2
@@ -2016,13 +2017,6 @@ namespace MEH2
             }
 
 
-
-            
-
-
-
-
-
         }
 
         private void ProcessingPowerTrackbar_Scroll(object sender, EventArgs e)
@@ -2031,24 +2025,22 @@ namespace MEH2
             {
                 ProcessingPowerLabel.ForeColor = Color.Red;
                 ProcessingPowerLabel.Text = ProcessingPowerTrackbar.Value.ToString() + "% (NOT RECOMMENDED)";
-                ParallelProcessingWarningLabel.Visible = true;
             }
             else if (ProcessingPowerTrackbar.Value == 75)
             {
                 ProcessingPowerLabel.ForeColor = Color.Black;
                 ProcessingPowerLabel.Text = ProcessingPowerTrackbar.Value.ToString() + "% (Recommended)";
-                ParallelProcessingWarningLabel.Visible = false;
             }
             else
             {
                 ProcessingPowerLabel.ForeColor = Color.Black;
                 ProcessingPowerLabel.Text = ProcessingPowerTrackbar.Value.ToString() + "%";
-                ParallelProcessingWarningLabel.Visible = false;
             }
         }
+
+
+
     }
-
-
 
 }
 

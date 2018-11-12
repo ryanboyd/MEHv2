@@ -48,6 +48,7 @@
             this.EncodingDropdown = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.OutputFileTab = new System.Windows.Forms.TabPage();
+            this.ParallelProcessingWarningLabel = new System.Windows.Forms.Label();
             this.ProcessingPowerLabel = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
             this.ProcessingPowerTrackbar = new System.Windows.Forms.TrackBar();
@@ -142,7 +143,6 @@
             this.AboutMEHPictureBox = new System.Windows.Forms.PictureBox();
             this.label24 = new System.Windows.Forms.Label();
             this.BGWorker = new System.ComponentModel.BackgroundWorker();
-            this.ParallelProcessingWarningLabel = new System.Windows.Forms.Label();
             this.TabControlObject.SuspendLayout();
             this.InputFileTab.SuspendLayout();
             this.OutputFileTab.SuspendLayout();
@@ -394,12 +394,26 @@
             this.OutputFileTab.TabIndex = 10;
             this.OutputFileTab.Text = "Output Generation";
             // 
+            // ParallelProcessingWarningLabel
+            // 
+            this.ParallelProcessingWarningLabel.AutoSize = true;
+            this.ParallelProcessingWarningLabel.BackColor = System.Drawing.Color.Transparent;
+            this.ParallelProcessingWarningLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ParallelProcessingWarningLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ParallelProcessingWarningLabel.ForeColor = System.Drawing.Color.Black;
+            this.ParallelProcessingWarningLabel.Location = new System.Drawing.Point(13, 257);
+            this.ParallelProcessingWarningLabel.Name = "ParallelProcessingWarningLabel";
+            this.ParallelProcessingWarningLabel.Padding = new System.Windows.Forms.Padding(5);
+            this.ParallelProcessingWarningLabel.Size = new System.Drawing.Size(540, 174);
+            this.ParallelProcessingWarningLabel.TabIndex = 16;
+            this.ParallelProcessingWarningLabel.Text = resources.GetString("ParallelProcessingWarningLabel.Text");
+            // 
             // ProcessingPowerLabel
             // 
             this.ProcessingPowerLabel.AutoSize = true;
             this.ProcessingPowerLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ProcessingPowerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProcessingPowerLabel.Location = new System.Drawing.Point(185, 185);
+            this.ProcessingPowerLabel.Location = new System.Drawing.Point(215, 161);
             this.ProcessingPowerLabel.Name = "ProcessingPowerLabel";
             this.ProcessingPowerLabel.Size = new System.Drawing.Size(158, 18);
             this.ProcessingPowerLabel.TabIndex = 15;
@@ -409,21 +423,21 @@
             // 
             this.label43.AutoSize = true;
             this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label43.Location = new System.Drawing.Point(10, 185);
+            this.label43.Location = new System.Drawing.Point(10, 161);
             this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(169, 16);
+            this.label43.Size = new System.Drawing.Size(199, 16);
             this.label43.TabIndex = 14;
-            this.label43.Text = "Parallel Processing Power:";
+            this.label43.Text = "Limit Parallel Processing Power:";
             // 
             // ProcessingPowerTrackbar
             // 
             this.ProcessingPowerTrackbar.BackColor = System.Drawing.Color.SlateGray;
             this.ProcessingPowerTrackbar.LargeChange = 20;
-            this.ProcessingPowerTrackbar.Location = new System.Drawing.Point(13, 214);
+            this.ProcessingPowerTrackbar.Location = new System.Drawing.Point(10, 193);
             this.ProcessingPowerTrackbar.Maximum = 100;
             this.ProcessingPowerTrackbar.Minimum = 5;
             this.ProcessingPowerTrackbar.Name = "ProcessingPowerTrackbar";
-            this.ProcessingPowerTrackbar.Size = new System.Drawing.Size(465, 45);
+            this.ProcessingPowerTrackbar.Size = new System.Drawing.Size(540, 45);
             this.ProcessingPowerTrackbar.SmallChange = 5;
             this.ProcessingPowerTrackbar.TabIndex = 13;
             this.ProcessingPowerTrackbar.TickFrequency = 5;
@@ -1549,21 +1563,6 @@
             this.BGWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BGWorker_DoWork);
             this.BGWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.BGWorker_ProgressChanged);
             this.BGWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BGWorker_RunWorkerCompleted);
-            // 
-            // ParallelProcessingWarningLabel
-            // 
-            this.ParallelProcessingWarningLabel.AutoSize = true;
-            this.ParallelProcessingWarningLabel.BackColor = System.Drawing.Color.Black;
-            this.ParallelProcessingWarningLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ParallelProcessingWarningLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ParallelProcessingWarningLabel.ForeColor = System.Drawing.Color.Red;
-            this.ParallelProcessingWarningLabel.Location = new System.Drawing.Point(13, 280);
-            this.ParallelProcessingWarningLabel.Name = "ParallelProcessingWarningLabel";
-            this.ParallelProcessingWarningLabel.Padding = new System.Windows.Forms.Padding(5);
-            this.ParallelProcessingWarningLabel.Size = new System.Drawing.Size(540, 156);
-            this.ParallelProcessingWarningLabel.TabIndex = 16;
-            this.ParallelProcessingWarningLabel.Text = resources.GetString("ParallelProcessingWarningLabel.Text");
-            this.ParallelProcessingWarningLabel.Visible = false;
             // 
             // MainForm
             // 

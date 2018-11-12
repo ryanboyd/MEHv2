@@ -121,10 +121,11 @@
     <value>
 WARNING: Setting this value above ~75% may cause unexpected behavior.
 This setting tells MEH how much of your computer's processing power 
-it is allowed to use when analyzing texts. If you max out this setting, MEH,
-other programs, or your computer may become unresponsive. This can
-happen because your operating system will not have enough free cycles
-to work with if MEH is hogging all of your processing capacity.
+it is allowed to use when analyzing texts. If you max out this setting, MEH 
+(or your whole computer) may become unresponsive. This problem can
+happen when any program is using up all of your processing capacity,
+resulting in your computer not having enough free processing power 
+to perform other tasks.
  </value>
   </data>
   <data name="label32.Text" xml:space="preserve">
