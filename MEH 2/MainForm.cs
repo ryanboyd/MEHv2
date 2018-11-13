@@ -10,7 +10,6 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using System.Media;
 using System.Linq;
-using System.Diagnostics;
 
 
 namespace MEH2
@@ -515,6 +514,7 @@ namespace MEH2
                 BGData.CSVSeparateColumns = this.CSVSeparateColumns;
 
                 BGData.ProcessingPower = ProcessingPowerTrackbar.Value;
+                BGData.SaveTokenizedText = SaveTokenizedTextCheckbox.Checked;
 
 
                 if (SubfolderCheckbox.Checked)
@@ -559,7 +559,7 @@ namespace MEH2
                 BGData.GenerateBinary = BinaryOutputCheckbox.Checked;
                 BGData.GenerateVerbose = VerboseOutputCheckbox.Checked;
                 BGData.GenerateRawDTM = RawOutputCheckbox.Checked;
-                BGData.GenerateTFIDF = TFIDFOutputCheckbox.Checked;
+                BGData.SaveTokenizedText = SaveTokenizedTextCheckbox.Checked;
                 BGData.PreExistingDWL_Location = PregeneratedDWLTextbox.Text;
 
                 
@@ -875,8 +875,7 @@ namespace MEH2
 
                 //set up our output location
                 string DWL_Output_Location = BGData.OutputFileLocation + Path.DirectorySeparatorChar + DateTime.Now.ToString("yyyy-MM-dd_") + "MEH DWL.ndjson";
-
-
+                string Tokenized_Text_Output_Location = BGData.OutputFileLocation + Path.DirectorySeparatorChar + DateTime.Now.ToString("yyyy-MM-dd_") + "MEH Modified Texts.csv";
 
 
                 //set up all of the things that are going to be used while we're tokenizing
@@ -925,8 +924,13 @@ namespace MEH2
                 if (BGData.PreExistingDWL_Location == "" && !BGWorker.CancellationPending) {
 
                     ThreadsafeOutputWriter OutputWriter = new ThreadsafeOutputWriter(DWL_Output_Location, BGData.SelectedEncoding);
+                    Dictionary<string, ThreadsafeOutputWriter> Tokenized_Text_Logger  = new Dictionary<string, ThreadsafeOutputWriter>();
 
-
+                    if (BGData.SaveTokenizedText)
+                    {
+                        Tokenized_Text_Logger.Add("TokenizedText", new ThreadsafeOutputWriter(Tokenized_Text_Output_Location, BGData.SelectedEncoding));
+                        Tokenized_Text_Logger["TokenizedText"].WriteString("\"Filename\",\"Segment\",\"Text\"");
+                    }
 
 
                     //report that we're getting ready to start
@@ -1022,6 +1026,19 @@ namespace MEH2
                                 //write output to ndjson file
                                 string outputline = JsonConvert.SerializeObject(FileTokenData);
                                 OutputWriter.WriteString(outputline);
+
+                                if (BGData.SaveTokenizedText)
+                                {
+                                    StringBuilder TokenizedTextOutputLine = new StringBuilder();
+                                    TokenizedTextOutputLine.Append("\"" + Path.GetFileName(inputfile).Replace("\"", "\"\"") + "\",");
+                                    TokenizedTextOutputLine.Append((segment_number + 1).ToString() + ",");
+                                    //we're actually going to have it save the version from SegmentedTokenText[segment_number]
+                                    //instead of TokenizedText_For_Ngrams, because the latter has omitted stop words.
+                                    TokenizedTextOutputLine.Append("\"" + string.Join(" ", SegmentedTokenText[segment_number]).Replace("\"", "\"\"") + "\"");
+                                    Tokenized_Text_Logger["TokenizedText"].WriteString(TokenizedTextOutputLine.ToString());
+                                }
+
+
                             }
 
 
@@ -1185,6 +1202,8 @@ namespace MEH2
 
 
                     OutputWriter.Dispose();
+                    if (BGData.SaveTokenizedText) Tokenized_Text_Logger["TokenizedText"].Dispose();
+
                     LogWriter.WriteToLog(DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss tt") + ": Tokenization Complete.", Color.Green);
                 }
                 //if we have a pre-generated DWL, we do this instead:
@@ -1223,6 +1242,9 @@ namespace MEH2
 
                 if (BGData.GenerateFreqList && !BGWorker.CancellationPending)
                 {
+
+
+
                     LogWriter.WriteToLog(Environment.NewLine + DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss tt") + ": Constructing Frequency List...", Color.LightBlue);
 
                     //the "long" array is being used to store

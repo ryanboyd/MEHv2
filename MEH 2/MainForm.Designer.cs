@@ -98,7 +98,6 @@
             this.ChooseOutputTypesTab = new System.Windows.Forms.TabPage();
             this.PruneFreqListParameterTextbox = new System.Windows.Forms.TextBox();
             this.PruneFreqListCheckbox = new System.Windows.Forms.CheckBox();
-            this.label21 = new System.Windows.Forms.Label();
             this.ClearDWLSelectionButton = new System.Windows.Forms.Button();
             this.label25 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -106,7 +105,6 @@
             this.ChooseDWLButton = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.DocumentWordListsOutputCheckbox = new System.Windows.Forms.CheckBox();
-            this.TFIDFOutputCheckbox = new System.Windows.Forms.CheckBox();
             this.RawOutputCheckbox = new System.Windows.Forms.CheckBox();
             this.VerboseOutputCheckbox = new System.Windows.Forms.CheckBox();
             this.BinaryOutputCheckbox = new System.Windows.Forms.CheckBox();
@@ -143,6 +141,7 @@
             this.AboutMEHPictureBox = new System.Windows.Forms.PictureBox();
             this.label24 = new System.Windows.Forms.Label();
             this.BGWorker = new System.ComponentModel.BackgroundWorker();
+            this.SaveTokenizedTextCheckbox = new System.Windows.Forms.CheckBox();
             this.TabControlObject.SuspendLayout();
             this.InputFileTab.SuspendLayout();
             this.OutputFileTab.SuspendLayout();
@@ -859,6 +858,7 @@
             // 
             this.TokenizationHandlingTab.BackColor = System.Drawing.Color.PaleTurquoise;
             this.TokenizationHandlingTab.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TokenizationHandlingTab.Controls.Add(this.SaveTokenizedTextCheckbox);
             this.TokenizationHandlingTab.Controls.Add(this.label38);
             this.TokenizationHandlingTab.Controls.Add(this.TokenizerSelectionDropdown);
             this.TokenizationHandlingTab.Controls.Add(this.label22);
@@ -899,7 +899,7 @@
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.ForeColor = System.Drawing.Color.Red;
-            this.label22.Location = new System.Drawing.Point(10, 176);
+            this.label22.Location = new System.Drawing.Point(10, 166);
             this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(470, 51);
@@ -914,7 +914,7 @@
             this.ConvertToLowercaseCheckbox.Checked = true;
             this.ConvertToLowercaseCheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.ConvertToLowercaseCheckbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ConvertToLowercaseCheckbox.Location = new System.Drawing.Point(10, 151);
+            this.ConvertToLowercaseCheckbox.Location = new System.Drawing.Point(10, 141);
             this.ConvertToLowercaseCheckbox.Margin = new System.Windows.Forms.Padding(2);
             this.ConvertToLowercaseCheckbox.Name = "ConvertToLowercaseCheckbox";
             this.ConvertToLowercaseCheckbox.Size = new System.Drawing.Size(202, 21);
@@ -927,7 +927,7 @@
             this.LemmatizerLanguageSelector.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.LemmatizerLanguageSelector.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LemmatizerLanguageSelector.FormattingEnabled = true;
-            this.LemmatizerLanguageSelector.Location = new System.Drawing.Point(10, 289);
+            this.LemmatizerLanguageSelector.Location = new System.Drawing.Point(10, 279);
             this.LemmatizerLanguageSelector.Margin = new System.Windows.Forms.Padding(2);
             this.LemmatizerLanguageSelector.Name = "LemmatizerLanguageSelector";
             this.LemmatizerLanguageSelector.Size = new System.Drawing.Size(306, 25);
@@ -939,7 +939,7 @@
             this.UseLemmatizationCheckbox.Checked = true;
             this.UseLemmatizationCheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.UseLemmatizationCheckbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UseLemmatizationCheckbox.Location = new System.Drawing.Point(10, 265);
+            this.UseLemmatizationCheckbox.Location = new System.Drawing.Point(10, 255);
             this.UseLemmatizationCheckbox.Margin = new System.Windows.Forms.Padding(2);
             this.UseLemmatizationCheckbox.Name = "UseLemmatizationCheckbox";
             this.UseLemmatizationCheckbox.Size = new System.Drawing.Size(292, 21);
@@ -963,7 +963,6 @@
             this.ChooseOutputTypesTab.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ChooseOutputTypesTab.Controls.Add(this.PruneFreqListParameterTextbox);
             this.ChooseOutputTypesTab.Controls.Add(this.PruneFreqListCheckbox);
-            this.ChooseOutputTypesTab.Controls.Add(this.label21);
             this.ChooseOutputTypesTab.Controls.Add(this.ClearDWLSelectionButton);
             this.ChooseOutputTypesTab.Controls.Add(this.label25);
             this.ChooseOutputTypesTab.Controls.Add(this.label16);
@@ -971,7 +970,6 @@
             this.ChooseOutputTypesTab.Controls.Add(this.ChooseDWLButton);
             this.ChooseOutputTypesTab.Controls.Add(this.label15);
             this.ChooseOutputTypesTab.Controls.Add(this.DocumentWordListsOutputCheckbox);
-            this.ChooseOutputTypesTab.Controls.Add(this.TFIDFOutputCheckbox);
             this.ChooseOutputTypesTab.Controls.Add(this.RawOutputCheckbox);
             this.ChooseOutputTypesTab.Controls.Add(this.VerboseOutputCheckbox);
             this.ChooseOutputTypesTab.Controls.Add(this.BinaryOutputCheckbox);
@@ -986,7 +984,7 @@
             // PruneFreqListParameterTextbox
             // 
             this.PruneFreqListParameterTextbox.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PruneFreqListParameterTextbox.Location = new System.Drawing.Point(452, 281);
+            this.PruneFreqListParameterTextbox.Location = new System.Drawing.Point(452, 276);
             this.PruneFreqListParameterTextbox.Margin = new System.Windows.Forms.Padding(2);
             this.PruneFreqListParameterTextbox.Name = "PruneFreqListParameterTextbox";
             this.PruneFreqListParameterTextbox.Size = new System.Drawing.Size(95, 23);
@@ -1000,26 +998,13 @@
             this.PruneFreqListCheckbox.Checked = true;
             this.PruneFreqListCheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.PruneFreqListCheckbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PruneFreqListCheckbox.Location = new System.Drawing.Point(76, 282);
+            this.PruneFreqListCheckbox.Location = new System.Drawing.Point(76, 277);
             this.PruneFreqListCheckbox.Margin = new System.Windows.Forms.Padding(2);
             this.PruneFreqListCheckbox.Name = "PruneFreqListCheckbox";
             this.PruneFreqListCheckbox.Size = new System.Drawing.Size(372, 21);
             this.PruneFreqListCheckbox.TabIndex = 14;
             this.PruneFreqListCheckbox.Text = "Prune Frequency List; Prune after every X Documents:";
             this.PruneFreqListCheckbox.UseVisualStyleBackColor = true;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.BackColor = System.Drawing.Color.Crimson;
-            this.label21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label21.Location = new System.Drawing.Point(313, 418);
-            this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(155, 17);
-            this.label21.TabIndex = 13;
-            this.label21.Text = "Not Currently Implemented";
-            this.label21.Visible = false;
             // 
             // ClearDWLSelectionButton
             // 
@@ -1035,7 +1020,7 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(8, 301);
+            this.label25.Location = new System.Drawing.Point(8, 305);
             this.label25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(784, 15);
@@ -1046,7 +1031,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(8, 191);
+            this.label16.Location = new System.Drawing.Point(8, 185);
             this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(784, 15);
@@ -1095,7 +1080,7 @@
             this.DocumentWordListsOutputCheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.DocumentWordListsOutputCheckbox.Enabled = false;
             this.DocumentWordListsOutputCheckbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DocumentWordListsOutputCheckbox.Location = new System.Drawing.Point(40, 227);
+            this.DocumentWordListsOutputCheckbox.Location = new System.Drawing.Point(40, 222);
             this.DocumentWordListsOutputCheckbox.Margin = new System.Windows.Forms.Padding(2);
             this.DocumentWordListsOutputCheckbox.Name = "DocumentWordListsOutputCheckbox";
             this.DocumentWordListsOutputCheckbox.Size = new System.Drawing.Size(263, 21);
@@ -1103,26 +1088,12 @@
             this.DocumentWordListsOutputCheckbox.Text = "Document Word Lists (as .ndjson file)";
             this.DocumentWordListsOutputCheckbox.UseVisualStyleBackColor = true;
             // 
-            // TFIDFOutputCheckbox
-            // 
-            this.TFIDFOutputCheckbox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.TFIDFOutputCheckbox.AutoSize = true;
-            this.TFIDFOutputCheckbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TFIDFOutputCheckbox.Location = new System.Drawing.Point(40, 417);
-            this.TFIDFOutputCheckbox.Margin = new System.Windows.Forms.Padding(2);
-            this.TFIDFOutputCheckbox.Name = "TFIDFOutputCheckbox";
-            this.TFIDFOutputCheckbox.Size = new System.Drawing.Size(299, 21);
-            this.TFIDFOutputCheckbox.TabIndex = 5;
-            this.TFIDFOutputCheckbox.Text = "TF-IDF Weighted Document by Term Matrix";
-            this.TFIDFOutputCheckbox.UseVisualStyleBackColor = true;
-            this.TFIDFOutputCheckbox.Visible = false;
-            // 
             // RawOutputCheckbox
             // 
             this.RawOutputCheckbox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.RawOutputCheckbox.AutoSize = true;
             this.RawOutputCheckbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RawOutputCheckbox.Location = new System.Drawing.Point(40, 388);
+            this.RawOutputCheckbox.Location = new System.Drawing.Point(40, 403);
             this.RawOutputCheckbox.Margin = new System.Windows.Forms.Padding(2);
             this.RawOutputCheckbox.Name = "RawOutputCheckbox";
             this.RawOutputCheckbox.Size = new System.Drawing.Size(302, 21);
@@ -1137,7 +1108,7 @@
             this.VerboseOutputCheckbox.Checked = true;
             this.VerboseOutputCheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.VerboseOutputCheckbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VerboseOutputCheckbox.Location = new System.Drawing.Point(40, 360);
+            this.VerboseOutputCheckbox.Location = new System.Drawing.Point(40, 375);
             this.VerboseOutputCheckbox.Margin = new System.Windows.Forms.Padding(2);
             this.VerboseOutputCheckbox.Name = "VerboseOutputCheckbox";
             this.VerboseOutputCheckbox.Size = new System.Drawing.Size(339, 21);
@@ -1152,7 +1123,7 @@
             this.BinaryOutputCheckbox.Checked = true;
             this.BinaryOutputCheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.BinaryOutputCheckbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BinaryOutputCheckbox.Location = new System.Drawing.Point(40, 332);
+            this.BinaryOutputCheckbox.Location = new System.Drawing.Point(40, 347);
             this.BinaryOutputCheckbox.Margin = new System.Windows.Forms.Padding(2);
             this.BinaryOutputCheckbox.Name = "BinaryOutputCheckbox";
             this.BinaryOutputCheckbox.Size = new System.Drawing.Size(300, 21);
@@ -1167,7 +1138,7 @@
             this.FrequencyListCheckbox.Checked = true;
             this.FrequencyListCheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.FrequencyListCheckbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FrequencyListCheckbox.Location = new System.Drawing.Point(40, 255);
+            this.FrequencyListCheckbox.Location = new System.Drawing.Point(40, 250);
             this.FrequencyListCheckbox.Margin = new System.Windows.Forms.Padding(2);
             this.FrequencyListCheckbox.Name = "FrequencyListCheckbox";
             this.FrequencyListCheckbox.Size = new System.Drawing.Size(120, 21);
@@ -1564,6 +1535,19 @@
             this.BGWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.BGWorker_ProgressChanged);
             this.BGWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BGWorker_RunWorkerCompleted);
             // 
+            // SaveTokenizedTextCheckbox
+            // 
+            this.SaveTokenizedTextCheckbox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.SaveTokenizedTextCheckbox.AutoSize = true;
+            this.SaveTokenizedTextCheckbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SaveTokenizedTextCheckbox.Location = new System.Drawing.Point(10, 380);
+            this.SaveTokenizedTextCheckbox.Margin = new System.Windows.Forms.Padding(2);
+            this.SaveTokenizedTextCheckbox.Name = "SaveTokenizedTextCheckbox";
+            this.SaveTokenizedTextCheckbox.Size = new System.Drawing.Size(498, 21);
+            this.SaveTokenizedTextCheckbox.TabIndex = 7;
+            this.SaveTokenizedTextCheckbox.Text = "Save a Copy of MEH-Modified Texts (e.g., after lemmatization/conversions)";
+            this.SaveTokenizedTextCheckbox.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1652,7 +1636,6 @@
         private System.Windows.Forms.ComboBox LemmatizerLanguageSelector;
         private System.Windows.Forms.CheckBox UseLemmatizationCheckbox;
         private System.Windows.Forms.CheckBox FrequencyListCheckbox;
-        private System.Windows.Forms.CheckBox TFIDFOutputCheckbox;
         private System.Windows.Forms.CheckBox RawOutputCheckbox;
         private System.Windows.Forms.CheckBox VerboseOutputCheckbox;
         private System.Windows.Forms.CheckBox BinaryOutputCheckbox;
@@ -1692,7 +1675,6 @@
         private System.Windows.Forms.Button CancelAnalysisButton;
         private System.Windows.Forms.RadioButton ThresholdOptionRawFreq;
         private System.Windows.Forms.Button ClearDWLSelectionButton;
-        private System.Windows.Forms.Label label21;
         private System.Windows.Forms.PictureBox AboutMEHPictureBox;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Label label33;
@@ -1726,6 +1708,7 @@
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.TrackBar ProcessingPowerTrackbar;
         private System.Windows.Forms.Label ParallelProcessingWarningLabel;
+        private System.Windows.Forms.CheckBox SaveTokenizedTextCheckbox;
     }
 }
 

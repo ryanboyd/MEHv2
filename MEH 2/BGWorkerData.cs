@@ -55,6 +55,7 @@ namespace MEH2
         public bool GenerateVerbose { get; set; }
         public bool GenerateRawDTM { get; set; }
         public bool GenerateTFIDF { get; set; }
+        public bool SaveTokenizedText { get; set; }
 
         public string PreExistingDWL_Location { get; set; }
 
