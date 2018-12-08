@@ -88,6 +88,7 @@
             this.DictionaryListTextbox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.TokenizationHandlingTab = new System.Windows.Forms.TabPage();
+            this.SaveTokenizedTextCheckbox = new System.Windows.Forms.CheckBox();
             this.label38 = new System.Windows.Forms.Label();
             this.TokenizerSelectionDropdown = new System.Windows.Forms.ComboBox();
             this.label22 = new System.Windows.Forms.Label();
@@ -141,7 +142,6 @@
             this.AboutMEHPictureBox = new System.Windows.Forms.PictureBox();
             this.label24 = new System.Windows.Forms.Label();
             this.BGWorker = new System.ComponentModel.BackgroundWorker();
-            this.SaveTokenizedTextCheckbox = new System.Windows.Forms.CheckBox();
             this.TabControlObject.SuspendLayout();
             this.InputFileTab.SuspendLayout();
             this.OutputFileTab.SuspendLayout();
@@ -689,6 +689,7 @@
             this.ConversionsTextbox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.ConversionsTextbox.Size = new System.Drawing.Size(318, 379);
             this.ConversionsTextbox.TabIndex = 1;
+            this.ConversionsTextbox.WordWrap = false;
             // 
             // label4
             // 
@@ -784,6 +785,7 @@
             this.StopListTextbox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.StopListTextbox.Size = new System.Drawing.Size(316, 379);
             this.StopListTextbox.TabIndex = 1;
+            this.StopListTextbox.WordWrap = false;
             // 
             // label5
             // 
@@ -871,6 +873,19 @@
             this.TokenizationHandlingTab.Size = new System.Drawing.Size(662, 454);
             this.TokenizationHandlingTab.TabIndex = 5;
             this.TokenizationHandlingTab.Text = "Token Handling Options";
+            // 
+            // SaveTokenizedTextCheckbox
+            // 
+            this.SaveTokenizedTextCheckbox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.SaveTokenizedTextCheckbox.AutoSize = true;
+            this.SaveTokenizedTextCheckbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SaveTokenizedTextCheckbox.Location = new System.Drawing.Point(10, 380);
+            this.SaveTokenizedTextCheckbox.Margin = new System.Windows.Forms.Padding(2);
+            this.SaveTokenizedTextCheckbox.Name = "SaveTokenizedTextCheckbox";
+            this.SaveTokenizedTextCheckbox.Size = new System.Drawing.Size(498, 21);
+            this.SaveTokenizedTextCheckbox.TabIndex = 7;
+            this.SaveTokenizedTextCheckbox.Text = "Save a Copy of MEH-Modified Texts (e.g., after lemmatization/conversions)";
+            this.SaveTokenizedTextCheckbox.UseVisualStyleBackColor = true;
             // 
             // label38
             // 
@@ -1534,19 +1549,6 @@
             this.BGWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BGWorker_DoWork);
             this.BGWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.BGWorker_ProgressChanged);
             this.BGWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BGWorker_RunWorkerCompleted);
-            // 
-            // SaveTokenizedTextCheckbox
-            // 
-            this.SaveTokenizedTextCheckbox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.SaveTokenizedTextCheckbox.AutoSize = true;
-            this.SaveTokenizedTextCheckbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SaveTokenizedTextCheckbox.Location = new System.Drawing.Point(10, 380);
-            this.SaveTokenizedTextCheckbox.Margin = new System.Windows.Forms.Padding(2);
-            this.SaveTokenizedTextCheckbox.Name = "SaveTokenizedTextCheckbox";
-            this.SaveTokenizedTextCheckbox.Size = new System.Drawing.Size(498, 21);
-            this.SaveTokenizedTextCheckbox.TabIndex = 7;
-            this.SaveTokenizedTextCheckbox.Text = "Save a Copy of MEH-Modified Texts (e.g., after lemmatization/conversions)";
-            this.SaveTokenizedTextCheckbox.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
