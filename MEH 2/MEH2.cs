@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using System.Net;
 using System.IO;
 
+
 namespace MEH2
 {
     static class MEH2
@@ -31,7 +32,7 @@ namespace MEH2
                 StreamReader reader = new StreamReader(stream);
                 string content = reader.ReadToEnd();
 
-                if (content != VersionText)
+                if ((content != VersionText) && (content.Length < 10))
                 {
                     var result = MessageBox.Show("A new version of MEH (v" + content + ") is available at https://meh.ryanb.cc" + Environment.NewLine + Environment.NewLine + "Would you like to download the update?", "Update Available", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
