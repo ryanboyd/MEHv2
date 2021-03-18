@@ -188,6 +188,8 @@
     <None Include="Resources\lemmatization-lists-master\fixed\manual-lemmatization-sl.txt" />
     <None Include="Resources\lemmatization-lists-master\fixed\manual-lemmatization-sv.txt" />
     <None Include="Resources\lemmatization-lists-master\fixed\manual-lemmatization-uk.txt" />
+    <None Include="Resources\stoplists\danishST.txt" />
+    <None Include="Resources\lemmatization-lists-master\lemmatization list - da.txt" />
     <Content Include="Resources\stoplists\StopListCharacters.txt" />
     <Content Include="Resources\stoplists\stoplist_mallet_en.txt" />
   </ItemGroup>

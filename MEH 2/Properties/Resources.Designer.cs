@@ -19,7 +19,7 @@ namespace MEHv2.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -291,6 +291,124 @@ namespace MEHv2.Properties {
         internal static string czechstoplist {
             get {
                 return ResourceManager.GetString("czechstoplist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to `
+        ///~
+        ///!
+        ///@
+        ///#
+        ///$
+        ///%
+        ///^
+        ///&amp;
+        ///*
+        ///(
+        ///)
+        ///_
+        ///+
+        ///-
+        ///=
+        ///[
+        ///]
+        ///\
+        ///;
+        ///&apos;
+        ///,
+        ///.
+        ////
+        ///{
+        ///}
+        ///|
+        ///:
+        ///&quot;
+        ///&lt;
+        ///&gt;
+        ///?
+        ///..
+        ///...
+        ///«
+        ///««
+        ///»»
+        ///“
+        ///”
+        ///‘
+        ///‘‘
+        ///’
+        ///’’
+        ///1
+        ///2
+        ///3
+        ///4
+        ///5
+        ///6
+        ///7
+        ///8
+        ///9
+        ///0
+        ///10
+        ///11
+        ///12
+        ///13
+        ///14
+        ///15
+        ///16
+        ///17
+        ///18
+        ///19
+        ///20
+        ///25
+        ///30
+        ///33
+        ///40
+        ///50
+        ///60
+        ///66
+        ///70
+        ///75
+        ///80
+        ///90
+        ///99
+        ///100
+        ///123
+        ///1000
+        ///10000
+        ///12345
+        ///100000
+        ///1000000
+        ///aan
+        ///aangaande
+        ///aangezien
+        ///achte
+        ///achter
+        ///achterna
+        ///af
+        ///afgelopen
+        ///al
+        ///aldaar
+        ///aldus
+        ///alhoewel
+        ///alias
+        ///alle
+        ///allebei
+        ///alleen
+        ///alles
+        ///als
+        ///alsnog
+        ///altijd
+        ///altoos
+        ///ander
+        ///andere
+        ///anders
+        ///anderszins
+        ///beetje
+        ///be [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string danishST {
+            get {
+                return ResourceManager.GetString("danishST", resourceCulture);
             }
         }
         
@@ -691,6 +809,43 @@ namespace MEHv2.Properties {
         internal static string italianstoplist {
             get {
                 return ResourceManager.GetString("italianstoplist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to `a^a
+        ///aagtappelen^aagtappel
+        ///aagtappels^aagtappel
+        ///aagten^aagt
+        ///aaide^aai
+        ///aaiden^aai
+        ///aaien^aai
+        ///aaiend^aai
+        ///aaiende^aai
+        ///aaiingen^aaiing
+        ///aait^aai
+        ///aaitje^aai
+        ///aaitjes^aai
+        ///aalbessen^aalbes
+        ///aalbessestruiken^aalbessestruik
+        ///aalelgers^aalelger
+        ///aalfuiken^aalfuik
+        ///aalgeren^aalgeer
+        ///aalgladde^aalglad
+        ///aalkaren^aalkaar
+        ///aalkasten^aalkast
+        ///aalkorven^aalkorf
+        ///aalkuipen^aalkuip
+        ///aalkwabben^aalkwab
+        ///aalkwabben^aalkwabbe
+        ///aalmoezen^aalmoes
+        ///aalmoezeniers^aalmoezenier
+        ///aalmoezenierskamers^aalmoezenierskamer
+        ///aalpom [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string lemmatization_list___da {
+            get {
+                return ResourceManager.GetString("lemmatization_list___da", resourceCulture);
             }
         }
         
