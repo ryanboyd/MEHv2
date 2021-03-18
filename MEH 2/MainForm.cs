@@ -32,7 +32,7 @@ namespace MEH2
 
             AboutLabel.Text = "Boyd, R. L. (2018). MEH: Meaning Extraction" + Environment.NewLine + 
                               "      Helper(version " + VersionText + ") [Software]." + Environment.NewLine +
-                              "      Available from https://meh.ryanb.cc";
+                              "      Available from https://www.ryanboyd.io/software/meh";
 
 
             //just testing some stuff -- disregard
@@ -1018,7 +1018,7 @@ namespace MEH2
 
                                 //Use the NgramBuilder's method to actually iterate through the string array
                                 //and return to us a dictionary that is ready to write
-                                FileTokenData = NgramBuilder.BuildNgramDictionary(TokenizedText_For_Ngrams,
+                                FileTokenData = NgramBuilder.BuildNgramDictionary(TokenizedText_For_Ngrams, StopList,
                                                                                   FileTokenData,
                                                                                   BGData.Ngram_N_Min, BGData.Ngram_N_Max);
 
@@ -1177,7 +1177,7 @@ namespace MEH2
 
                                         //Use the NgramBuilder's method to actually iterate through the string array
                                         //and return to us a dictionary that is ready to write
-                                        FileTokenData = NgramBuilder.BuildNgramDictionary(TokenizedText_For_Ngrams,
+                                        FileTokenData = NgramBuilder.BuildNgramDictionary(TokenizedText_For_Ngrams, StopList,
                                                                                           FileTokenData,
                                                                                           BGData.Ngram_N_Min, BGData.Ngram_N_Max);
 

@@ -37,7 +37,7 @@ namespace MEHv2
 
 
 
-        public Dictionary<string, Dictionary<string, long>> BuildNgramDictionary(string[] TokenizedText_For_Ngrams,
+        public Dictionary<string, Dictionary<string, long>> BuildNgramDictionary(string[] TokenizedText_For_Ngrams, HashSet<string> stoplist,
                                                                                  Dictionary<string, Dictionary<string, long>> FileTokenData,
                                                                                  int Ngram_N_Min, int Ngram_N_Max)
         {
@@ -63,7 +63,7 @@ namespace MEHv2
                         if (Converter.LookupMethod && Converter.ConversionList_NoRegex.Count > 0 && Converter.ConversionList_NoRegex.ContainsKey(token))
                         {
                             token = Converter.ConversionList_NoRegex[token];
-
+                            if (stoplist.Contains(token)) continue;
                         }
 
 
