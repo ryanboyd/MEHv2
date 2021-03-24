@@ -59,7 +59,7 @@ namespace MEH2
             "Беларуская (Bulgarian)",
             "čeština (Czech)",
             "français (French)",
-            "Dansk (Danish)",
+            "Dutch",
             "Deutsch (German)",
             "Magyar (Hungarian)",
             "italiano (Italian)",
@@ -79,7 +79,7 @@ namespace MEH2
             "Lemma Lookup List: Bulgarian (bg)",
             "Lemma Lookup List: Catalan (ca)",
             "Lemma Lookup List: Czech (cs)",
-            "Lemma Lookup List: Danish (da)",
+            "Lemma Lookup List: Dutch",
             "Lemma Lookup List: English (en)",
             "Lemma Lookup List: Estonian (et)",
             "Lemma Lookup List: French (fr)",
@@ -260,8 +260,8 @@ namespace MEH2
                     StopListTextbox.Text += MEHv2.Properties.Resources.czechstoplist.ToLower();
                     break;
 
-                case "Dansk (Danish)":
-                    StopListTextbox.Text += MEHv2.Properties.Resources.danishST.ToLower();
+                case "Dutch":
+                    StopListTextbox.Text += MEHv2.Properties.Resources.dutchST.ToLower();
                     break;
 
                 case "français (French)":
@@ -363,8 +363,8 @@ namespace MEH2
                     UseLemmatizationCheckbox.Checked = false;
                     break;
 
-                case "Lemma Lookup List: Danish (da)":
-                    ConversionsTextbox.Text = MEHv2.Properties.Resources.lemmatization_list___da;
+                case "Lemma Lookup List: Dutch":
+                    ConversionsTextbox.Text = MEHv2.Properties.Resources.lemmatization_list_dutch;
                     Conversions_Use_Lookup_Checkbox.Checked = true;
                     UseLemmatizationCheckbox.Checked = false;
                     break;

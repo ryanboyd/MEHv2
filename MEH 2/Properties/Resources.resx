@@ -247,10 +247,10 @@
   <data name="manual_lemmatization_uk" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\lemmatization-lists-master\fixed\manual-lemmatization-uk.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="danishST" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\stoplists\danishST.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="dutchST" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\stoplists\dutchST.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="lemmatization_list___da" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\lemmatization-lists-master\lemmatization list - da.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  <data name="lemmatization_list_dutch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lemmatization-lists-master\lemmatization list-dutch.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
 </root>

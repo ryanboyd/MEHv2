@@ -295,124 +295,6 @@ namespace MEHv2.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to `
-        ///~
-        ///!
-        ///@
-        ///#
-        ///$
-        ///%
-        ///^
-        ///&amp;
-        ///*
-        ///(
-        ///)
-        ///_
-        ///+
-        ///-
-        ///=
-        ///[
-        ///]
-        ///\
-        ///;
-        ///&apos;
-        ///,
-        ///.
-        ////
-        ///{
-        ///}
-        ///|
-        ///:
-        ///&quot;
-        ///&lt;
-        ///&gt;
-        ///?
-        ///..
-        ///...
-        ///«
-        ///««
-        ///»»
-        ///“
-        ///”
-        ///‘
-        ///‘‘
-        ///’
-        ///’’
-        ///1
-        ///2
-        ///3
-        ///4
-        ///5
-        ///6
-        ///7
-        ///8
-        ///9
-        ///0
-        ///10
-        ///11
-        ///12
-        ///13
-        ///14
-        ///15
-        ///16
-        ///17
-        ///18
-        ///19
-        ///20
-        ///25
-        ///30
-        ///33
-        ///40
-        ///50
-        ///60
-        ///66
-        ///70
-        ///75
-        ///80
-        ///90
-        ///99
-        ///100
-        ///123
-        ///1000
-        ///10000
-        ///12345
-        ///100000
-        ///1000000
-        ///aan
-        ///aangaande
-        ///aangezien
-        ///achte
-        ///achter
-        ///achterna
-        ///af
-        ///afgelopen
-        ///al
-        ///aldaar
-        ///aldus
-        ///alhoewel
-        ///alias
-        ///alle
-        ///allebei
-        ///alleen
-        ///alles
-        ///als
-        ///alsnog
-        ///altijd
-        ///altoos
-        ///ander
-        ///andere
-        ///anders
-        ///anderszins
-        ///beetje
-        ///be [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string danishST {
-            get {
-                return ResourceManager.GetString("danishST", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to l&apos;ansiare^ansia
         ///un&apos;ansia^ansia
         ///d&apos;ansiare^ansia
@@ -490,6 +372,75 @@ namespace MEHv2.Properties {
         internal static string default_conversions_turkish {
             get {
                 return ResourceManager.GetString("default_conversions_turkish", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to aan
+        ///aangaande
+        ///aangezien
+        ///achte
+        ///achter
+        ///achterna
+        ///af
+        ///afgelopen
+        ///al
+        ///aldaar
+        ///aldus
+        ///alhoewel
+        ///alias
+        ///alle
+        ///allebei
+        ///alleen
+        ///alles
+        ///als
+        ///alsnog
+        ///altijd
+        ///altoos
+        ///ander
+        ///andere
+        ///anders
+        ///anderszins
+        ///beetje
+        ///behalve
+        ///behoudens
+        ///beide
+        ///beiden
+        ///ben
+        ///beneden
+        ///bent
+        ///bepaald
+        ///betreffende
+        ///bij
+        ///bijna
+        ///bijv
+        ///binnen
+        ///binnenin
+        ///blijkbaar
+        ///blijken
+        ///boven
+        ///bovenal
+        ///bovendien
+        ///bovengenoemd
+        ///bovenstaand
+        ///bovenvermeld
+        ///buiten
+        ///bv
+        ///daar
+        ///daardoor
+        ///daarheen
+        ///daarin
+        ///daarna
+        ///daarnet
+        ///daarom
+        ///daarop
+        ///daaruit
+        ///daarvanlangs
+        ///dan        /// [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string dutchST {
+            get {
+                return ResourceManager.GetString("dutchST", resourceCulture);
             }
         }
         
@@ -843,9 +794,9 @@ namespace MEHv2.Properties {
         ///aalmoezenierskamers^aalmoezenierskamer
         ///aalpom [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string lemmatization_list___da {
+        internal static string lemmatization_list_dutch {
             get {
-                return ResourceManager.GetString("lemmatization_list___da", resourceCulture);
+                return ResourceManager.GetString("lemmatization_list_dutch", resourceCulture);
             }
         }
         
