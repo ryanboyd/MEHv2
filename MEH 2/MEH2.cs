@@ -28,19 +28,19 @@ namespace MEH2
             {
                 MyWebClient client = new MyWebClient();
                 client.CachePolicy = new System.Net.Cache.RequestCachePolicy(System.Net.Cache.RequestCacheLevel.NoCacheNoStore);
-                Stream stream = client.OpenRead("https://meh.ryanb.cc/version.txt");
+                Stream stream = client.OpenRead("https://www.ryanboyd.io/software/meh/version.txt");
                 StreamReader reader = new StreamReader(stream);
                 string content = reader.ReadToEnd();
 
                 if ((content != VersionText) && (content.Length < 10))
                 {
-                    var result = MessageBox.Show("A new version of MEH (v" + content + ") is available at https://meh.ryanb.cc" + Environment.NewLine + Environment.NewLine + "Would you like to download the update?", "Update Available", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    var result = MessageBox.Show("A new version of MEH (v" + content + ") is available at https://www.ryanboyd.io/software/meh" + Environment.NewLine + Environment.NewLine + "Would you like to download the update?", "Update Available", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                     if (result == DialogResult.Yes)
                     {
                         try
                         {
-                            System.Diagnostics.Process.Start("https://meh.ryanb.cc/download/");
+                            System.Diagnostics.Process.Start("https://www.ryanboyd.io/software/meh/download");
                             Application.Exit();
                         }
                         catch

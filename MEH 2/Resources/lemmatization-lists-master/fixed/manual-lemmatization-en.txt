@@ -7361,9 +7361,7 @@ conjunctivitides^conjunctivitis
 conjured^conjure
 conjures^conjure
 conjuring^conjure
-also^conjurer
 conjurers^conjurer
-spelled^conjurer
 conjurors^conjuror
 conked^conk
 conking^conk

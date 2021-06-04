@@ -31,8 +31,9 @@ namespace MEH2
             DoubleBuffered = true;
 
             AboutLabel.Text = "Boyd, R. L. (2018). MEH: Meaning Extraction" + Environment.NewLine + 
-                              "      Helper(version " + VersionText + ") [Software]." + Environment.NewLine +
-                              "      Available from https://www.ryanboyd.io/software/meh";
+                              "  Helper(version " + VersionText + ") [Software]." + Environment.NewLine +
+                              "  Available from" + Environment.NewLine +
+                              "  https://www.ryanboyd.io/software/meh";
 
 
             //just testing some stuff -- disregard
