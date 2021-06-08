@@ -1010,8 +1010,6 @@
             // 
             this.PruneFreqListCheckbox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.PruneFreqListCheckbox.AutoSize = true;
-            this.PruneFreqListCheckbox.Checked = true;
-            this.PruneFreqListCheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.PruneFreqListCheckbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PruneFreqListCheckbox.Location = new System.Drawing.Point(76, 277);
             this.PruneFreqListCheckbox.Margin = new System.Windows.Forms.Padding(2);

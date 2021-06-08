@@ -42,11 +42,11 @@ namespace MEH2
                     {
                         if (LowerCaseConversion)
                         {
-                            CompiledRegex = new Regex(@"(?<=\s|^)" + Regex.Escape(ConversionItemSplit[0]).Replace(@"\*", @"\S+") + @"(?=\s|$)", RegexOptions.Compiled | RegexOptions.Multiline | RegexOptions.IgnoreCase);
+                            CompiledRegex = new Regex(@"(?<=\b|^)" + Regex.Escape(ConversionItemSplit[0]).Replace(@"\*", @".*?") + @"(?=\b|$)", RegexOptions.Compiled | RegexOptions.Multiline | RegexOptions.IgnoreCase);
                         }
                         else
                         {
-                            CompiledRegex = new Regex(@"(?<=\s|^)" + Regex.Escape(ConversionItemSplit[0]).Replace(@"\*", @"\S+") + @"(?=\s|$)", RegexOptions.Compiled | RegexOptions.Multiline);
+                            CompiledRegex = new Regex(@"(?<=\b|^)" + Regex.Escape(ConversionItemSplit[0]).Replace(@"\*", @".*?") + @"(?=\b|$)", RegexOptions.Compiled | RegexOptions.Multiline);
                         }
 
                         ConversionListCompiled.Add(new Tuple<Regex, string>(CompiledRegex, ConversionItemSplit[1]));
