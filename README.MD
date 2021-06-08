@@ -1,5 +1,5 @@
 Source code for the Meaning Extraction Helper (MEH) program.
-[https://meh.ryanb.cc](https://meh.ryanb.cc)
+[https://www.ryanboyd.io/software/meh](https://www.ryanboyd.io/software/meh)
 
 Currently in beta.
 
