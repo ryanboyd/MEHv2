@@ -31,7 +31,7 @@ namespace MEH2
             DoubleBuffered = true;
 
             AboutLabel.Text = "Boyd, R. L. (2018). MEH: Meaning Extraction" + Environment.NewLine + 
-                              "  Helper(version " + VersionText + ") [Software]." + Environment.NewLine +
+                              "  Helper (version " + VersionText + ") [Software]." + Environment.NewLine +
                               "  Available from" + Environment.NewLine +
                               "  https://www.ryanboyd.io/software/meh";
 
@@ -1198,6 +1198,17 @@ namespace MEH2
                                         //write output to ndjson file
                                         string outputline = JsonConvert.SerializeObject(FileTokenData);
                                         OutputWriter.WriteString(outputline);
+
+                                        if (BGData.SaveTokenizedText)
+                                        {
+                                            StringBuilder TokenizedTextOutputLine = new StringBuilder();
+                                            TokenizedTextOutputLine.Append("\"" + Path.GetFileName(RowIdentifierForOutput).Replace("\"", "\"\"") + "\",");
+                                            TokenizedTextOutputLine.Append((segment_number + 1).ToString() + ",");
+                                            //we're actually going to have it save the version from SegmentedTokenText[segment_number]
+                                            //instead of TokenizedText_For_Ngrams, because the latter has omitted stop words.
+                                            TokenizedTextOutputLine.Append("\"" + string.Join(" ", SegmentedTokenText[segment_number]).Replace("\"", "\"\"") + "\"");
+                                            Tokenized_Text_Logger["TokenizedText"].WriteString(TokenizedTextOutputLine.ToString());
+                                        }
                                     }
                                 }
 
