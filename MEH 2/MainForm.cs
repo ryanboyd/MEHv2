@@ -1047,7 +1047,8 @@ namespace MEH2
                                     TokenizedTextOutputLine.Append((segment_number + 1).ToString() + ",");
                                     //we're actually going to have it save the version from SegmentedTokenText[segment_number]
                                     //instead of TokenizedText_For_Ngrams, because the latter has omitted stop words.
-                                    TokenizedTextOutputLine.Append("\"" + string.Join(" ", SegmentedTokenText[segment_number]).Replace("\"", "\"\"") + "\"");
+                                    TokenizedTextOutputLine.Append("\"" + string.Join(" ", SegmentedTokenText[segment_number]
+                                        .Where(x => !StopList.Contains(x)).ToArray()).Replace("\"", "\"\"") + "\"");
                                     Tokenized_Text_Logger["TokenizedText"].WriteString(TokenizedTextOutputLine.ToString());
                                 }
 
@@ -1206,7 +1207,8 @@ namespace MEH2
                                             TokenizedTextOutputLine.Append((segment_number + 1).ToString() + ",");
                                             //we're actually going to have it save the version from SegmentedTokenText[segment_number]
                                             //instead of TokenizedText_For_Ngrams, because the latter has omitted stop words.
-                                            TokenizedTextOutputLine.Append("\"" + string.Join(" ", SegmentedTokenText[segment_number]).Replace("\"", "\"\"") + "\"");
+                                            TokenizedTextOutputLine.Append("\"" + string.Join(" ", SegmentedTokenText[segment_number]
+                                                .Where(x => !StopList.Contains(x)).ToArray()).Replace("\"", "\"\"") + "\"");
                                             Tokenized_Text_Logger["TokenizedText"].WriteString(TokenizedTextOutputLine.ToString());
                                         }
                                     }
